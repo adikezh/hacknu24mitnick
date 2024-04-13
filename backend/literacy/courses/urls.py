@@ -1,13 +1,13 @@
 from django.urls import path, include
 
-from courses.views import BasePage, CreateLesson, CreateCourse, LessonDetail, LessonList, CoursesList
+from courses.views import *
 
 app_name = "courses"
 
 url_courses = [
     path("create_course", CreateCourse.as_view(), name="course_create"),
     path("list_course", CoursesList.as_view(), name="course_list"),
-    path("detail_course/<slug:slug>", LessonDetail.as_view(), name="course_detail")
+    path("detail_course/<slug:slug>", CourseDetail.as_view(), name="course_detail")
 ]
 
 url_lessons = [

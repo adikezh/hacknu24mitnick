@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+This is a detail page for: {{ lesson }}<br>
+This is rule of the lesson: {{ lesson.rule }}
+<hr>
+{% for quiz in lesson.quizes.all %}
+    <form method="POST">
+    {% csrf_token %}
+    <input type="hidden" name="quiz" value="{{ quiz.id }}">
+        {{ quiz }}
+        <br>
+        <fieldset>
+            {% for question in quiz.questions.all %}
+                <input type="radio" name="{{ question.id }}" value="{{ question.answer }}">
+                <label for="{{ question }}">{{ question.answer }}</label>
+                <br>
+            {% endfor %}
+        </fieldset>
+        <input type="submit" value="Submit">
+        <hr>
+    </form>
+{% endfor %}
+</body>
+</html>

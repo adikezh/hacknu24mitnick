@@ -3,12 +3,11 @@ from django.views.generic import TemplateView
 from django.views.generic.detail import DetailView
 from django.shortcuts import get_object_or_404
 from django.views.generic import CreateView
-from django.views.generic.edit import View, ProcessFormView
-from django.views.decorators.csrf import csrf_exempt
 from django.urls import reverse_lazy, reverse
+from django.http import JsonResponse
 
 from courses.forms import CreateLessonForm, CreateCourseForm
-from courses.models import Course, Lesson, Quiz
+from courses.models import Course, Lesson, Quiz, Result
 
 
 # Create your views here.
@@ -47,18 +46,45 @@ class LessonDetail(DetailView):
     model = Lesson
     template_name = "courses/lessons/detail.html"
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
+    def post(self, request, *args, **kwargs):
+        lesson = self.get_object()
+        quiz = lesson.quizes.filter(id=request.POST["quiz"]).first()
+        if Result.objects.get(user=request.user, quiz=quiz):
+            return JsonResponse({"error": "You have already passed this quiz"})
 
-        return context
+        submitted_answers = {i: request.POST[i] for i in request.POST.keys() if i not in ["quiz", "csrfmiddlewaretoken"]}
+        correct_answers = {str(answer.id): answer.is_right for answer in quiz.questions.all()}
+        results = {question_id: not not submitted_answers.get(question_id) if correct_answers.get(question_id) == True else not submitted_answers.get(question_id) for question_id in correct_answers.keys()}
 
-    def get_quizes(self, lesson: Lesson):
-        return lesson.quizes.all()
+        percent = sum(results.values()) / len(results) * 100
+
+        result = Result.objects.create(
+            user=request.user,
+            quiz=quiz,
+            percent=percent
+        )
+
+        return JsonResponse(results)
 
 
 class LessonList(ListView):
     model = Lesson
     template_name = "courses/lessons/list.html"
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(object_list=object_list, **kwargs)
+        t = []
+        for lesson in context["lesson_list"]:
+            a = []
+            for quiz in lesson.quizes.all():
+                percents = quiz.results.filter(user=self.request.user).first()
+                if percents:
+                    a.append(percents.percent)
+            lesson.percent = sum(a) / len(a) if a else 0
+            t.append(lesson)
+        context["lesson_list"] = t
+        print(context)
+        return context
 
 
 class CreateLesson(CreateView):

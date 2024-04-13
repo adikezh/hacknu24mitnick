@@ -44,8 +44,14 @@ class Quiz(models.Model):
 
 class Answer(models.Model):
     answer = models.CharField(max_length=255)
-    quiz = models.ForeignKey("Quiz", related_name="reviews", on_delete=models.CASCADE)
+    quiz = models.ForeignKey("Quiz", related_name="questions", on_delete=models.CASCADE)
     is_right = models.BooleanField()
 
     def __str__(self):
         return self.answer
+
+
+class Result(models.Model):
+    user = models.ForeignKey("authorization.User", related_name="results", on_delete=models.CASCADE)
+    quiz = models.ForeignKey("Quiz", related_name="results", on_delete=models.CASCADE)
+    percent = models.FloatField()
