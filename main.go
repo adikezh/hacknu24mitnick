@@ -78,5 +78,5 @@ func translateHandler(w http.ResponseWriter, r *http.Request) {
 func main() {
 	http.HandleFunc("/translate", translateHandler)
 	fmt.Println("Server listening on port 8080")
-	http.ListenAndServe(":8080", nil)
+	http.ListenAndServe(":5500", nil)
 }
