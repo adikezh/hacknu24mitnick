@@ -4,8 +4,11 @@ from django.views.generic.detail import DetailView
 from django.shortcuts import get_object_or_404
 from django.views.generic import CreateView
 from django.views.generic.edit import View, ProcessFormView
+from django.views.decorators.csrf import csrf_exempt
+from django.urls import reverse_lazy, reverse
 
-from courses.models import Courses, Lesson, Quiz
+from courses.forms import CreateLessonForm, CreateCourseForm
+from courses.models import Course, Lesson, Quiz
 
 
 # Create your views here.
@@ -15,21 +18,29 @@ class BasePage(TemplateView):
 
 
 class CoursesList(ListView):
-    model = Courses
+    model = Course
     template_name = "courses/course_list.html"
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        context = super().get_context_data(object_list=object_list, **kwargs)
+        print(context)
+
+        return context
 
 
 class CourseDetail(DetailView):
-    model = Courses
+    model = Course
     template_name = "courses/course_detail.html"
 
     def get_queryset(self):
-        slug = get_object_or_404(Courses, slug=self.kwargs.get("course"))
+        slug = get_object_or_404(Course, slug=self.kwargs.get("course"))
 
 
-class CreateCourse(CreateView):
-    model = Courses
-    template_name = "courses/course_create.html"
+class CreateCourse(CreateView, ):
+    model = Course
+    template_name = "courses/course/create.html"
+    form_class = CreateCourseForm
+    success_url = reverse_lazy('courses:course_list')
 
 
 class LessonDetail(DetailView):
@@ -45,10 +56,16 @@ class LessonDetail(DetailView):
         return lesson.quizes.all()
 
 
+class LessonList(ListView):
+    model = Lesson
+    template_name = "courses/lessons/list.html"
+
+
 class CreateLesson(CreateView):
     model = Lesson
     template_name = "courses/lessons/create.html"
+    form_class = CreateLessonForm
 
+    def get_success_url(self):
+        return reverse("courses:lesson_detail", kwargs={"slug": self.object.slug})
 
-def get_all_questions_from_quiz(request):
-    quiz = Quiz.objects.get(lesson=request.POST)
