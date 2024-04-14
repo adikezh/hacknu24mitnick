@@ -10,20 +10,24 @@ from django.views.generic import TemplateView
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 from django.http import HttpResponseRedirect
+from django.contrib import messages
 
-from courses.forms import CreateLessonForm, CreateCourseForm
+from courses.forms import CreateLessonForm, CreateCourseForm, FeedbackForm
 from courses.models import Course, Lesson, Result
 
 
 # Create your views here.
 
 
-class BasePage(TemplateView):
-    template_name = "courses/index.html"
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        return context
+def base_page(request):
+    if request.method == "POST":
+        form = FeedbackForm()
+        return render(request, "courses/index.html")
+    form = FeedbackForm(request.POST)
+    if form.is_valid():
+        form.save()
+        messages.success(request, "Feedback sent successfully")
+    return render(request, "courses/index.html")
 
 
 class CoursesList(ListView):
@@ -137,10 +141,14 @@ class LessonTest(DetailView):
 def translate(request):
     if request.method != "POST":
         return JsonResponse({"error": "Method not allowed", 'info': "Available languages: en, ru, kk"})
+
+    print(request.headers)
     data = json.loads(request.body.decode('utf-8'))
     texts = data.get("texts")
     source_language = data.get("sourceLanguageCode")
     target_language = data.get("targetLanguageCode")
+
+    print(data)
 
     url = "https://translate.api.cloud.yandex.net/translate/v2/translate"
     payload = {
@@ -161,5 +169,5 @@ def translate(request):
     return JsonResponse(response.json())
 
 
-def testing(request):
-    return render("courses/course/translator.html", request)
+def translator(request):
+    return render(request, "courses/translator.html")

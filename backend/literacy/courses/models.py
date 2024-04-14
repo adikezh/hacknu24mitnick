@@ -76,3 +76,17 @@ class Result(models.Model):
     user = models.ForeignKey("authorization.User", related_name="results", on_delete=models.CASCADE)
     quiz = models.ForeignKey("Quiz", related_name="results", on_delete=models.CASCADE)
     percent = models.FloatField()
+
+
+class Feedback(models.Model):
+    full_name = models.CharField(max_length=255)
+    email = models.EmailField()
+    phone = models.CharField(max_length=20)
+    message = models.TextField()
+    checked = models.BooleanField(default=False)
+
+    def is_valid(self):
+        return self.full_name and self.email and self.phone and self.message
+
+    def __str__(self):
+        return self.full_name

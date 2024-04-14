@@ -18,8 +18,9 @@ url_lessons = [
 ]
 
 urlpatterns = [
-    path("", BasePage.as_view(), name="base_page"),
+    path("", base_page, name="base_page"),
     path("course/", include(url_courses)),
     path("lesson/", include(url_lessons)),
     path("translate", translate, name="translate"),
+    path("translator/", translator, name="translator")
 ]
