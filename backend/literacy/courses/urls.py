@@ -22,5 +22,4 @@ urlpatterns = [
     path("course/", include(url_courses)),
     path("lesson/", include(url_lessons)),
     path("translate", translate, name="translate"),
-    path("test", testing)
 ]
