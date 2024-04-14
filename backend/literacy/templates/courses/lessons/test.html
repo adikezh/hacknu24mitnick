@@ -25,7 +25,7 @@
                 <label for="question1" class="form-label">{{ quiz.question }}</label>
                 {% for question in quiz.questions.all %}
                     <div>
-                        <input type="radio" name="{{ question.id }}" value="{{ question.answer }}" id="q1-{{ question.id }}">
+                        <input type="checkbox" name="{{ question.id }}" value="{{ question.answer }}" id="q1-{{ question.id }}">
                         <label for="q1-{{ question.id }}">{{ question.answer }}</label>
                     </div>
                 {% endfor %}

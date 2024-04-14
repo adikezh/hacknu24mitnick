@@ -1,5 +1,6 @@
 const sections = document.querySelectorAll("section");
 const navLi = document.querySelectorAll(".navbar-nav .nav-link");
+
 window.onscroll = () => {
   var current = "";
   sections.forEach((section) => {

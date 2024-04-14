@@ -1,3 +1,5 @@
+import math
+
 from django.db import models
 from django.urls import reverse
 
@@ -44,6 +46,12 @@ class Lesson(models.Model):
 
     def get_test_link(self):
         return self.get_absolute_url() + "/test"
+
+    def get_percent(self):
+        results = Result.objects.filter(quiz__lesson=self)
+        if results:
+            return math.floor(sum([result.percent for result in results]) / len(results))
+        return 0
 
 
 class Quiz(models.Model):

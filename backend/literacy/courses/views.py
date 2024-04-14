@@ -2,13 +2,14 @@ import json
 
 import requests
 from django.http import JsonResponse
-from django.shortcuts import get_object_or_404
+from django.shortcuts import get_object_or_404, render
 from django.urls import reverse_lazy, reverse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import CreateView
 from django.views.generic import TemplateView
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
+from django.http import HttpResponseRedirect
 
 from courses.forms import CreateLessonForm, CreateCourseForm
 from courses.models import Course, Lesson, Result
@@ -89,27 +90,47 @@ class LessonTest(DetailView):
     model = Lesson
     template_name = "courses/lessons/test.html"
 
+    def get(self, request, *args, **kwargs):
+        lesson = self.get_object()
+        quizes = lesson.quizes.all()
+        try:
+            get = Result.objects.get(user=request.user, quiz=quizes.first())
+        except Result.DoesNotExist:
+            get = None
+        if get:
+            return HttpResponseRedirect(reverse("courses:lesson_detail", kwargs={"slug": lesson.slug}))
+        return super().get(request, *args, **kwargs)
+
     def post(self, request, *args, **kwargs):
         lesson = self.get_object()
-        quiz = lesson.quizes.filter(id=request.POST["quiz"]).first()
-        if Result.objects.get(user=request.user, quiz=quiz):
-            return JsonResponse({"error": "You have already passed this quiz"})
-
+        quizes = lesson.quizes.all()
+        try:
+            get = Result.objects.get(user=request.user, quiz=quizes.first())
+        except Result.DoesNotExist:
+            get = None
+        if get:
+            return JsonResponse({"error": "You have already passed this test"})
         submitted_answers = {i: request.POST[i] for i in request.POST.keys() if
                              i not in ["quiz", "csrfmiddlewaretoken"]}
-        correct_answers = {str(answer.id): answer.is_right for answer in quiz.questions.all()}
-        results = {question_id: not not submitted_answers.get(question_id) if correct_answers.get(
-            question_id) is True else not submitted_answers.get(question_id) for question_id in correct_answers.keys()}
+        correct_answers = [quiz.questions.filter(is_right=True).values_list("id", flat=True).first()
+                           for quiz in
+                           quizes]
+        correct_count = sum(
+            [1 for i in submitted_answers.keys() if int(i) in correct_answers])
+        incorrect_count = sum(
+            [1 for i in submitted_answers.keys() if int(i) not in correct_answers and int(submitted_answers[i]) == int(i)])
+        percent = correct_count / len(correct_answers) * 100
 
-        percent = sum(results.values()) / len(results) * 100
+        print(submitted_answers, correct_answers, incorrect_count, correct_count, percent)
 
+        # Save the result in the database
         result = Result.objects.create(
             user=request.user,
-            quiz=quiz,
+            quiz=quizes.first(),
             percent=percent
         )
 
-        return JsonResponse(results)
+        return HttpResponseRedirect(reverse("courses:lesson_detail", kwargs={"slug": lesson.slug}))
 
 
 @csrf_exempt
@@ -138,3 +159,7 @@ def translate(request):
 
     response = requests.post(url, json=payload, headers=headers)
     return JsonResponse(response.json())
+
+
+def testing(request):
+    return render("courses/course/translator.html", request)

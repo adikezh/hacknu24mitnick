@@ -55,14 +55,18 @@
 <!-- Summary Section -->
 <section id="summary" class="container my-5">
     <h2>Summary</h2>
-    <p>{{ lesson.detail }}</p>
+    <p>{{ lesson.summary }}</p>
 </section>
 
 <!-- Test Section -->
 <section id="test" class="container my-5">
     <h2>Test</h2>
     <p>Add content related to the test from the video here.</p>
+    {% if lesson.get_percent == 0 %}
     <a type="link" class="btn btn-primary" rel="stylesheet" href="{{ lesson.get_test_link }}">Take a test</a>
+    {% else %}
+    <button type="link" class="btn btn-secondary" rel="stylesheet" href="{{ lesson.get_test_link }}" disabled>You already took the test</button>
+    {% endif %}
 </section>
 
 <!-- Footer -->
