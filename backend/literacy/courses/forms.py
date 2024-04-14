@@ -7,7 +7,7 @@ from courses.models import Lesson, Course
 class CreateLessonForm(forms.ModelForm):
     class Meta:
         model = Lesson
-        fields = ['name', 'video', 'rule', 'course']
+        fields = ['name', 'video', 'course']
 
     def save(self, commit=True):
         self.instance.slug = slugify(self.instance.name)

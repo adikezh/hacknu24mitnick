@@ -14,10 +14,12 @@ url_lessons = [
     path("create_lesson", CreateLesson.as_view(), name="lesson_create"),
     path("list_lesson", LessonList.as_view(), name="lesson_list"),
     path("detail_lesson/<slug:slug>", LessonDetail.as_view(), name="lesson_detail"),
+    path("detail_lesson/<slug:slug>/test", LessonTest.as_view(), name="lesson_test")
 ]
 
 urlpatterns = [
-    path("", BasePage.as_view()),
+    path("", BasePage.as_view(), name="base_page"),
     path("course/", include(url_courses)),
     path("lesson/", include(url_lessons)),
+    path("translate", translate, name="translate")
 ]

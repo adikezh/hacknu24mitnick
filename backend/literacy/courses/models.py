@@ -8,12 +8,12 @@ from django.urls import reverse
 class Course(models.Model):
     name = models.CharField(max_length=255)
     slug = models.SlugField()
-    # prev_course = models.ForeignKey(
-    #     "Course",
-    #     related_name="next_course",
-    #     on_delete=models.CASCADE,
-    #     null=True,
-    #     blank=True)
+    prev_course = models.ForeignKey(
+        "Course",
+        related_name="next_course",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True)
 
     def __str__(self):
         return self.name
@@ -25,12 +25,25 @@ class Course(models.Model):
 class Lesson(models.Model):
     name = models.CharField(max_length=255)
     slug = models.SlugField()
+    description = models.TextField(blank=True)
+    summary = models.TextField(blank=True)
     video = models.CharField(max_length=500)
-    rule = models.TextField()
     course = models.ForeignKey("Course", related_name="lessons", on_delete=models.CASCADE)
+    prev_lesson = models.ForeignKey(
+        "Lesson",
+        related_name="next_lesson",
+        on_delete=models.CASCADE,
+        null=True,
+        blank=True)
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse("courses:lesson_detail", kwargs={"slug": self.slug})
+
+    def get_test_link(self):
+        return self.get_absolute_url() + "/test"
 
 
 class Quiz(models.Model):

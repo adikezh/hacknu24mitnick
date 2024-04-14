@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Language Learning</title>
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/course-list.css' %}">
+</head>
+<body>
+<div class="container">
+    {% for course in course_list %}
+        <div class="block" id="articles">
+            <h2>{{ course }}</h2>
+            <p>In this section, you'll find a variety of articles on different topics to improve your reading
+                comprehension skills.</p>
+            <ul>
+                {% for lesson in course.lessons.all %}
+                    <li><a href="{{ lesson.get_absolute_url }}">{{ lesson }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endfor %}
+</div>
+</body>
+</html>
