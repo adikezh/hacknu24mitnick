@@ -1,0 +1,16 @@
+{% extends '_base.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block title %}{{ object.title}}{% endblock title %}
+
+{% block content %}
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col">
+      {{ object.title }}
+    </div>
+  </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,22 @@
+{% extends '_base.html' %}
+
+{% load static %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block title %}Удалить документ{% endblock title %}
+
+{% block content %}
+<div class="container" style="margin-top: 120px; margin-bottom: 120px;">
+  <div class="row mt-5">
+    <div class="col">
+      <h1>{% trans 'Delete document' %}</h1>
+      <p>{% trans 'Are you sure you want to delete' %} "{{ object }}?</p>
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input class="btn btn-danger" type="submit" value="{% trans 'Delete' %}">
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock content %}

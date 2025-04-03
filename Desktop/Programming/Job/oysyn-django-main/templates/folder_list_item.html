@@ -1,0 +1,10 @@
+<li data-folder-id="{{ folder.id }}" class="folder-item list-group-item">
+  <span class="folder-name">{{ folder.name }} <small>({{ folder.document_count }})</small></span>
+  {% if folder.subfolders.exists %}
+    <ul>
+      {% for subfolder in folder.subfolders.all %}
+        {% include 'folder_list_item.html' with folder=subfolder %}
+      {% endfor %}
+    </ul>
+  {% endif %}
+</li>

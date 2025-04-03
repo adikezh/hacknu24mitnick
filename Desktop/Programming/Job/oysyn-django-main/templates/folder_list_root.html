@@ -1,0 +1,450 @@
+{% extends '_base.html' %}
+
+{% load i18n %}
+
+{% block title %}{% trans 'List folders and documents' %}{% endblock title %}
+
+{% block content %}
+<style>
+  .folder-item.selected-folder {
+    background-color: lightgray;
+  }
+  #nested-folder-list li {
+    cursor: pointer;
+  }
+  #nested-folder-list li.selected-folder {
+    background-color: #007bff;
+    color: white;
+  }
+</style>
+
+<div class="container my-5">
+  <div class="row">
+    <!-- Folders list on the left -->
+    <div class="col-md-3 py-3" style="background-color: #f6fafd;">
+      <h5>{% trans 'Folders' %}</h5>
+      <a href="{% url 'document_create' %}" id="create-document" class="btn w-100 btn-outline-primary mb-3">{% trans 'Check new document' %}</a>
+      <ul id="folder-list" class="list-group mb-3">
+        <li data-folder-id="root" class="folder-item list-group-item">
+          <span class="folder-name">
+            {% trans 'Root Folder' %}
+            <small>({{ root_documents_count }})</small>
+          </span>
+        </li>
+        {% for folder in folders %}
+          {% include 'folder_list_item.html' with folder=folder %}
+        {% endfor %}
+      </ul>
+      <button id="create-folder" class="btn btn-sm btn-outline-secondary">{% trans 'New folder' %}</button>
+      <button id="edit-folder" class="btn btn-sm btn-outline-secondary" style="display: none;" data-toggle="tooltip" data-placement="bottom" title="Переименовать папку"><i class="bi bi-pencil"></i></button>
+      <button id="move-folder" class="btn btn-sm btn-outline-secondary" style="display: none;" data-toggle="tooltip" data-placement="bottom" title="Переместить папку"><i class="bi bi-arrows-move"></i></button>
+      <button id="delete-folder" class="btn btn-sm btn-outline-secondary" style="display: none;" data-toggle="tooltip" data-placement="bottom" title="Удалить папку"><i class="bi bi-trash"></i></button>
+    </div>
+
+    <!-- Documents list on the right -->
+    <div class="col-md-9 py-3">
+      <h5>{% trans 'Documents list' %}</h5>
+
+      <!-- Search bar for documents -->
+      <div class="row mb-3">
+        <div class="col-md-8">
+          <input type="text" id="search-keyword" class="form-control" placeholder="{% trans 'Search by title' %}">
+        </div>
+        <div class="col-md-4">
+          <button id="search-button" class="btn btn-outline-secondary w-100">{% trans 'Search' %}</button>
+        </div>
+      </div>
+
+      <button id="move-documents" class="btn btn-sm btn-outline-secondary" style="display: none;">{% trans 'Move documents' %}</button>
+      <button id="delete-documents" class="btn btn-sm btn-outline-secondary" style="display: none;">{% trans 'Delete documents' %}</button>
+      
+      <div id="document-list" class="mt-2">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col"><input type="checkbox" id="select-all-docs"></th>
+              <th scope="col">{% trans 'Name' %}</th>
+              <th scope="col">{% trans 'Status' %}</th>
+              <th scope="col">{% trans 'Result' %}</th> <!-- New column -->
+              <th scope="col">{% trans 'Date' %}</th>
+              <th scope="col">{% trans 'Originality' %}</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Dynamic content will be loaded here -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Move Modal -->
+<div class="modal fade" id="moveModal" tabindex="-1" aria-labelledby="moveModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="moveModalLabel">{% trans 'Select Destination Folder' %}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <ul id="nested-folder-list" class="list-group">
+          <li data-folder-id="root" class="list-group-item">{% trans 'Root Folder' %}</li>
+          {% for folder in folders %}
+            {% include 'folder_list_item.html' with folder=folder %}
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" id="confirm-move">{% trans 'Move selected documents' %}</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Delete Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel">{% trans 'Confirm Deletion' %}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>{% trans 'Are you sure you want to delete the following documents?' %}</p>
+        <ul id="selected-documents-list" class="list-group">
+          <!-- List of selected documents will be populated here -->
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" id="confirm-delete">{% trans 'Confirm delete' %}</button>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+
+{% block page_js %}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+$(document).ready(function() {
+  const csrfToken = "{{ csrf_token }}";
+  let currentFolderId = "root";
+  let selectedFolderId = null;
+
+  loadDocuments(currentFolderId);
+
+  $('#folder-list').on('click', '.folder-item', function(event) {
+    event.stopPropagation();
+
+    $('#folder-list .folder-item').removeClass('selected-folder');
+    $(this).addClass('selected-folder');
+    currentFolderId = $(this).data('folder-id');
+
+    $('#delete-folder, #edit-folder, #move-folder').toggle(currentFolderId !== "root");
+    loadDocuments(currentFolderId);
+  });
+
+  function loadDocuments(folderId) {
+    const url = folderId === "root" ? "/folders/0/documents/" : `/folders/${folderId}/documents/`;
+    const searchKeyword = $('#search-keyword').val();
+
+    $.ajax({
+      url: url,
+      type: "GET",
+      data: { search: searchKeyword },
+      success: function(documents) {
+        renderDocuments(documents);
+      }
+    });
+  }
+
+  function renderDocuments(documents) {
+    const tbody = $('#document-list tbody');
+    tbody.empty();
+
+    if (documents.length === 0) {
+      tbody.append("<tr><td colspan='7'>---</td></tr>");
+    } else {
+      documents.forEach((doc) => {
+        const statusIcon = (doc.status === 'CH') ? '/static/images/checkmark.png' : '/static/images/spinner.gif';
+        const formattedDate = new Date(doc.created_at).toLocaleString();
+        const originalityHtml = doc.status === 'PR' 
+                                ? `<span class="countdown" data-remaining="${doc.remaining_seconds}"></span>` 
+                                : `${doc.final_originality || "0"}%`;
+        
+        let originalityCheckHtml;
+        if (doc.status === 'CH') {
+          originalityCheckHtml = doc.has_passed
+            ? '<span class="badge bg-success" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Высокая оригинальность">+</span>'
+            : '<span class="badge bg-danger"data-bs-toggle="tooltip" data-bs-placement="bottom" title="Низкая оригинальность">!</span>';
+        } else {
+          originalityCheckHtml = '<span class="badge bg-secondary"></span>';
+        }
+
+        tbody.append(`
+          <tr>
+            <td><input type="checkbox" class="doc-checkbox" data-doc-id="${doc.id}"></td>
+            <td>${doc.title}</td>
+            <td>
+              <img src="${statusIcon}" alt="${doc.status}" width="20" height="20" style="margin-left: 5px;" 
+                  data-bs-toggle="tooltip" data-bs-placement="bottom" title="${doc.status}">
+            </td>
+            <td>${originalityCheckHtml}</td>
+            <td>${formattedDate}</td>
+            <td>${originalityHtml}</td>
+            <td>
+              ${
+                doc.report_id
+                  ? `<a href="/report/new_detail/${doc.report_id}/" class="btn btn-sm btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Посмотреть отчет"><i class="bi bi-eye"></i></a>`
+                  : `<span class="text-muted" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Отчет недоступен"><i class="bi bi-eye-slash"></i></span>`
+              }
+              <a href="/document/${doc.id}/delete/" class="btn btn-sm btn-outline-secondary" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Удалить документ"><i class="bi bi-trash"></i></a>
+            </td>
+          </tr>
+        `);
+      });
+
+      document.querySelectorAll('.countdown').forEach(el => startCountdown(el));
+      $('[data-bs-toggle="tooltip"]').tooltip();
+    }
+
+    // Rebind the checkbox event listener to toggle "Move" and "Delete" buttons visibility
+    $('.doc-checkbox').on('change', toggleActionButtons);
+  }
+
+  function startCountdown(element) {
+    let remainingSeconds = parseInt(element.getAttribute("data-remaining"));
+
+    function updateCountdown() {
+      if (remainingSeconds <= 0) {
+        element.textContent = "Почти проверено...";
+        clearInterval(interval);
+        return;
+      }
+
+      const minutes = Math.floor((remainingSeconds % 3600) / 60);
+      const seconds = remainingSeconds % 60;
+      element.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+      remainingSeconds -= 1;
+    }
+
+    updateCountdown();
+    const interval = setInterval(updateCountdown, 1000);
+  }
+
+  // Toggle "Move" and "Delete" buttons based on selected documents
+  function toggleActionButtons() {
+    const selectedDocs = $('.doc-checkbox:checked');
+    $('#move-documents, #delete-documents').toggle(selectedDocs.length > 0);
+  }
+
+  $('#select-all-docs').click(function() {
+    const isChecked = this.checked;
+    $('.doc-checkbox').prop('checked', isChecked);
+    toggleActionButtons();
+  });
+
+  $('#move-documents').click(function() {
+    selectedFolderId = null;
+    $('#nested-folder-list li').removeClass('selected-folder');
+    $('#moveModal').modal('show');
+  });
+
+  $('#nested-folder-list').on('click', 'li', function(event) {
+    event.stopPropagation();
+    $('#nested-folder-list li').removeClass('selected-folder');
+    $(this).addClass('selected-folder');
+    selectedFolderId = $(this).data('folder-id');
+  });
+
+  $('#confirm-move').click(function() {
+    const selectedDocs = [];
+    $('.doc-checkbox:checked').each(function() {
+      selectedDocs.push($(this).data('doc-id'));
+    });
+
+    if (selectedFolderId === null) {
+      alert("Выберите папку, пожалуйста");
+      return;
+    }
+
+    $.ajax({
+      url: "/documents/move/",
+      type: "PUT",
+      headers: { 
+        "X-CSRFToken": csrfToken,
+        "Content-Type": "application/json" 
+      },
+      data: JSON.stringify({ folder_id: selectedFolderId, document_ids: selectedDocs }),
+      success: function(response) {
+        alert(response.message);
+        $('#moveModal').modal('hide');
+        loadDocuments(currentFolderId);
+      },
+      error: function(xhr, status, error) {
+        console.error("Error moving documents: ", error);
+        alert("Не удалось переместить документы. Попробуйте позднее, пожалуйста");
+      }
+    });
+  });
+
+  $('#delete-documents').click(function() {
+    const selectedDocs = [];
+    $('#selected-documents-list').empty();
+
+    $('.doc-checkbox:checked').each(function() {
+      const docId = $(this).data('doc-id');
+      const docTitle = $(this).closest('tr').find('td:nth-child(2)').text();
+      selectedDocs.push(docId);
+      $('#selected-documents-list').append(`<li class="list-group-item">${docTitle}</li>`);
+    });
+
+    if (selectedDocs.length === 0) {
+      alert("Выберите документы для удаления, пожалуйста");
+      return;
+    }
+
+    $('#deleteModal').modal('show');
+
+    $('#confirm-delete').off('click').on('click', function() {
+      $.ajax({
+        url: "/documents/delete/",
+        type: "DELETE",
+        headers: { 
+          "X-CSRFToken": csrfToken,
+          "Content-Type": "application/json" 
+        },
+        data: JSON.stringify({ document_ids: selectedDocs }),
+        success: function(response) {
+          alert(response.message);
+          $('#deleteModal').modal('hide');
+          loadDocuments(currentFolderId);
+        },
+        error: function(xhr, status, error) {
+          console.error("Error deleting documents: ", error);
+          alert("Не удалось удалить документы. Попробуйте позднее, пожалуйста");
+        }
+      });
+    });
+  });
+
+  $('#create-folder').click(function() {
+    const folderName = prompt("Введите название новой папки");
+    if (folderName) {
+      $.ajax({
+        url: "{% url 'folder_create_ajax' %}",
+        type: "POST",
+        headers: { "X-CSRFToken": csrfToken },
+        data: { name: folderName, parent_folder_id: currentFolderId === "root" ? null : currentFolderId },
+        success: function(folder) {
+          $('#folder-list').append(`
+            <li data-folder-id="${folder.id}" class="folder-item list-group-item">
+              <span class="folder-name">${folder.name}</span>
+            </li>
+          `);
+          alert("Папка создана успешно");
+        },
+        error: function(xhr, status, error) {
+          console.error("Возникла ошибка при создании папки:", error);
+          alert("Не удалось создать папку. Попробуйте позднее");
+        }
+      });
+    }
+  });
+
+  $('#edit-folder').click(function() {
+    if (currentFolderId === "root") {
+      alert("Корневую папку редактировать нельзя");
+      return;
+    }
+    
+    const folderElement = $(`li[data-folder-id="${currentFolderId}"] .folder-name`);
+    const folderName = folderElement.text().trim();
+    const newFolderName = prompt("Введите новое название папки:", folderName);
+
+    if (newFolderName && newFolderName !== folderName) {
+      $.ajax({
+        url: `/folders/${currentFolderId}/update/`,
+        type: "PUT",
+        headers: { "X-CSRFToken": csrfToken, "Content-Type": "application/json" },
+        data: JSON.stringify({ name: newFolderName }),
+        success: function(response) {
+          folderElement.text(response.name);
+          alert("Папка обновлена успешно");
+        },
+        error: function(xhr, status, error) {
+          console.error("Error updating folder:", error);
+          alert("Не удалось обновить папку. Попробуйте позднее, пожалуйста");
+        }
+      });
+    }
+  });
+
+  // Move a folder
+  $('#move-folder').click(function() {
+    let targetFolderId = null;
+
+    $('#nested-folder-list li').removeClass('selected-folder');
+    $('#moveModal').modal('show');
+
+    $('#nested-folder-list').on('click', 'li', function() {
+      $('#nested-folder-list li').removeClass('selected-folder');
+      $(this).addClass('selected-folder');
+      targetFolderId = $(this).data('folder-id');
+    });
+
+    $('#confirm-move').click(function() {
+      if (!targetFolderId) {
+        alert("Выберите целевую папку, пожалуйста");
+        return;
+      }
+
+      $.ajax({
+        url: `/folders/${currentFolderId}/move/`,
+        type: "PUT",
+        headers: { "X-CSRFToken": csrfToken },
+        data: JSON.stringify({ parent_folder_id: targetFolderId }),
+        contentType: "application/json",
+        success: function() {
+          alert("Папка перемещена успешно");
+          $('#moveModal').modal('hide');
+          location.reload();
+        },
+        error: function() {
+          alert("Не удалось переместить папку. Попробуйте позднее, пожалуйста");
+        }
+      });
+    });
+  });
+
+  $('#delete-folder').click(function() {
+    if (currentFolderId === "root") {
+      alert("Корневую папку удалить нельзя");
+      return;
+    }
+
+    if (confirm("Вы уверены, что хотите удалить папку?")) {
+      $.ajax({
+        url: `/folders/${currentFolderId}/delete/`,
+        type: "DELETE",
+        headers: { "X-CSRFToken": csrfToken },
+        success: function(response) {
+          $(`li[data-folder-id="${currentFolderId}"]`).remove();
+          currentFolderId = "root";
+          loadDocuments(currentFolderId);
+          alert("Папка удалена успешно");
+        },
+        error: function(xhr, status, error) {
+          console.error("Error deleting folder:", error);
+          alert("Не удалось удалить папку. Попробуйте позднее, пожалуйста");
+        }
+      });
+    }
+  });
+});
+</script>
+{% endblock %}

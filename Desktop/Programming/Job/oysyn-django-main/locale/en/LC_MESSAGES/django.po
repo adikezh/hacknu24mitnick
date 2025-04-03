@@ -1,0 +1,1990 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-11 21:52+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: api/templates/certificate_template.html:10
+#: documents/templates/documents/certificate_template.html:10
+msgid "Plagiarism check certificate"
+msgstr ""
+
+#: api/templates/certificate_template.html:57
+#: api/templates/report_template.html:57
+#: documents/templates/documents/certificate_template.html:57
+#: documents/templates/documents/report_template.html:57
+msgid "Innovative plagiarism checking system"
+msgstr ""
+
+#: api/templates/certificate_template.html:58
+#: documents/templates/documents/certificate_template.html:58
+msgid "CERTIFICATE<br>of passing the system to confirm originality"
+msgstr ""
+
+#: api/templates/certificate_template.html:60
+#: api/templates/report_template.html:60
+#: documents/templates/documents/certificate_template.html:60
+#: documents/templates/documents/report_template.html:60
+msgid "Author"
+msgstr ""
+
+#: api/templates/certificate_template.html:61
+#: api/templates/report_template.html:61 documents/models.py:100
+#: documents/templates/documents/certificate_template.html:61
+#: documents/templates/documents/report_template.html:61
+msgid "Document type"
+msgstr ""
+
+#: api/templates/certificate_template.html:62
+#: api/templates/report_template.html:62
+#: documents/templates/documents/certificate_template.html:62
+#: documents/templates/documents/report_template.html:62
+#: templates/report_detail.html:15 templates/report_new_detail.html:28
+#: templates/report_new_detail.html:29
+msgid "Document title"
+msgstr ""
+
+#: api/templates/certificate_template.html:63
+#: api/templates/report_template.html:63
+#: documents/templates/documents/certificate_template.html:63
+#: documents/templates/documents/report_template.html:63
+msgid "Originality percentage"
+msgstr ""
+
+#: api/templates/certificate_template.html:64
+#: api/templates/report_template.html:64
+#: documents/templates/documents/certificate_template.html:64
+#: documents/templates/documents/report_template.html:64
+msgid "Plagiarism percentage"
+msgstr ""
+
+#: api/templates/certificate_template.html:65
+#: api/templates/report_template.html:65
+#: documents/templates/documents/certificate_template.html:65
+#: documents/templates/documents/report_template.html:65
+#: templates/report_new_detail.html:44
+msgid "Citation percentage"
+msgstr ""
+
+#: api/templates/certificate_template.html:66
+#: api/templates/report_template.html:66
+#: documents/templates/documents/certificate_template.html:66
+#: documents/templates/documents/report_template.html:66
+#: templates/report_new_detail.html:45
+msgid "Selfcitation percentage"
+msgstr ""
+
+#: api/templates/certificate_template.html:67
+#: api/templates/report_template.html:67
+#: documents/templates/documents/certificate_template.html:67
+#: documents/templates/documents/report_template.html:67
+#: templates/report_detail.html:23 templates/report_new_detail.html:46
+msgid "ChatGPT generated probability"
+msgstr ""
+
+#: api/templates/certificate_template.html:68
+#: api/templates/report_template.html:68
+#: documents/templates/documents/certificate_template.html:68
+#: documents/templates/documents/report_template.html:68
+msgid "Document checked by"
+msgstr ""
+
+#: api/templates/certificate_template.html:69
+#: api/templates/report_template.html:69
+#: documents/templates/documents/certificate_template.html:69
+#: documents/templates/documents/report_template.html:69
+#: templates/document_list.html:21 templates/folder_list_root.html:69
+#: templates/report_list.html:21
+msgid "Date"
+msgstr ""
+
+#: api/templates/certificate_template.html:73
+#: api/templates/report_template.html:117
+#: documents/templates/documents/certificate_new_template.html:156
+#: documents/templates/documents/certificate_template.html:73
+#: documents/templates/documents/report_new_template.html:187
+#: documents/templates/documents/report_template.html:117
+msgid "Please scan the QR-code to validate the document."
+msgstr ""
+
+#: api/templates/report_template.html:10
+#: documents/templates/documents/report_template.html:10
+msgid "Plagiarism check report"
+msgstr ""
+
+#: api/templates/report_template.html:58
+#: documents/templates/documents/report_template.html:58
+msgid "REPORT<br>of passing the system to confirm originality"
+msgstr ""
+
+#: api/templates/report_template.html:73
+#: documents/templates/documents/report_template.html:73
+msgid "List of plagiarism instances"
+msgstr ""
+
+#: api/templates/report_template.html:78
+#: documents/templates/documents/report_template.html:78
+#: organizations/models.py:48
+#: organizations/templates/organizations/organization_list.html:20
+#: templates/document_list.html:20 templates/instance_update.html:27
+#: templates/report_new_detail.html:61
+msgid "Title"
+msgstr ""
+
+#: api/templates/report_template.html:79
+#: documents/templates/documents/report_template.html:79
+msgid "Share in report"
+msgstr ""
+
+#: api/templates/report_template.html:80
+#: documents/templates/documents/report_template.html:80
+#: templates/report_new_detail.html:63
+msgid "Module"
+msgstr ""
+
+#: api/templates/report_template.html:101
+#: documents/templates/documents/report_new_template.html:175
+#: documents/templates/documents/report_template.html:101
+msgid "There is no plagiarism instances"
+msgstr ""
+
+#: comments/models.py:18
+#: organizations/templates/organizations/organization_detail.html:23
+msgid "Created at"
+msgstr ""
+
+#: comments/models.py:19
+#: organizations/templates/organizations/organization_detail.html:24
+msgid "Updated at"
+msgstr ""
+
+#: comments/models.py:20
+msgid "Text of the comment"
+msgstr ""
+
+#: comments/models.py:21
+msgid "Is text approved"
+msgstr ""
+
+#: core/settings.py:154 documents/forms.py:18
+msgid "Kazakh"
+msgstr ""
+
+#: core/settings.py:155 documents/forms.py:17
+msgid "Russian"
+msgstr ""
+
+#: core/settings.py:156 documents/forms.py:16
+msgid "English"
+msgstr ""
+
+#: documents/forms.py:25 documents/models.py:140
+msgid "OCR languages"
+msgstr ""
+
+#: documents/forms.py:26
+msgid "Select languages for OCR processing"
+msgstr ""
+
+#: documents/forms.py:45
+msgid "The filename is too long. Please use a shorter name."
+msgstr ""
+
+#: documents/models.py:28
+msgid "Folder Name"
+msgstr ""
+
+#: documents/models.py:38
+msgid "Folder"
+msgstr ""
+
+#: documents/models.py:39 templates/folder_list_root.html:25
+msgid "Folders"
+msgstr ""
+
+#: documents/models.py:53
+msgid "Uploaded"
+msgstr ""
+
+#: documents/models.py:54
+msgid "Checking"
+msgstr ""
+
+#: documents/models.py:55
+msgid "Checked"
+msgstr ""
+
+#: documents/models.py:56
+msgid "Error"
+msgstr ""
+
+#: documents/models.py:74
+#: organizations/templates/organizations/organization_detail.html:61
+msgid "Article"
+msgstr ""
+
+#: documents/models.py:75
+#: organizations/templates/organizations/organization_detail.html:65
+msgid "Course work"
+msgstr ""
+
+#: documents/models.py:76
+msgid "Doctoral dissertation"
+msgstr ""
+
+#: documents/models.py:77
+#: organizations/templates/organizations/organization_detail.html:73
+msgid "Diploma thesis"
+msgstr ""
+
+#: documents/models.py:78
+#: organizations/templates/organizations/organization_detail.html:77
+msgid "Diploma project"
+msgstr ""
+
+#: documents/models.py:79
+msgid "Masters dissertation"
+msgstr ""
+
+#: documents/models.py:80
+#: organizations/templates/organizations/organization_detail.html:85
+msgid "Study guide"
+msgstr ""
+
+#: documents/models.py:81
+#: organizations/templates/organizations/organization_detail.html:89
+msgid "Textbook"
+msgstr ""
+
+#: documents/models.py:82
+#: organizations/templates/organizations/organization_detail.html:93
+msgid "Book"
+msgstr ""
+
+#: documents/models.py:83
+#: organizations/templates/organizations/organization_detail.html:97
+msgid "Research"
+msgstr ""
+
+#: documents/models.py:84
+#: organizations/templates/organizations/organization_detail.html:101
+msgid "Monograph"
+msgstr ""
+
+#: documents/models.py:85
+msgid "Abstract"
+msgstr ""
+
+#: documents/models.py:86
+msgid "Other"
+msgstr ""
+
+#: documents/models.py:90 documents/models.py:175 documents/models.py:383
+#: news/models.py:8
+msgid "title"
+msgstr ""
+
+#: documents/models.py:91
+msgid "author"
+msgstr ""
+
+#: documents/models.py:93 templates/report_new_detail.html:32
+msgid "Department"
+msgstr ""
+
+#: documents/models.py:97
+msgid "Department name"
+msgstr ""
+
+#: documents/models.py:106
+msgid "description"
+msgstr ""
+
+#: documents/models.py:114 documents/models.py:179 organizations/models.py:40
+msgid "created at"
+msgstr ""
+
+#: documents/models.py:120
+msgid "text content"
+msgstr ""
+
+#: documents/models.py:123
+msgid "Stores the extracted text of the document"
+msgstr ""
+
+#: documents/models.py:126
+msgid "status"
+msgstr ""
+
+#: documents/models.py:133
+msgid "How many tasks is completed"
+msgstr ""
+
+#: documents/models.py:136
+msgid "Enable OCR"
+msgstr ""
+
+#: documents/models.py:137
+msgid "Extract text using OCR recognition (only pdf files)"
+msgstr ""
+
+#: documents/models.py:141
+msgid "For example: 'eng+rus+kaz'"
+msgstr ""
+
+#: documents/models.py:148
+msgid "estimated check completion"
+msgstr ""
+
+#: documents/models.py:150
+msgid "The estimated time when the document will be fully processed"
+msgstr ""
+
+#: documents/models.py:184
+msgid "originality percentage (internet)"
+msgstr ""
+
+#: documents/models.py:187
+msgid "Text originality percentage from Internet module"
+msgstr ""
+
+#: documents/models.py:190
+msgid "plagiarism percentage (internet)"
+msgstr ""
+
+#: documents/models.py:193
+msgid "Text plagiarism percentage from Internet module"
+msgstr ""
+
+#: documents/models.py:196
+msgid "uniqueness"
+msgstr ""
+
+#: documents/models.py:201
+msgid "human written percentage"
+msgstr ""
+
+#: documents/models.py:206
+msgid "chatgpt generated percentage"
+msgstr ""
+
+#: documents/models.py:211
+msgid "formulas result"
+msgstr ""
+
+#: documents/models.py:213
+msgid "invisible symbols result"
+msgstr ""
+
+#: documents/models.py:215
+msgid "white spaces result"
+msgstr ""
+
+#: documents/models.py:217
+msgid "latin letters result"
+msgstr ""
+
+#: documents/models.py:219
+msgid "pdf report"
+msgstr ""
+
+#: documents/models.py:224
+msgid "certificate"
+msgstr ""
+
+#: documents/models.py:231
+msgid "originality percentage"
+msgstr ""
+
+#: documents/models.py:236 documents/models.py:405
+msgid "plagiarism percentage"
+msgstr ""
+
+#: documents/models.py:241
+msgid "citation percentage"
+msgstr ""
+
+#: documents/models.py:246
+msgid "selfcitation percentage"
+msgstr ""
+
+#: documents/models.py:251
+msgid "shingles total number"
+msgstr ""
+
+#: documents/models.py:253
+msgid "Total number of shingles in the document"
+msgstr ""
+
+#: documents/models.py:355
+msgid "Plagiarism"
+msgstr ""
+
+#: documents/models.py:356
+msgid "Citation"
+msgstr ""
+
+#: documents/models.py:357
+msgid "Selfcitation"
+msgstr ""
+
+#: documents/models.py:362
+msgid "url"
+msgstr ""
+
+#: documents/models.py:363
+msgid "Link to the document from which the text was borrowed."
+msgstr ""
+
+#: documents/models.py:365
+msgid "plagiarism ranges"
+msgstr ""
+
+#: documents/models.py:367
+msgid "range of borrowed characters: start, end, length."
+msgstr ""
+
+#: documents/models.py:369
+msgid "plagiarism characters count"
+msgstr ""
+
+#: documents/models.py:371
+msgid "Characters count of plagiarism instance."
+msgstr ""
+
+#: documents/models.py:373
+msgid "indices"
+msgstr ""
+
+#: documents/models.py:375
+msgid "type"
+msgstr ""
+
+#: documents/models.py:385
+msgid "The title of the document from which the text was borrowed."
+msgstr ""
+
+#: documents/models.py:389
+msgid "module"
+msgstr ""
+
+#: documents/models.py:391
+msgid "The module containing original document."
+msgstr ""
+
+#: documents/models.py:395
+msgid "shingles"
+msgstr ""
+
+#: documents/models.py:397
+msgid "Intersecting shingles."
+msgstr ""
+
+#: documents/models.py:400
+msgid "fragments"
+msgstr ""
+
+#: documents/models.py:402
+msgid "Borrowed text in preprocessed format."
+msgstr ""
+
+#: documents/models.py:408
+msgid "Counted by formula: plagiarised_shingles / total_shingles * 100"
+msgstr ""
+
+#: documents/notifications.py:8
+msgid ""
+"All tasks are completed and the document status is now updated to Checked."
+msgstr ""
+
+#: news/models.py:9
+msgid "The news title."
+msgstr ""
+
+#: news/models.py:12
+msgid "excerpt"
+msgstr ""
+
+#: news/models.py:13
+msgid "Short summary."
+msgstr ""
+
+#: news/models.py:16
+msgid "text"
+msgstr ""
+
+#: news/models.py:17
+msgid "The full content of the news article."
+msgstr ""
+
+#: news/models.py:22
+msgid "Is the news approved"
+msgstr ""
+
+#: organizations/models.py:44
+msgid "updated at"
+msgstr ""
+
+#: organizations/models.py:50
+msgid "Name of the organization"
+msgstr ""
+
+#: organizations/models.py:53
+#: organizations/templates/organizations/organization_detail.html:21
+#: organizations/templates/organizations/organization_list.html:21
+#: templates/user_detail.html:21
+msgid "City"
+msgstr ""
+
+#: organizations/models.py:56
+msgid "City where the organization is based"
+msgstr ""
+
+#: organizations/models.py:59
+#: organizations/templates/organizations/organization_detail.html:22
+#: templates/home.html:605 templates/user_detail.html:22
+msgid "Address"
+msgstr ""
+
+#: organizations/models.py:61
+msgid "Full address of the organization"
+msgstr ""
+
+#: organizations/models.py:71
+msgid "Description"
+msgstr ""
+
+#: organizations/models.py:72
+msgid "Short information about the organization"
+msgstr ""
+
+#: organizations/models.py:74 users/models.py:25
+msgid "checks available"
+msgstr ""
+
+#: organizations/models.py:76
+msgid "Number of documents the organization can check."
+msgstr ""
+
+#: organizations/models.py:81
+msgid "Article originality threshold"
+msgstr ""
+
+#: organizations/models.py:84
+msgid "Minimum originality percentage required for articles"
+msgstr ""
+
+#: organizations/models.py:87
+msgid "Course work originality threshold"
+msgstr ""
+
+#: organizations/models.py:90
+msgid "Minimum originality percentage required for course works"
+msgstr ""
+
+#: organizations/models.py:93
+msgid "Doctoral originality threshold"
+msgstr ""
+
+#: organizations/models.py:96
+msgid "Minimum originality percentage required for doctoral works"
+msgstr ""
+
+#: organizations/models.py:99
+msgid "Diploma thesis originality threshold"
+msgstr ""
+
+#: organizations/models.py:102
+msgid "Minimum originality percentage required for diploma theses"
+msgstr ""
+
+#: organizations/models.py:105
+msgid "Diploma project originality threshold"
+msgstr ""
+
+#: organizations/models.py:108
+msgid "Minimum originality percentage required for diploma projects"
+msgstr ""
+
+#: organizations/models.py:111
+msgid "Masters thesis project originality threshold"
+msgstr ""
+
+#: organizations/models.py:114
+msgid "Minimum originality percentage required for masters thesis"
+msgstr ""
+
+#: organizations/models.py:117
+msgid "Study guide project originality threshold"
+msgstr ""
+
+#: organizations/models.py:120
+msgid "Minimum originality percentage required for study guides"
+msgstr ""
+
+#: organizations/models.py:123
+msgid "Textbook project originality threshold"
+msgstr ""
+
+#: organizations/models.py:126
+msgid "Minimum originality percentage required for textbooks"
+msgstr ""
+
+#: organizations/models.py:129
+msgid "Book project originality threshold"
+msgstr ""
+
+#: organizations/models.py:132
+msgid "Minimum originality percentage required for books"
+msgstr ""
+
+#: organizations/models.py:135
+msgid "Research project originality threshold"
+msgstr ""
+
+#: organizations/models.py:138
+msgid "Minimum originality percentage required for researches"
+msgstr ""
+
+#: organizations/models.py:141
+msgid "Monograph project originality threshold"
+msgstr ""
+
+#: organizations/models.py:144
+msgid "Minimum originality percentage required for monographs"
+msgstr ""
+
+#: organizations/models.py:147
+msgid "Abstract project originality threshold"
+msgstr ""
+
+#: organizations/models.py:150
+msgid "Minimum originality percentage required for abstracts"
+msgstr ""
+
+#: organizations/models.py:153
+msgid "Other documents project originality threshold"
+msgstr ""
+
+#: organizations/models.py:156
+msgid "Minimum originality percentage required for other documents"
+msgstr ""
+
+#: organizations/templates/organizations/organization_confirm_delete.html:13
+msgid "Delete organization"
+msgstr ""
+
+#: organizations/templates/organizations/organization_confirm_delete.html:14
+#: templates/document_confirm_delete.html:14
+msgid "Are you sure you want to delete"
+msgstr ""
+
+#: organizations/templates/organizations/organization_detail.html:25
+msgid "Checks available"
+msgstr ""
+
+#: organizations/templates/organizations/organization_detail.html:32
+msgid "Users in this organization"
+msgstr ""
+
+#: organizations/templates/organizations/organization_detail.html:46
+msgid "No users found"
+msgstr ""
+
+#: organizations/templates/organizations/organization_detail.html:54
+msgid "Originality thresholds"
+msgstr ""
+
+#: organizations/templates/organizations/organization_detail.html:57
+msgid "Document Types"
+msgstr ""
+
+#: organizations/templates/organizations/organization_detail.html:69
+msgid "Doctoral work"
+msgstr ""
+
+#: organizations/templates/organizations/organization_detail.html:81
+msgid "Masters thesis"
+msgstr ""
+
+#: organizations/templates/organizations/organization_detail.html:105
+msgid "Abstact"
+msgstr ""
+
+#: organizations/templates/organizations/organization_detail.html:109
+msgid "Other documents"
+msgstr ""
+
+#: organizations/templates/organizations/organization_detail.html:119
+msgid "Customer care service"
+msgstr ""
+
+#: organizations/templates/organizations/organization_detail.html:120
+msgid "You can call or write to our Customer care service 24/7."
+msgstr ""
+
+#: organizations/templates/organizations/organization_form.html:8
+#: organizations/templates/organizations/organization_form.html:19
+msgid "Update organization"
+msgstr ""
+
+#: organizations/templates/organizations/organization_form.html:10
+msgid "Create organization"
+msgstr ""
+
+#: organizations/templates/organizations/organization_form.html:21
+msgid "Create new organization"
+msgstr ""
+
+#: organizations/templates/organizations/organization_form.html:27
+#: templates/account/signup.html:17 templates/home.html:653
+msgid "Send"
+msgstr ""
+
+#: organizations/templates/organizations/organization_list.html:6
+#: organizations/templates/organizations/organization_list.html:12
+msgid "Organization List"
+msgstr ""
+
+#: organizations/templates/organizations/organization_list.html:13
+msgid "Create new"
+msgstr ""
+
+#: organizations/templates/organizations/organization_list.html:22
+#: templates/document_list.html:22 templates/folder_list_root.html:67
+#: templates/report_list.html:22
+msgid "Status"
+msgstr ""
+
+#: organizations/templates/organizations/organization_list.html:23
+#: templates/document_list.html:24 templates/report_list.html:24
+msgid "Actions"
+msgstr ""
+
+#: organizations/templates/organizations/organization_list.html:41
+msgid "There is no Organizations."
+msgstr ""
+
+#: organizations/templates/organizations/organization_list.html:50
+#: templates/report_list.html:59
+msgid "First"
+msgstr ""
+
+#: organizations/templates/organizations/organization_list.html:51
+#: templates/document_detail_new.html:50 templates/report_list.html:60
+msgid "Previous"
+msgstr ""
+
+#: organizations/templates/organizations/organization_list.html:55
+#: templates/report_list.html:64
+msgid "Page"
+msgstr ""
+
+#: organizations/templates/organizations/organization_list.html:55
+#: templates/document_detail_new.html:48 templates/report_list.html:64
+msgid "of"
+msgstr ""
+
+#: organizations/templates/organizations/organization_list.html:59
+#: templates/document_detail_new.html:51 templates/report_list.html:68
+msgid "Next"
+msgstr ""
+
+#: organizations/templates/organizations/organization_list.html:60
+#: templates/report_list.html:69
+msgid "Last"
+msgstr ""
+
+#: payments/forms.py:10
+msgid "Enter number of checks"
+msgstr ""
+
+#: payments/forms.py:11
+msgid "Enter the number of checks you want to purchase."
+msgstr ""
+
+#: templates/_base.html:21
+msgid ""
+"Ensure academic integrity and original content with our advanced plagiarism "
+"detection system. Efficiently scan documents for duplicate content and "
+"safeguard your work against plagiarism. Discover how our tool can enhance "
+"your writing quality today."
+msgstr ""
+
+#: templates/_base.html:22
+msgid ""
+"plagiarism detection, plagiarism checker, anti-plagiarism software, academic "
+"integrity, duplicate content checker, plagiarism prevention, content "
+"originality, text analysis, writing tool, academic plagiarism"
+msgstr ""
+
+#: templates/_base.html:25 templates/_base.html:34
+msgid "Advanced Plagiarism Detection System"
+msgstr ""
+
+#: templates/_base.html:26 templates/_base.html:35
+msgid ""
+"Protect your content and maintain academic integrity with our state-of-the-"
+"art plagiarism detection system. Efficiently scan and ensure originality in "
+"your documents."
+msgstr ""
+
+#: templates/_base.html:96 templates/_base.html:295 templates/home.html:6
+msgid "Main"
+msgstr ""
+
+#: templates/_base.html:103
+msgid "About"
+msgstr ""
+
+#: templates/_base.html:108 templates/home.html:589
+msgid "Contacts"
+msgstr ""
+
+#: templates/_base.html:115 templates/folder_list_root.html:26
+msgid "Check new document"
+msgstr ""
+
+#: templates/_base.html:122
+msgid "History of checks"
+msgstr ""
+
+#: templates/_base.html:127
+msgid "Account"
+msgstr ""
+
+#: templates/_base.html:137
+msgid "Organization profile"
+msgstr ""
+
+#: templates/_base.html:149 templates/account/logout.html:6
+#: templates/account/logout.html:10 templates/account/logout.html:15
+msgid "Log Out"
+msgstr ""
+
+#: templates/_base.html:212 templates/account/login.html:12
+msgid "Log In"
+msgstr ""
+
+#: templates/_base.html:279
+msgid "The courage to be original"
+msgstr ""
+
+#: templates/_base.html:291
+msgid "Useful links"
+msgstr ""
+
+#: templates/_base.html:305
+msgid "Services"
+msgstr ""
+
+#: templates/_base.html:307
+msgid "For corporate clients"
+msgstr ""
+
+#: templates/_base.html:308
+msgid "For individuals"
+msgstr ""
+
+#: templates/_base.html:309
+msgid "Support"
+msgstr ""
+
+#: templates/_base.html:314
+msgid "Contact Us"
+msgstr ""
+
+#: templates/_base.html:315
+msgid "Dostyk str, 16"
+msgstr ""
+
+#: templates/_base.html:316
+msgid "Talan Tower BC"
+msgstr ""
+
+#: templates/_base.html:317
+msgid "Astana, Kazakhstan"
+msgstr ""
+
+#: templates/_base.html:318 templates/home.html:613
+msgid "Phone"
+msgstr ""
+
+#: templates/about_oysyn.html:8
+msgid ""
+"Learn about OySyn, an innovative tool for text originality checks. Local "
+"development, high processing speed, and data confidentiality."
+msgstr ""
+
+#: templates/about_oysyn.html:11
+msgid "Be original with OySyn! Innovative plagiarism detection system"
+msgstr ""
+
+#: templates/about_oysyn.html:17
+msgid "What is OySyn, and what is it for"
+msgstr ""
+
+#: templates/about_oysyn.html:18
+msgid ""
+"The first Kazakhstani plagiarism checking system. OySyn is a modern "
+"plagiarism detection system designed to check texts for originality. The "
+"primary goal of OySyn is to prevent copyright violations and improve the "
+"quality of works and scientific research."
+msgstr ""
+
+#: templates/about_oysyn.html:19
+msgid ""
+"The system has successfully completed the Scalerator 2.0 acceleration "
+"program, aimed at supporting startups with export potential, and is a member "
+"of Astana HUB."
+msgstr ""
+
+#: templates/about_oysyn.html:21
+msgid "What makes OySyn unique compared to other plagiarism detection systems"
+msgstr ""
+
+#: templates/about_oysyn.html:23
+msgid ""
+"Local data storage: All databases are hosted within the Republic of "
+"Kazakhstan, ensuring confidentiality."
+msgstr ""
+
+#: templates/about_oysyn.html:24
+msgid ""
+"Resource efficiency: Optimized architecture reduces disk space requirements."
+msgstr ""
+
+#: templates/about_oysyn.html:25
+msgid ""
+"High processing speed: Modern big data processing methods ensure quick text "
+"checks."
+msgstr ""
+
+#: templates/about_oysyn.html:26
+msgid ""
+"Simple interface: The system is intuitive and does not require special "
+"technical knowledge."
+msgstr ""
+
+#: templates/about_oysyn.html:27
+msgid ""
+"Flexibility: OySyn can be customized to meet individual client requirements."
+msgstr ""
+
+#: templates/about_oysyn.html:30
+msgid "Who can use OySyn"
+msgstr ""
+
+#: templates/about_oysyn.html:31
+msgid "OySyn is designed for various user categories:"
+msgstr ""
+
+#: templates/about_oysyn.html:33
+msgid ""
+"Educational institutions: Checking theses, coursework, and other student "
+"works."
+msgstr ""
+
+#: templates/about_oysyn.html:34
+msgid ""
+"Journalists and publishers: Verifying the originality of materials for "
+"publication."
+msgstr ""
+
+#: templates/about_oysyn.html:35
+msgid ""
+"Content creators: Copywriters, bloggers, and marketers check texts before "
+"publication."
+msgstr ""
+
+#: templates/about_oysyn.html:36
+msgid "Main focus: Students, postgraduates, doctoral candidates, and faculty."
+msgstr ""
+
+#: templates/about_oysyn.html:39
+msgid ""
+"Does OySyn offer flexible pricing, and are there limits on the text volume"
+msgstr ""
+
+#: templates/about_oysyn.html:40
+msgid ""
+"OySyn provides a flexible pricing system suitable for various user "
+"categories. For legal entities, individual tariffs can be developed. "
+"Detailed information is available on our official website: OySyn."
+msgstr ""
+
+#: templates/about_oysyn.html:42
+msgid ""
+"Do I need to install software to use OySyn, and does it have a mobile version"
+msgstr ""
+
+#: templates/about_oysyn.html:43
+msgid ""
+"OySyn is a cloud platform that does not require software installation. To "
+"use it:"
+msgstr ""
+
+#: templates/about_oysyn.html:45
+msgid "Access the website from any device."
+msgstr ""
+
+#: templates/about_oysyn.html:46
+msgid "Register an account."
+msgstr ""
+
+#: templates/about_oysyn.html:47
+msgid "Upload text for analysis."
+msgstr ""
+
+#: templates/about_oysyn.html:49
+msgid ""
+"The system is fully optimized for mobile devices and tablets, ensuring "
+"convenience on the go."
+msgstr ""
+
+#: templates/about_oysyn.html:51
+msgid "What are OySyn's development prospects"
+msgstr ""
+
+#: templates/about_oysyn.html:52
+msgid "OySyn is actively developing in the following directions:"
+msgstr ""
+
+#: templates/about_oysyn.html:54
+msgid ""
+"Integration with educational platforms: Integration into popular LMS for "
+"schools and universities."
+msgstr ""
+
+#: templates/about_oysyn.html:55
+msgid ""
+"Text improvement tools: Features for automatic correction of stylistic "
+"errors and suggestions."
+msgstr ""
+
+#: templates/about_oysyn.html:56
+msgid ""
+"Database enrichment: Continuous updates of sources to improve analysis "
+"accuracy."
+msgstr ""
+
+#: templates/about_oysyn.html:59
+msgid "Why is OySyn a reliable choice for plagiarism detection"
+msgstr ""
+
+#: templates/about_oysyn.html:61
+msgid ""
+"A local system: A product of domestic development that meets international "
+"standards."
+msgstr ""
+
+#: templates/about_oysyn.html:62
+msgid ""
+"Data security: Security certification from the Committee on Information "
+"Security of the Republic of Kazakhstan."
+msgstr ""
+
+#: templates/about_oysyn.html:63
+msgid ""
+"Supporting the national economy: Using the system helps preserve "
+"intellectual and financial resources within the country."
+msgstr ""
+
+#: templates/about_oysyn.html:69 templates/home.html:26
+msgid "Start for free"
+msgstr ""
+
+#: templates/account/email/email_confirmation_message.txt:2
+#, python-format
+msgid ""
+"Hello from %(site_name)s!\n"
+"\n"
+"You are receiving this email because user %(user_display)s has given yours "
+"as an email address to connect their account.\n"
+"\n"
+"To confirm this is correct, go to %(activate_url)s\n"
+msgstr ""
+
+#: templates/account/email/email_confirmation_message.txt:8
+#, python-format
+msgid ""
+"Thank you from %(site_name)s!\n"
+"%(site_domain)s"
+msgstr ""
+
+#: templates/account/email/email_confirmation_subject.txt:3
+msgid "Confirm your sign up"
+msgstr ""
+
+#: templates/account/email_confirm.html:6
+#: templates/account/email_confirm.html:12
+msgid "Confirm email address"
+msgstr ""
+
+#: templates/account/email_confirm.html:15
+#, python-format
+msgid ""
+"Please confirm that <a href=\"mailto:%(email)s\">%(email)s is an email "
+"address for user %(user_display)s."
+msgstr ""
+
+#: templates/account/email_confirm.html:19
+msgid "Confirm"
+msgstr ""
+
+#: templates/account/email_confirm.html:23
+#, python-format
+msgid ""
+"This email confirmation link expired or is invalid. Please <a "
+"href=\"%(email_url)s\">issue a new email confirmation request</a>."
+msgstr ""
+
+#: templates/account/login.html:19
+msgid "If you have not registered yet, you can Sign Up for free"
+msgstr ""
+
+#: templates/account/login.html:19
+msgid "here"
+msgstr ""
+
+#: templates/account/logout.html:11
+msgid "Are you sure?"
+msgstr ""
+
+#: templates/account/password_reset.html:6
+#: templates/account/password_reset.html:12
+msgid "Password Reset"
+msgstr ""
+
+#: templates/account/password_reset.html:13
+msgid ""
+"If you have forgotten your password, please, type in your email and we will "
+"send you link to reset your password."
+msgstr ""
+
+#: templates/account/password_reset.html:17
+#: templates/report_new_detail.html:141
+msgid "Submit"
+msgstr ""
+
+#: templates/account/password_reset_done.html:4
+#: templates/account/password_reset_done.html:10
+msgid "Password Reset Sent"
+msgstr ""
+
+#: templates/account/password_reset_done.html:11
+msgid ""
+"A link to reset your password has been sent to your email address. Please "
+"check your inbox."
+msgstr ""
+
+#: templates/account/password_reset_done.html:12
+msgid "If you do not receive the email, please check your spam folder."
+msgstr ""
+
+#: templates/account/password_reset_done.html:13
+#: templates/account/password_reset_from_key_done.html:12
+msgid "Back to Login"
+msgstr ""
+
+#: templates/account/password_reset_from_key.html:5
+#: templates/account/password_reset_from_key.html:11
+msgid "Set New Password"
+msgstr ""
+
+#: templates/account/password_reset_from_key.html:15
+msgid "Set Password"
+msgstr ""
+
+#: templates/account/password_reset_from_key.html:17
+msgid "Remembered your password?"
+msgstr ""
+
+#: templates/account/password_reset_from_key.html:17
+msgid "Login"
+msgstr ""
+
+#: templates/account/password_reset_from_key_done.html:4
+#: templates/account/password_reset_from_key_done.html:10
+msgid "Password Reset Successful"
+msgstr ""
+
+#: templates/account/password_reset_from_key_done.html:11
+msgid ""
+"Your password has been successfully reset. You can now log in with your new "
+"password."
+msgstr ""
+
+#: templates/account/signup.html:6 templates/account/signup.html:13
+msgid "Sign Up"
+msgstr ""
+
+#: templates/document_confirm_delete.html:13
+msgid "Delete document"
+msgstr ""
+
+#: templates/document_confirm_delete.html:17
+msgid "Delete"
+msgstr ""
+
+#: templates/document_create.html:19
+msgid "Upload new document"
+msgstr ""
+
+#: templates/document_create.html:26
+msgid "Upload"
+msgstr ""
+
+#: templates/document_detail.html:6 templates/report_new_detail.html:15
+msgid "Document details"
+msgstr ""
+
+#: templates/document_detail.html:13 templates/document_detail_new.html:18
+#: templates/instance_update.html:26 templates/report_detail.html:14
+msgid "Document"
+msgstr ""
+
+#: templates/document_detail_new.html:19
+msgid "Document name"
+msgstr ""
+
+#: templates/document_detail_new.html:20 templates/instance_update.html:28
+#: templates/report_detail.html:16 templates/report_new_detail.html:30
+msgid "Uploaded by"
+msgstr ""
+
+#: templates/document_detail_new.html:21
+msgid "Uploading date"
+msgstr ""
+
+#: templates/document_detail_new.html:24 templates/report_detail.html:20
+#: templates/report_new_detail.html:40
+msgid "Report"
+msgstr ""
+
+#: templates/document_detail_new.html:25
+msgid "Uniqueness procent"
+msgstr ""
+
+#: templates/document_detail_new.html:26
+msgid "Probability percentage"
+msgstr ""
+
+#: templates/document_detail_new.html:27
+msgid "Trying to use formulas"
+msgstr ""
+
+#: templates/document_detail_new.html:28 templates/report_detail.html:25
+msgid "Attempt to hide symbols"
+msgstr ""
+
+#: templates/document_detail_new.html:29
+msgid "Repeat space"
+msgstr ""
+
+#: templates/document_detail_new.html:30
+msgid "Replacement of Cyrillic letters with Latin"
+msgstr ""
+
+#: templates/document_detail_new.html:33
+msgid "Plagiarism sources"
+msgstr ""
+
+#: templates/document_detail_new.html:35
+msgid "Source"
+msgstr ""
+
+#: templates/document_detail_new.html:44
+msgid "Current source ID"
+msgstr ""
+
+#: templates/document_detail_new.html:46
+msgid "Current source URL"
+msgstr ""
+
+#: templates/document_detail_new.html:48
+msgid "Number"
+msgstr ""
+
+#: templates/document_detail_new.html:55
+msgid "Update the Type of the plagiarism instance"
+msgstr ""
+
+#: templates/document_highlight.html:6 templates/document_highlight.html:33
+msgid "Document Highlight"
+msgstr ""
+
+#: templates/document_list.html:6
+msgid "Мои документы"
+msgstr ""
+
+#: templates/document_list.html:12
+msgid "My documents"
+msgstr ""
+
+#: templates/document_list.html:13 templates/home.html:410
+#: templates/report_list.html:13
+msgid "Check document"
+msgstr ""
+
+#: templates/document_list.html:23 templates/folder_list_root.html:70
+#: templates/report_list.html:23
+msgid "Originality"
+msgstr ""
+
+#: templates/document_list.html:43 templates/report_list.html:50
+msgid "There is no documents yet."
+msgstr ""
+
+#: templates/folder_list_root.html:5
+msgid "List folders and documents"
+msgstr ""
+
+#: templates/folder_list_root.html:30 templates/folder_list_root.html:93
+msgid "Root Folder"
+msgstr ""
+
+#: templates/folder_list_root.html:38
+msgid "New folder"
+msgstr ""
+
+#: templates/folder_list_root.html:46
+msgid "Documents list"
+msgstr ""
+
+#: templates/folder_list_root.html:51
+msgid "Search by title"
+msgstr ""
+
+#: templates/folder_list_root.html:54
+msgid "Search"
+msgstr ""
+
+#: templates/folder_list_root.html:58
+msgid "Move documents"
+msgstr ""
+
+#: templates/folder_list_root.html:59
+msgid "Delete documents"
+msgstr ""
+
+#: templates/folder_list_root.html:66 templates/user_detail.html:16
+msgid "Name"
+msgstr ""
+
+#: templates/folder_list_root.html:68
+msgid "Result"
+msgstr ""
+
+#: templates/folder_list_root.html:88
+msgid "Select Destination Folder"
+msgstr ""
+
+#: templates/folder_list_root.html:100
+msgid "Move selected documents"
+msgstr ""
+
+#: templates/folder_list_root.html:111
+msgid "Confirm Deletion"
+msgstr ""
+
+#: templates/folder_list_root.html:115
+msgid "Are you sure you want to delete the following documents?"
+msgstr ""
+
+#: templates/folder_list_root.html:121
+msgid "Confirm delete"
+msgstr ""
+
+#: templates/home.html:14
+msgid "Background image for plagiarism detection system"
+msgstr ""
+
+#: templates/home.html:21
+msgid "The best plagiarism detection system"
+msgstr ""
+
+#: templates/home.html:22
+msgid "Kazakhstan text borrowing detection system"
+msgstr ""
+
+#: templates/home.html:33
+msgid "Speed"
+msgstr ""
+
+#: templates/home.html:35
+#, python-format
+msgid "12%% faster than all existing modern analogues"
+msgstr ""
+
+#: templates/home.html:42
+msgid "Accuracy"
+msgstr ""
+
+#: templates/home.html:44
+#, python-format
+msgid "Aims for 100%% accuracy through a unique mathematical method"
+msgstr ""
+
+#: templates/home.html:51
+msgid "Multilingualism"
+msgstr ""
+
+#: templates/home.html:53
+msgid "Analyzes borrowings from sources not only in the author's language"
+msgstr ""
+
+#: templates/home.html:60
+msgid "AI Using"
+msgstr ""
+
+#: templates/home.html:62
+msgid "Detecting of a text generated with AI (ChatGPT)"
+msgstr ""
+
+#: templates/home.html:86
+msgid "Будь оригинальным вместе с OySyn"
+msgstr ""
+
+#: templates/home.html:121
+msgid "Advantages"
+msgstr ""
+
+#: templates/home.html:123 templates/home.html:132
+msgid "Unique database architecture capabilities"
+msgstr ""
+
+#: templates/home.html:137
+msgid "Reduced disk space requirements compared to foreign analogues"
+msgstr ""
+
+#: templates/home.html:142
+msgid ""
+"High speed of query processing, provided by state-of-the-art approaches to "
+"processing large data arrays"
+msgstr ""
+
+#: templates/home.html:147
+msgid "The system can be adapted to customer requirements"
+msgstr ""
+
+#: templates/home.html:169
+msgid "Clients"
+msgstr ""
+
+#: templates/home.html:176
+msgid "Univercities"
+msgstr ""
+
+#: templates/home.html:183
+msgid "Hours of suport"
+msgstr ""
+
+#: templates/home.html:190
+msgid "Employees"
+msgstr ""
+
+#: templates/home.html:212
+msgid "Learn about the system's capabilities in 60 seconds"
+msgstr ""
+
+#: templates/home.html:215
+msgid ""
+"Use antiplagiatkz to guarantee the uniqueness and quality of your content. "
+"Start today and see for yourself the effectiveness of our system!"
+msgstr ""
+
+#: templates/home.html:219
+msgid ""
+"Our algorithms check your text against millions of sources on the Internet "
+"and academic databases. Get results in minutes"
+msgstr ""
+
+#: templates/home.html:222
+msgid ""
+"We provide clear and detailed reports on the percentage of originality, "
+"sources of borrowings and text matches. Easily analyze and check all "
+"elements of your document"
+msgstr ""
+
+#: templates/home.html:225
+msgid ""
+"The easy-to-use interface allows you to quickly upload documents, receive "
+"reports and manage audit results without any extra effort."
+msgstr ""
+
+#: templates/home.html:229
+msgid ""
+"We care about your privacy. All uploaded documents are processed with strict "
+"security standards and your information remains protected."
+msgstr ""
+
+#: templates/home.html:279
+msgid "Testimonials"
+msgstr ""
+
+#: templates/home.html:282
+msgid "What users say about our plagiarism detection system"
+msgstr ""
+
+#: templates/home.html:321
+msgid ""
+"OySyn helped us effectively control the originality of the content. The "
+"results are always accurate and fast. Excellent support and adaptation to "
+"our needs. Very satisfied"
+msgstr ""
+
+#: templates/home.html:326
+msgid "Ruslan Kairatov"
+msgstr ""
+
+#: templates/home.html:327
+msgid "Director of Information Technology"
+msgstr ""
+
+#: templates/home.html:336
+msgid ""
+"The OySyn system is simply excellent! Intuitive interface and accuracy of "
+"checking are at their best. It has greatly simplified our work. I recommend "
+"it to everyone"
+msgstr ""
+
+#: templates/home.html:341
+msgid "Aliya Nurmuhamedova"
+msgstr ""
+
+#: templates/home.html:342
+msgid "Quality Manager"
+msgstr ""
+
+#: templates/home.html:351
+msgid ""
+"We started using OySyn to check materials before publishing. Convenient "
+"interface, fast scanning and reliable results are all we need"
+msgstr ""
+
+#: templates/home.html:356
+msgid "Damir Baimukhamedov"
+msgstr ""
+
+#: templates/home.html:357
+msgid "Editor"
+msgstr ""
+
+#: templates/home.html:366
+msgid ""
+"The OySyn system has become an indispensable tool in my work. It helps "
+"maintain academic integrity and provides clear reports. It is a pleasure to "
+"work with such a product."
+msgstr ""
+
+#: templates/home.html:371
+msgid "Zhanna Musina"
+msgstr ""
+
+#: templates/home.html:372
+msgid "Professor"
+msgstr ""
+
+#: templates/home.html:381
+msgid ""
+"I use OySyn to check scientific articles. The system works flawlessly, helps "
+"to avoid plagiarism and maintain high quality standards. Excellent tool for "
+"work"
+msgstr ""
+
+#: templates/home.html:386
+msgid "Amir Sultanov"
+msgstr ""
+
+#: templates/home.html:387
+msgid "Research Fellow"
+msgstr ""
+
+#: templates/home.html:406
+msgid "Start using for free"
+msgstr ""
+
+#: templates/home.html:408
+msgid "You can start using our loan search system for free today"
+msgstr ""
+
+#: templates/home.html:423
+msgid "Tariffs"
+msgstr ""
+
+#: templates/home.html:425
+msgid ""
+"Choose the most suitable tariff for yourself. We also provide individual "
+"tariffs upon request"
+msgstr ""
+
+#: templates/home.html:435
+msgid "Free"
+msgstr ""
+
+#: templates/home.html:436 templates/home.html:458 templates/home.html:480
+msgid "month"
+msgstr ""
+
+#: templates/home.html:439
+msgid "Limited number of modules."
+msgstr ""
+
+#: templates/home.html:442
+msgid "up to 150 000 symbols"
+msgstr ""
+
+#: templates/home.html:445
+msgid "Check document by full base"
+msgstr ""
+
+#: templates/home.html:448
+msgid "Full list of plagiarism instances"
+msgstr ""
+
+#: templates/home.html:451 templates/home.html:473 templates/home.html:495
+msgid "Buy now"
+msgstr ""
+
+#: templates/home.html:457
+msgid "Premium"
+msgstr ""
+
+#: templates/home.html:461
+msgid "Up to 300 000 symbols"
+msgstr ""
+
+#: templates/home.html:464 templates/home.html:486
+msgid "Check doc by full base"
+msgstr ""
+
+#: templates/home.html:467 templates/home.html:489
+msgid "Detect texts generated by AI"
+msgstr ""
+
+#: templates/home.html:470 templates/home.html:492
+msgid "Check by libraries of universities"
+msgstr ""
+
+#: templates/home.html:479
+msgid "Max"
+msgstr ""
+
+#: templates/home.html:483
+msgid "Up to 3 000 000 symbols"
+msgstr ""
+
+#: templates/home.html:510
+msgid "Frequently asked questions"
+msgstr ""
+
+#: templates/home.html:512
+msgid ""
+"If you have not found the answer to your question in this section, call us "
+"and we will be happy to help you"
+msgstr ""
+
+#: templates/home.html:525
+msgid "How does the OySyn system work?"
+msgstr ""
+
+#: templates/home.html:528
+msgid ""
+"OySyn uses algorithms to compare text with an extensive database of sources, "
+"including Internet resources and academic publications. The system checks "
+"for matches and provides a report on the percentage of originality and the "
+"borrowings found"
+msgstr ""
+
+#: templates/home.html:535
+msgid "How can I upload a document for verification?"
+msgstr ""
+
+#: templates/home.html:538
+msgid ""
+"You can upload a document through a convenient interface on our website. "
+"Click the \"Upload file\" button, select a document from your device and "
+"follow the on-screen instructions. The supported formats are .doc, .docx, ."
+"pdf and .txt"
+msgstr ""
+
+#: templates/home.html:545
+msgid "How long does the verification process take?"
+msgstr ""
+
+#: templates/home.html:548
+msgid ""
+"The verification time depends on the size and complexity of the document. "
+"The process usually takes a few minutes. You will receive an email "
+"notification as soon as the report is ready."
+msgstr ""
+
+#: templates/home.html:555
+msgid "How does the system handle data privacy?"
+msgstr ""
+
+#: templates/home.html:558
+msgid ""
+"We take data privacy very seriously. All uploaded documents are processed "
+"according to our strict security measures. Information is not shared with "
+"third parties and is used only for plagiarism checking."
+msgstr ""
+
+#: templates/home.html:565
+msgid "What types of reports does the system provide?"
+msgstr ""
+
+#: templates/home.html:568
+msgid ""
+"OySyn system provides detailed reports, including the percentage of "
+"originality, identified borrowings and links to sources from which fragments "
+"were borrowed. You can also view text matches and their context"
+msgstr ""
+
+#: templates/home.html:606
+msgid "Dostyk str, 16, BC Talan Towers"
+msgstr ""
+
+#: templates/home.html:633
+msgid "Your name"
+msgstr ""
+
+#: templates/home.html:641
+msgid "Theme"
+msgstr ""
+
+#: templates/home.html:645
+msgid "Message"
+msgstr ""
+
+#: templates/home.html:649
+msgid "Sending"
+msgstr ""
+
+#: templates/home.html:651
+msgid "Your message is sent. Thank you!"
+msgstr ""
+
+#: templates/instance_update.html:7 templates/instance_update.html:34
+msgid "Update type"
+msgstr ""
+
+#: templates/instance_update.html:22
+msgid "Update plagiarism instance type"
+msgstr ""
+
+#: templates/instance_update.html:29 templates/report_detail.html:17
+#: templates/report_new_detail.html:34
+msgid "Uploaded at"
+msgstr ""
+
+#: templates/instance_update.html:31
+msgid "Link to original document"
+msgstr ""
+
+#: templates/instance_update.html:32
+msgid "Link"
+msgstr ""
+
+#: templates/instance_update.html:38 templates/user_update.html:17
+msgid "Change"
+msgstr ""
+
+#: templates/instance_update.html:41
+msgid "Other plagiarism instances"
+msgstr ""
+
+#: templates/payments/payment_form.html:7
+msgid "Purchase new checks"
+msgstr ""
+
+#: templates/payments/payment_success.html:7
+#: templates/payments/payment_success.html:13
+msgid "Payment successfull"
+msgstr ""
+
+#: templates/payments/payment_success.html:14
+msgid ""
+"Your payment has been successfully. You have purchased {{ payment."
+"checks_purchased }}"
+msgstr ""
+
+#: templates/payments/payment_widget.html:5
+msgid "Payment Widget"
+msgstr ""
+
+#: templates/payments/payment_widget.html:9
+msgid "Processing Payment"
+msgstr ""
+
+#: templates/report_detail.html:6 templates/report_detail.html:11
+#: templates/report_new_detail.html:7
+msgid "Report details"
+msgstr ""
+
+#: templates/report_detail.html:21
+msgid "Report created at"
+msgstr ""
+
+#: templates/report_detail.html:22 templates/report_new_detail.html:42
+msgid "Originality percent"
+msgstr ""
+
+#: templates/report_detail.html:24
+msgid "Formula usage probability"
+msgstr ""
+
+#: templates/report_detail.html:26 templates/report_new_detail.html:49
+msgid "White spaces"
+msgstr ""
+
+#: templates/report_detail.html:27 templates/report_new_detail.html:50
+msgid "Replacement of cyrillic letters with latin"
+msgstr ""
+
+#: templates/report_detail.html:32
+msgid "Plagiarism instances"
+msgstr ""
+
+#: templates/report_list.html:12
+msgid "Checking history"
+msgstr ""
+
+#: templates/report_list.html:20
+msgid "Titile"
+msgstr ""
+
+#: templates/report_new_detail.html:19
+msgid "Download report"
+msgstr ""
+
+#: templates/report_new_detail.html:27
+msgid "Information about the document"
+msgstr ""
+
+#: templates/report_new_detail.html:41
+msgid "Information about the report"
+msgstr ""
+
+#: templates/report_new_detail.html:47
+msgid "Formula using attempts"
+msgstr ""
+
+#: templates/report_new_detail.html:48
+msgid "Symbols hiding attempts"
+msgstr ""
+
+#: templates/report_new_detail.html:56
+msgid "List of top plagiarism instances"
+msgstr ""
+
+#: templates/report_new_detail.html:62
+msgid "Plagiarism Percentage"
+msgstr ""
+
+#: templates/report_new_detail.html:90
+msgid "Top Plagiarism Instances (Local)"
+msgstr ""
+
+#: templates/report_new_detail.html:114
+msgid "No plagiarism instances found."
+msgstr ""
+
+#: templates/report_new_detail.html:124
+msgid "Comments"
+msgstr ""
+
+#: templates/report_new_detail.html:133
+msgid "Write the first comment ;) "
+msgstr ""
+
+#: templates/report_new_detail.html:138
+msgid "Add new comment"
+msgstr ""
+
+#: templates/report_new_detail.html:139
+msgid "Comment text"
+msgstr ""
+
+#: templates/user_detail.html:6
+msgid "User details"
+msgstr ""
+
+#: templates/user_detail.html:13
+msgid "My profile"
+msgstr ""
+
+#: templates/user_detail.html:17
+msgid "Middle_name"
+msgstr ""
+
+#: templates/user_detail.html:18
+msgid "Surname"
+msgstr ""
+
+#: templates/user_detail.html:19 users/models.py:30
+msgid "IIN"
+msgstr ""
+
+#: templates/user_detail.html:20
+msgid "Email"
+msgstr ""
+
+#: templates/user_detail.html:23
+msgid "Zip Code"
+msgstr ""
+
+#: templates/user_detail.html:24
+msgid "Available Checks"
+msgstr ""
+
+#: templates/user_detail.html:27
+msgid "Organization"
+msgstr ""
+
+#: templates/user_update.html:7
+msgid "Update user info"
+msgstr ""
+
+#: templates/user_update.html:13
+msgid "Update my profile"
+msgstr ""
+
+#: users/models.py:12
+msgid "role"
+msgstr ""
+
+#: users/models.py:27
+msgid "Number of documents user can check."
+msgstr ""
+
+#: users/models.py:29
+msgid "middle name"
+msgstr ""
+
+#: users/models.py:31
+msgid "city"
+msgstr ""
+
+#: users/models.py:32
+msgid "address"
+msgstr ""
+
+#: users/models.py:33
+msgid "zip code"
+msgstr ""

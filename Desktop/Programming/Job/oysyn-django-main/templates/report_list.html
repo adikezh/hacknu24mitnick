@@ -1,0 +1,76 @@
+{% extends '_base.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block title %}История проверок{% endblock title %}
+
+{% block content %}
+<div class="container" style="margin-top: 120px; margin-bottom: 120px;">
+  <div class="row">
+    <div class="col">
+      <h1>{% trans 'Checking history' %}
+        <a href="{% url 'document_create' %}" class="btn btn-sm btn-primary">{% trans 'Check document' %}</a>
+      </h1>
+      <div class="table-responsive">
+        <table class="table mt-3">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">{% trans 'Titile' %}</th>
+              <th scope="col">{% trans 'Date' %}</th>
+              <th scope="col">{% trans 'Status' %}</th>
+              <th scope="col">{% trans 'Originality' %}</th>
+              <th scope="col">{% trans 'Actions' %}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for object in page_obj %}
+            <tr>
+              <th scope="row">{{ forloop.counter }}</th>
+              <td>{{ object.document }}</td>
+              <td>{{ object.created_at|date:"d.m.Y H:i" }}</td>
+              <td>
+                {{ object.document.get_status_display }}
+              </td>
+              <td>
+                {% if object.document.status == 'CH' %}
+                  {{ object.calculate_final_originality }}%
+                {% else %}
+                  <img src="{% static 'images/spinner.gif' %}" alt="Loading" width="25px">
+                {% endif %}
+              </td>
+              <td>
+                <a href="{% url 'report_new_details' object.pk %}" class="btn btn-outline-primary btn-sm" data-toggle="tooltip" data-placement="bottom" title="Show details"><i class="bi bi-eye"></i></a>
+                <a href="{% url 'document_delete' object.document.pk %}" class="btn btn-outline-danger btn-sm" data-toggle="tooltip" data-placement="bottom" title="Delete"><i class="bi bi-trash"></i></a>
+              </td>
+            </tr>
+            {% empty %}
+            <p class="mt-3 mb-3">
+              {% trans 'There is no documents yet.' %}
+            </p>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <div class="pagination mt-3">
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+              <a href="?page=1">&laquo; {% trans 'First' %}</a>
+              <a href="?page={{ page_obj.previous_page_number }}">{% trans 'Previous' %}</a>
+            {% endif %}
+    
+            <span class="current">
+                {% trans 'Page' %} {{ page_obj.number }} {% trans 'of' %} {{ page_obj.paginator.num_pages }}.
+            </span>
+    
+            {% if page_obj.has_next %}
+              <a href="?page={{ page_obj.next_page_number }}">{% trans 'Next' %}</a>
+              <a href="?page={{ page_obj.paginator.num_pages }}">{% trans 'Last' %} &raquo;</a>
+            {% endif %}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

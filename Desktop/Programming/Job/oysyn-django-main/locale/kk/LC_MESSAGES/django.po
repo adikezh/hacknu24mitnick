@@ -1,0 +1,2409 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-11 21:52+0500\n"
+"PO-Revision-Date: 2024-12-06 23:25+0500\n"
+"Last-Translator: Temirlan Mukatayev <timfirst0990@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Translated-Using: django-rosetta 0.10.0\n"
+
+#: api/templates/certificate_template.html:10
+#: documents/templates/documents/certificate_template.html:10
+#, fuzzy
+#| msgid "Plagiarism percentage"
+msgid "Plagiarism check certificate"
+msgstr "Плагиат пайызы"
+
+#: api/templates/certificate_template.html:57
+#: api/templates/report_template.html:57
+#: documents/templates/documents/certificate_template.html:57
+#: documents/templates/documents/report_template.html:57
+msgid "Innovative plagiarism checking system"
+msgstr "Инновациялық плагиат анықтау жүйесі"
+
+#: api/templates/certificate_template.html:58
+#: documents/templates/documents/certificate_template.html:58
+msgid "CERTIFICATE<br>of passing the system to confirm originality"
+msgstr "ТҮПНҰСҚАЛЫҚТЫ РАСТАУ ЖҮЙЕСІНЕН ӨТКЕНІ ТУРАЛЫ СЕРТИФИКАТ"
+
+#: api/templates/certificate_template.html:60
+#: api/templates/report_template.html:60
+#: documents/templates/documents/certificate_template.html:60
+#: documents/templates/documents/report_template.html:60
+msgid "Author"
+msgstr "Автор"
+
+#: api/templates/certificate_template.html:61
+#: api/templates/report_template.html:61 documents/models.py:100
+#: documents/templates/documents/certificate_template.html:61
+#: documents/templates/documents/report_template.html:61
+#, fuzzy
+#| msgid "Document title"
+msgid "Document type"
+msgstr "Құжаттың атауы"
+
+#: api/templates/certificate_template.html:62
+#: api/templates/report_template.html:62
+#: documents/templates/documents/certificate_template.html:62
+#: documents/templates/documents/report_template.html:62
+#: templates/report_detail.html:15 templates/report_new_detail.html:28
+#: templates/report_new_detail.html:29
+msgid "Document title"
+msgstr "Құжаттың атауы"
+
+#: api/templates/certificate_template.html:63
+#: api/templates/report_template.html:63
+#: documents/templates/documents/certificate_template.html:63
+#: documents/templates/documents/report_template.html:63
+msgid "Originality percentage"
+msgstr "Ортақтылық пайызы"
+
+#: api/templates/certificate_template.html:64
+#: api/templates/report_template.html:64
+#: documents/templates/documents/certificate_template.html:64
+#: documents/templates/documents/report_template.html:64
+msgid "Plagiarism percentage"
+msgstr "Плагиат пайызы"
+
+#: api/templates/certificate_template.html:65
+#: api/templates/report_template.html:65
+#: documents/templates/documents/certificate_template.html:65
+#: documents/templates/documents/report_template.html:65
+#: templates/report_new_detail.html:44
+msgid "Citation percentage"
+msgstr "Цитаталар пайызы"
+
+#: api/templates/certificate_template.html:66
+#: api/templates/report_template.html:66
+#: documents/templates/documents/certificate_template.html:66
+#: documents/templates/documents/report_template.html:66
+#: templates/report_new_detail.html:45
+msgid "Selfcitation percentage"
+msgstr "Өзіндік цитаталар пайызы"
+
+#: api/templates/certificate_template.html:67
+#: api/templates/report_template.html:67
+#: documents/templates/documents/certificate_template.html:67
+#: documents/templates/documents/report_template.html:67
+#: templates/report_detail.html:23 templates/report_new_detail.html:46
+msgid "ChatGPT generated probability"
+msgstr "ChatGPT арқылы жасалған ықтималдық"
+
+#: api/templates/certificate_template.html:68
+#: api/templates/report_template.html:68
+#: documents/templates/documents/certificate_template.html:68
+#: documents/templates/documents/report_template.html:68
+msgid "Document checked by"
+msgstr "Құжатты тексерген"
+
+#: api/templates/certificate_template.html:69
+#: api/templates/report_template.html:69
+#: documents/templates/documents/certificate_template.html:69
+#: documents/templates/documents/report_template.html:69
+#: templates/document_list.html:21 templates/folder_list_root.html:69
+#: templates/report_list.html:21
+msgid "Date"
+msgstr "Күні"
+
+#: api/templates/certificate_template.html:73
+#: api/templates/report_template.html:117
+#: documents/templates/documents/certificate_new_template.html:156
+#: documents/templates/documents/certificate_template.html:73
+#: documents/templates/documents/report_new_template.html:187
+#: documents/templates/documents/report_template.html:117
+msgid "Please scan the QR-code to validate the document."
+msgstr "\"Құжатты растау үшін QR-кодты сканерлеңіз."
+
+#: api/templates/report_template.html:10
+#: documents/templates/documents/report_template.html:10
+#, fuzzy
+#| msgid "Plagiarism percentage"
+msgid "Plagiarism check report"
+msgstr "Плагиат пайызы"
+
+#: api/templates/report_template.html:58
+#: documents/templates/documents/report_template.html:58
+msgid "REPORT<br>of passing the system to confirm originality"
+msgstr "ТҮПНҰСҚАЛЫҚТЫ РАСТАУ ЖҮЙЕСІНЕН ӨТКЕНІ ТУРАЛЫ ЕСЕП"
+
+#: api/templates/report_template.html:73
+#: documents/templates/documents/report_template.html:73
+#, fuzzy
+#| msgid "Full list of plagiarism instances"
+msgid "List of plagiarism instances"
+msgstr "Плагиат жағдайларының тізімі"
+
+#: api/templates/report_template.html:78
+#: documents/templates/documents/report_template.html:78
+#: organizations/models.py:48
+#: organizations/templates/organizations/organization_list.html:20
+#: templates/document_list.html:20 templates/instance_update.html:27
+#: templates/report_new_detail.html:61
+msgid "Title"
+msgstr "Атау"
+
+#: api/templates/report_template.html:79
+#: documents/templates/documents/report_template.html:79
+msgid "Share in report"
+msgstr "Есепте үлес"
+
+#: api/templates/report_template.html:80
+#: documents/templates/documents/report_template.html:80
+#: templates/report_new_detail.html:63
+msgid "Module"
+msgstr "Модуль"
+
+#: api/templates/report_template.html:101
+#: documents/templates/documents/report_new_template.html:175
+#: documents/templates/documents/report_template.html:101
+#, fuzzy
+#| msgid "There is no plagiarism instances."
+msgid "There is no plagiarism instances"
+msgstr "Плагиат жағдайлары жоқ"
+
+#: comments/models.py:18
+#: organizations/templates/organizations/organization_detail.html:23
+#, fuzzy
+#| msgid "created at"
+msgid "Created at"
+msgstr "Жасалған күні"
+
+#: comments/models.py:19
+#: organizations/templates/organizations/organization_detail.html:24
+#, fuzzy
+#| msgid "Update type"
+msgid "Updated at"
+msgstr "Типті жаңарту"
+
+#: comments/models.py:20
+msgid "Text of the comment"
+msgstr "Пікір мәтіні"
+
+#: comments/models.py:21
+msgid "Is text approved"
+msgstr "Мәтін бекітілген"
+
+#: core/settings.py:154 documents/forms.py:18
+msgid "Kazakh"
+msgstr "Қазақша"
+
+#: core/settings.py:155 documents/forms.py:17
+msgid "Russian"
+msgstr "Орысша"
+
+#: core/settings.py:156 documents/forms.py:16
+msgid "English"
+msgstr "Ағылшын"
+
+#: documents/forms.py:25 documents/models.py:140
+msgid "OCR languages"
+msgstr "OCR тілдері"
+
+#: documents/forms.py:26
+msgid "Select languages for OCR processing"
+msgstr "OCR өңдеу үшін тілдерді таңдаңыз"
+
+#: documents/forms.py:45
+msgid "The filename is too long. Please use a shorter name."
+msgstr ""
+
+#: documents/models.py:28
+msgid "Folder Name"
+msgstr "Название папки"
+
+#: documents/models.py:38
+msgid "Folder"
+msgstr "Папка"
+
+#: documents/models.py:39 templates/folder_list_root.html:25
+msgid "Folders"
+msgstr "Папкалар"
+
+#: documents/models.py:53
+msgid "Uploaded"
+msgstr "Жүктелді"
+
+#: documents/models.py:54
+msgid "Checking"
+msgstr "Тексеру"
+
+#: documents/models.py:55
+msgid "Checked"
+msgstr "Тексерілді"
+
+#: documents/models.py:56
+msgid "Error"
+msgstr "Қате"
+
+#: documents/models.py:74
+#: organizations/templates/organizations/organization_detail.html:61
+msgid "Article"
+msgstr "Мақала"
+
+#: documents/models.py:75
+#: organizations/templates/organizations/organization_detail.html:65
+msgid "Course work"
+msgstr "Курстық жұмыс"
+
+#: documents/models.py:76
+msgid "Doctoral dissertation"
+msgstr "Докторлық диссертация"
+
+#: documents/models.py:77
+#: organizations/templates/organizations/organization_detail.html:73
+msgid "Diploma thesis"
+msgstr "Дипломдық жұмыс"
+
+#: documents/models.py:78
+#: organizations/templates/organizations/organization_detail.html:77
+msgid "Diploma project"
+msgstr "Дипломдық жоба"
+
+#: documents/models.py:79
+msgid "Masters dissertation"
+msgstr "Магистрлік диссертация"
+
+#: documents/models.py:80
+#: organizations/templates/organizations/organization_detail.html:85
+msgid "Study guide"
+msgstr "Оқу құралы"
+
+#: documents/models.py:81
+#: organizations/templates/organizations/organization_detail.html:89
+msgid "Textbook"
+msgstr "Оқулық"
+
+#: documents/models.py:82
+#: organizations/templates/organizations/organization_detail.html:93
+msgid "Book"
+msgstr "Кітап"
+
+#: documents/models.py:83
+#: organizations/templates/organizations/organization_detail.html:97
+msgid "Research"
+msgstr "Зерттеу"
+
+#: documents/models.py:84
+#: organizations/templates/organizations/organization_detail.html:101
+msgid "Monograph"
+msgstr "Монография"
+
+#: documents/models.py:85
+msgid "Abstract"
+msgstr "Реферат"
+
+#: documents/models.py:86
+msgid "Other"
+msgstr "Басқа"
+
+#: documents/models.py:90 documents/models.py:175 documents/models.py:383
+#: news/models.py:8
+msgid "title"
+msgstr "Атауы"
+
+#: documents/models.py:91
+msgid "author"
+msgstr "Автор"
+
+#: documents/models.py:93 templates/report_new_detail.html:32
+msgid "Department"
+msgstr ""
+
+#: documents/models.py:97
+#, fuzzy
+#| msgid "Document name"
+msgid "Department name"
+msgstr "Құжаттың атауы"
+
+#: documents/models.py:106
+msgid "description"
+msgstr "Сипаттамасы"
+
+#: documents/models.py:114 documents/models.py:179 organizations/models.py:40
+msgid "created at"
+msgstr "Жасалған күні"
+
+#: documents/models.py:120
+msgid "text content"
+msgstr ""
+
+#: documents/models.py:123
+msgid "Stores the extracted text of the document"
+msgstr ""
+
+#: documents/models.py:126
+msgid "status"
+msgstr "Мәртебе"
+
+#: documents/models.py:133
+msgid "How many tasks is completed"
+msgstr "Қанша тапсырма орындалды"
+
+#: documents/models.py:136
+msgid "Enable OCR"
+msgstr "OCR қосу"
+
+#: documents/models.py:137
+msgid "Extract text using OCR recognition (only pdf files)"
+msgstr "OCR тану арқылы мәтінді шығарып алу (тек pdf документтер)"
+
+#: documents/models.py:141
+msgid "For example: 'eng+rus+kaz'"
+msgstr "Мысалы: 'eng+rus+kaz'"
+
+#: documents/models.py:148
+msgid "estimated check completion"
+msgstr ""
+
+#: documents/models.py:150
+msgid "The estimated time when the document will be fully processed"
+msgstr ""
+
+#: documents/models.py:184
+#, fuzzy
+#| msgid "originality percentage"
+msgid "originality percentage (internet)"
+msgstr "Оригиналдылық пайызы"
+
+#: documents/models.py:187
+#, fuzzy
+#| msgid "originality percentage"
+msgid "Text originality percentage from Internet module"
+msgstr "Оригиналдылық пайызы"
+
+#: documents/models.py:190
+#, fuzzy
+#| msgid "plagiarism percentage"
+msgid "plagiarism percentage (internet)"
+msgstr "Плагиат пайызы"
+
+#: documents/models.py:193
+#, fuzzy
+#| msgid "plagiarism percentage"
+msgid "Text plagiarism percentage from Internet module"
+msgstr "Плагиат пайызы"
+
+#: documents/models.py:196
+msgid "uniqueness"
+msgstr "Ерекшелік"
+
+#: documents/models.py:201
+msgid "human written percentage"
+msgstr "Адам жазған пайызы"
+
+#: documents/models.py:206
+msgid "chatgpt generated percentage"
+msgstr "ChatGPT жасаған пайызы"
+
+#: documents/models.py:211
+msgid "formulas result"
+msgstr "Формулалардың нәтижесі"
+
+#: documents/models.py:213
+msgid "invisible symbols result"
+msgstr "Көрінбейтін символдардың нәтижесі"
+
+#: documents/models.py:215
+msgid "white spaces result"
+msgstr "Ақ кеңістіктердің нәтижесі"
+
+#: documents/models.py:217
+msgid "latin letters result"
+msgstr "Латын әріптерінің нәтижесі"
+
+#: documents/models.py:219
+#, fuzzy
+#| msgid "html report"
+msgid "pdf report"
+msgstr "HTML есебі"
+
+#: documents/models.py:224
+msgid "certificate"
+msgstr "Сертификат"
+
+#: documents/models.py:231
+msgid "originality percentage"
+msgstr "Оригиналдылық пайызы"
+
+#: documents/models.py:236 documents/models.py:405
+msgid "plagiarism percentage"
+msgstr "Плагиат пайызы"
+
+#: documents/models.py:241
+msgid "citation percentage"
+msgstr "Цитата пайызы"
+
+#: documents/models.py:246
+msgid "selfcitation percentage"
+msgstr "Өз-өзін циталау пайызы"
+
+#: documents/models.py:251
+msgid "shingles total number"
+msgstr "Шинглдардың жалпы саны"
+
+#: documents/models.py:253
+msgid "Total number of shingles in the document"
+msgstr "Құжаттағы шинглдардың жалпы саны"
+
+#: documents/models.py:355
+msgid "Plagiarism"
+msgstr "Плагиат"
+
+#: documents/models.py:356
+msgid "Citation"
+msgstr "Цитата"
+
+#: documents/models.py:357
+msgid "Selfcitation"
+msgstr "Өз-өзін циталау"
+
+#: documents/models.py:362
+msgid "url"
+msgstr "URL"
+
+#: documents/models.py:363
+#, fuzzy
+#| msgid "The title of the document from which the text was borrowed."
+msgid "Link to the document from which the text was borrowed."
+msgstr "Мәтін алынған құжаттың атауы"
+
+#: documents/models.py:365
+#, fuzzy
+#| msgid "plagiarism percentage"
+msgid "plagiarism ranges"
+msgstr "Плагиат пайызы"
+
+#: documents/models.py:367
+msgid "range of borrowed characters: start, end, length."
+msgstr ""
+"Қарызға алынған таңбалардың диапазоны: басталу нүктесі, аяқталу нүктесі, "
+"ұзындығы."
+
+#: documents/models.py:369
+#, fuzzy
+#| msgid "plagiarism percentage"
+msgid "plagiarism characters count"
+msgstr "Плагиат пайызы"
+
+#: documents/models.py:371
+#, fuzzy
+#| msgid "There is no plagiarism instances."
+msgid "Characters count of plagiarism instance."
+msgstr "Плагиат жағдайлары жоқ"
+
+#: documents/models.py:373
+msgid "indices"
+msgstr "Индекстер"
+
+#: documents/models.py:375
+msgid "type"
+msgstr "Түрі"
+
+#: documents/models.py:385
+msgid "The title of the document from which the text was borrowed."
+msgstr "Мәтін алынған құжаттың атауы"
+
+#: documents/models.py:389
+msgid "module"
+msgstr "Модуль"
+
+#: documents/models.py:391
+msgid "The module containing original document."
+msgstr "Оригинал құжатты қамтитын модуль"
+
+#: documents/models.py:395
+msgid "shingles"
+msgstr "Шинглдар"
+
+#: documents/models.py:397
+msgid "Intersecting shingles."
+msgstr "Қатталған шинглдар"
+
+#: documents/models.py:400
+msgid "fragments"
+msgstr "Фрагменттер"
+
+#: documents/models.py:402
+msgid "Borrowed text in preprocessed format."
+msgstr "Алынған мәтін алдын ала өңделген форматта"
+
+#: documents/models.py:408
+msgid "Counted by formula: plagiarised_shingles / total_shingles * 100"
+msgstr ""
+"Формула бойынша есептелген: плагиатталған шинглдар / жалпы шинглдар * 100"
+
+#: documents/notifications.py:8
+msgid ""
+"All tasks are completed and the document status is now updated to Checked."
+msgstr ""
+"Барлық тапсырмалар орындалды және құжат күйі енді Тексерілді күйіне "
+"жаңартылды."
+
+#: news/models.py:9
+msgid "The news title."
+msgstr "Жаңалық атауы."
+
+#: news/models.py:12
+msgid "excerpt"
+msgstr "Үзінді"
+
+#: news/models.py:13
+msgid "Short summary."
+msgstr "Қысқаша қорытынды."
+
+#: news/models.py:16
+msgid "text"
+msgstr "мәтін"
+
+#: news/models.py:17
+msgid "The full content of the news article."
+msgstr "Жаңалық мақаланың толық мазмұны."
+
+#: news/models.py:22
+msgid "Is the news approved"
+msgstr "Жаңалық мақұлданды ма"
+
+#: organizations/models.py:44
+msgid "updated at"
+msgstr "жаңартылған"
+
+#: organizations/models.py:50
+#, fuzzy
+#| msgid "Delete organization"
+msgid "Name of the organization"
+msgstr "Ұйымды жою"
+
+#: organizations/models.py:53
+#: organizations/templates/organizations/organization_detail.html:21
+#: organizations/templates/organizations/organization_list.html:21
+#: templates/user_detail.html:21
+msgid "City"
+msgstr "Қала"
+
+#: organizations/models.py:56
+#, fuzzy
+#| msgid "Delete organization"
+msgid "City where the organization is based"
+msgstr "Ұйымды жою"
+
+#: organizations/models.py:59
+#: organizations/templates/organizations/organization_detail.html:22
+#: templates/home.html:605 templates/user_detail.html:22
+msgid "Address"
+msgstr "Мекен-жай"
+
+#: organizations/models.py:61
+#, fuzzy
+#| msgid "Delete organization"
+msgid "Full address of the organization"
+msgstr "Ұйымды жою"
+
+#: organizations/models.py:71
+#, fuzzy
+#| msgid "description"
+msgid "Description"
+msgstr "Сипаттамасы"
+
+#: organizations/models.py:72
+#, fuzzy
+#| msgid "Information about the report"
+msgid "Short information about the organization"
+msgstr "Есеп туралы ақпарат"
+
+#: organizations/models.py:74 users/models.py:25
+msgid "checks available"
+msgstr "жаңартылған"
+
+#: organizations/models.py:76
+msgid "Number of documents the organization can check."
+msgstr "Ұйым тексере алатын құжаттар саны."
+
+#: organizations/models.py:81
+msgid "Article originality threshold"
+msgstr ""
+
+#: organizations/models.py:84
+#, fuzzy
+#| msgid "originality percentage"
+msgid "Minimum originality percentage required for articles"
+msgstr "Оригиналдылық пайызы"
+
+#: organizations/models.py:87
+msgid "Course work originality threshold"
+msgstr ""
+
+#: organizations/models.py:90
+#, fuzzy
+#| msgid "originality percentage"
+msgid "Minimum originality percentage required for course works"
+msgstr "Оригиналдылық пайызы"
+
+#: organizations/models.py:93
+msgid "Doctoral originality threshold"
+msgstr ""
+
+#: organizations/models.py:96
+#, fuzzy
+#| msgid "originality percentage"
+msgid "Minimum originality percentage required for doctoral works"
+msgstr "Оригиналдылық пайызы"
+
+#: organizations/models.py:99
+msgid "Diploma thesis originality threshold"
+msgstr ""
+
+#: organizations/models.py:102
+#, fuzzy
+#| msgid "originality percentage"
+msgid "Minimum originality percentage required for diploma theses"
+msgstr "Оригиналдылық пайызы"
+
+#: organizations/models.py:105
+msgid "Diploma project originality threshold"
+msgstr ""
+
+#: organizations/models.py:108
+#, fuzzy
+#| msgid "originality percentage"
+msgid "Minimum originality percentage required for diploma projects"
+msgstr "Оригиналдылық пайызы"
+
+#: organizations/models.py:111
+msgid "Masters thesis project originality threshold"
+msgstr ""
+
+#: organizations/models.py:114
+#, fuzzy
+#| msgid "originality percentage"
+msgid "Minimum originality percentage required for masters thesis"
+msgstr "Оригиналдылық пайызы"
+
+#: organizations/models.py:117
+msgid "Study guide project originality threshold"
+msgstr ""
+
+#: organizations/models.py:120
+#, fuzzy
+#| msgid "originality percentage"
+msgid "Minimum originality percentage required for study guides"
+msgstr "Оригиналдылық пайызы"
+
+#: organizations/models.py:123
+msgid "Textbook project originality threshold"
+msgstr ""
+
+#: organizations/models.py:126
+#, fuzzy
+#| msgid "originality percentage"
+msgid "Minimum originality percentage required for textbooks"
+msgstr "Оригиналдылық пайызы"
+
+#: organizations/models.py:129
+msgid "Book project originality threshold"
+msgstr ""
+
+#: organizations/models.py:132
+#, fuzzy
+#| msgid "originality percentage"
+msgid "Minimum originality percentage required for books"
+msgstr "Оригиналдылық пайызы"
+
+#: organizations/models.py:135
+msgid "Research project originality threshold"
+msgstr ""
+
+#: organizations/models.py:138
+#, fuzzy
+#| msgid "originality percentage"
+msgid "Minimum originality percentage required for researches"
+msgstr "Оригиналдылық пайызы"
+
+#: organizations/models.py:141
+msgid "Monograph project originality threshold"
+msgstr ""
+
+#: organizations/models.py:144
+#, fuzzy
+#| msgid "originality percentage"
+msgid "Minimum originality percentage required for monographs"
+msgstr "Оригиналдылық пайызы"
+
+#: organizations/models.py:147
+msgid "Abstract project originality threshold"
+msgstr ""
+
+#: organizations/models.py:150
+#, fuzzy
+#| msgid "originality percentage"
+msgid "Minimum originality percentage required for abstracts"
+msgstr "Оригиналдылық пайызы"
+
+#: organizations/models.py:153
+msgid "Other documents project originality threshold"
+msgstr ""
+
+#: organizations/models.py:156
+#, fuzzy
+#| msgid "originality percentage"
+msgid "Minimum originality percentage required for other documents"
+msgstr "Оригиналдылық пайызы"
+
+#: organizations/templates/organizations/organization_confirm_delete.html:13
+msgid "Delete organization"
+msgstr "Ұйымды жою"
+
+#: organizations/templates/organizations/organization_confirm_delete.html:14
+#: templates/document_confirm_delete.html:14
+msgid "Are you sure you want to delete"
+msgstr "Жоюға сенімдісіз бе"
+
+#: organizations/templates/organizations/organization_detail.html:25
+msgid "Checks available"
+msgstr "Тексеру қолжетімді"
+
+#: organizations/templates/organizations/organization_detail.html:32
+msgid "Users in this organization"
+msgstr "Ұйымдағы пайдаланушылар"
+
+#: organizations/templates/organizations/organization_detail.html:46
+msgid "No users found"
+msgstr "Ешбір пайдаланушы табылмады"
+
+#: organizations/templates/organizations/organization_detail.html:54
+#, fuzzy
+#| msgid "Originality percent"
+msgid "Originality thresholds"
+msgstr "Бірегейлік пайызы"
+
+#: organizations/templates/organizations/organization_detail.html:57
+#, fuzzy
+#| msgid "Document title"
+msgid "Document Types"
+msgstr "Құжаттың атауы"
+
+#: organizations/templates/organizations/organization_detail.html:69
+msgid "Doctoral work"
+msgstr ""
+
+#: organizations/templates/organizations/organization_detail.html:81
+msgid "Masters thesis"
+msgstr ""
+
+#: organizations/templates/organizations/organization_detail.html:105
+#, fuzzy
+#| msgid "Abstract"
+msgid "Abstact"
+msgstr "Реферат"
+
+#: organizations/templates/organizations/organization_detail.html:109
+#, fuzzy
+#| msgid "Delete document"
+msgid "Other documents"
+msgstr "Құжатты жою"
+
+#: organizations/templates/organizations/organization_detail.html:119
+msgid "Customer care service"
+msgstr "Тұтынушыларға қызмет көрсету"
+
+#: organizations/templates/organizations/organization_detail.html:120
+msgid "You can call or write to our Customer care service 24/7."
+msgstr ""
+"Тұтынушыларды қолдау қызметіне тәулік бойы қоңырау шалуға немесе жазуға "
+"болады."
+
+#: organizations/templates/organizations/organization_form.html:8
+#: organizations/templates/organizations/organization_form.html:19
+#, fuzzy
+#| msgid "Delete organization"
+msgid "Update organization"
+msgstr "Ұйымды жою"
+
+#: organizations/templates/organizations/organization_form.html:10
+#, fuzzy
+#| msgid "Create new organization"
+msgid "Create organization"
+msgstr "Жаңа ұйым құру"
+
+#: organizations/templates/organizations/organization_form.html:21
+msgid "Create new organization"
+msgstr "Жаңа ұйым құру"
+
+#: organizations/templates/organizations/organization_form.html:27
+#: templates/account/signup.html:17 templates/home.html:653
+msgid "Send"
+msgstr "Жіберу"
+
+#: organizations/templates/organizations/organization_list.html:6
+#: organizations/templates/organizations/organization_list.html:12
+msgid "Organization List"
+msgstr "Ұйымдар тізімі"
+
+#: organizations/templates/organizations/organization_list.html:13
+msgid "Create new"
+msgstr "Жаңа жасау"
+
+#: organizations/templates/organizations/organization_list.html:22
+#: templates/document_list.html:22 templates/folder_list_root.html:67
+#: templates/report_list.html:22
+msgid "Status"
+msgstr "Мәртебе"
+
+#: organizations/templates/organizations/organization_list.html:23
+#: templates/document_list.html:24 templates/report_list.html:24
+msgid "Actions"
+msgstr "Әрекеттер"
+
+#: organizations/templates/organizations/organization_list.html:41
+msgid "There is no Organizations."
+msgstr "Ұйымдар жоқ"
+
+#: organizations/templates/organizations/organization_list.html:50
+#: templates/report_list.html:59
+msgid "First"
+msgstr "Бірінші"
+
+#: organizations/templates/organizations/organization_list.html:51
+#: templates/document_detail_new.html:50 templates/report_list.html:60
+msgid "Previous"
+msgstr "Алдыңғы"
+
+#: organizations/templates/organizations/organization_list.html:55
+#: templates/report_list.html:64
+msgid "Page"
+msgstr "Бет"
+
+#: organizations/templates/organizations/organization_list.html:55
+#: templates/document_detail_new.html:48 templates/report_list.html:64
+msgid "of"
+msgstr "бойынша"
+
+#: organizations/templates/organizations/organization_list.html:59
+#: templates/document_detail_new.html:51 templates/report_list.html:68
+msgid "Next"
+msgstr "Келесі"
+
+#: organizations/templates/organizations/organization_list.html:60
+#: templates/report_list.html:69
+msgid "Last"
+msgstr "Соңғы"
+
+#: payments/forms.py:10
+msgid "Enter number of checks"
+msgstr "Тексерулер санын жазыңыз"
+
+#: payments/forms.py:11
+msgid "Enter the number of checks you want to purchase."
+msgstr "Сатып алғыңыз келетін тексерулер санын енгізіңіз."
+
+#: templates/_base.html:21
+msgid ""
+"Ensure academic integrity and original content with our advanced plagiarism "
+"detection system. Efficiently scan documents for duplicate content and "
+"safeguard your work against plagiarism. Discover how our tool can enhance "
+"your writing quality today."
+msgstr ""
+"Біздің жетілдірілген плагиат анықтау жүйемізбен академиялық адалдықты және "
+"түпнұсқа мазмұнды қамтамасыз етіңіз. Құжаттарды қайталанатын мазмұнға тиімді "
+"түрде сканерлеп, жұмысыңызды плагиаттан қорғаңыз. Бүгін біздің құралдың "
+"сіздің жазу сапаңызды қалай арттыра алатынын біліңіз."
+
+#: templates/_base.html:22
+msgid ""
+"plagiarism detection, plagiarism checker, anti-plagiarism software, academic "
+"integrity, duplicate content checker, plagiarism prevention, content "
+"originality, text analysis, writing tool, academic plagiarism"
+msgstr ""
+"Плагиатты анықтау, плагиатты тексеру құралы, антиплагиат бағдарламасы, "
+"академиялық адалдық, қайталанатын мазмұнды тексеру құралы, плагиаттың алдын "
+"алу, мазмұнның түпнұсқалығы, мәтінді талдау, жазу құралы, академиялық "
+"плагиат."
+
+#: templates/_base.html:25 templates/_base.html:34
+#, fuzzy
+#| msgid "Kazakhstan plagiarism detection system"
+msgid "Advanced Plagiarism Detection System"
+msgstr "Қазақстанның плагиат анықтау жүйесі"
+
+#: templates/_base.html:26 templates/_base.html:35
+msgid ""
+"Protect your content and maintain academic integrity with our state-of-the-"
+"art plagiarism detection system. Efficiently scan and ensure originality in "
+"your documents."
+msgstr ""
+"Мазмұныңызды қорғаңыз және академиялық адалдықты біздің заманауи плагиат "
+"анықтау жүйемізбен сақтаңыз. Құжаттарыңызды тиімді түрде сканерлеп, "
+"түпнұсқалығын қамтамасыз етіңіз."
+
+#: templates/_base.html:96 templates/_base.html:295 templates/home.html:6
+msgid "Main"
+msgstr "Негізгі"
+
+#: templates/_base.html:103
+msgid "About"
+msgstr "Ақпарат"
+
+#: templates/_base.html:108 templates/home.html:589
+msgid "Contacts"
+msgstr "Байланыстар"
+
+#: templates/_base.html:115 templates/folder_list_root.html:26
+msgid "Check new document"
+msgstr "Құжатты тексеру"
+
+#: templates/_base.html:122
+msgid "History of checks"
+msgstr "Тексерулер тарихы"
+
+#: templates/_base.html:127
+msgid "Account"
+msgstr "Аккаунт"
+
+#: templates/_base.html:137
+msgid "Organization profile"
+msgstr "Ұйымдар тізімі"
+
+#: templates/_base.html:149 templates/account/logout.html:6
+#: templates/account/logout.html:10 templates/account/logout.html:15
+msgid "Log Out"
+msgstr "Шығу"
+
+#: templates/_base.html:212 templates/account/login.html:12
+msgid "Log In"
+msgstr "Кіру"
+
+#: templates/_base.html:279
+msgid "The courage to be original"
+msgstr "Түпнұсқа болуға батылдық"
+
+#: templates/_base.html:291
+msgid "Useful links"
+msgstr "Пайдалы сілтемелер"
+
+#: templates/_base.html:305
+msgid "Services"
+msgstr "Қызметтер"
+
+#: templates/_base.html:307
+msgid "For corporate clients"
+msgstr "Корпоративтік клиенттер үшін"
+
+#: templates/_base.html:308
+msgid "For individuals"
+msgstr "Жеке тұлғалар үшін"
+
+#: templates/_base.html:309
+#, fuzzy
+#| msgid "Suport"
+msgid "Support"
+msgstr "Қолдау"
+
+#: templates/_base.html:314
+msgid "Contact Us"
+msgstr "Бізбен байланысыңыз"
+
+#: templates/_base.html:315
+msgid "Dostyk str, 16"
+msgstr "Достық көшесі, 16"
+
+#: templates/_base.html:316
+msgid "Talan Tower BC"
+msgstr "Talan Tower БО (Бизнес орталық)"
+
+#: templates/_base.html:317
+msgid "Astana, Kazakhstan"
+msgstr "Астана, Қазақстан"
+
+#: templates/_base.html:318 templates/home.html:613
+msgid "Phone"
+msgstr "Телефон"
+
+#: templates/about_oysyn.html:8
+msgid ""
+"Learn about OySyn, an innovative tool for text originality checks. Local "
+"development, high processing speed, and data confidentiality."
+msgstr ""
+
+#: templates/about_oysyn.html:11
+msgid "Be original with OySyn! Innovative plagiarism detection system"
+msgstr "OySyn-мен түпнұсқа болыңыз! Плагиатты анықтаудың инновациялық жүйесі"
+
+#: templates/about_oysyn.html:17
+msgid "What is OySyn, and what is it for"
+msgstr "OySyn дегеніміз не және ол не үшін қажет"
+
+#: templates/about_oysyn.html:18
+msgid ""
+"The first Kazakhstani plagiarism checking system. OySyn is a modern "
+"plagiarism detection system designed to check texts for originality. The "
+"primary goal of OySyn is to prevent copyright violations and improve the "
+"quality of works and scientific research."
+msgstr ""
+"Плагиатты тексерудің алғашқы қазақстандық жүйесі. OySyn — мәтіндердің "
+"түпнұсқалығын тексеруге арналған заманауи плагиатты анықтау жүйесі. OySyn "
+"компаниясының басты мақсаты – авторлық құқық бұзушылықтардың алдын алу, "
+"жұмыстар мен ғылыми зерттеулердің сапасын арттыру."
+
+#: templates/about_oysyn.html:19
+msgid ""
+"The system has successfully completed the Scalerator 2.0 acceleration "
+"program, aimed at supporting startups with export potential, and is a member "
+"of Astana HUB."
+msgstr ""
+"Жүйе экспорттық әлеуеті бар стартаптарды қолдауға бағытталған Scalerator 2.0 "
+"акселерация бағдарламасын сәтті аяқтады және Astana HUB мүшесі болып "
+"табылады."
+
+#: templates/about_oysyn.html:21
+msgid "What makes OySyn unique compared to other plagiarism detection systems"
+msgstr ""
+"Плагиатты анықтаудың басқа жүйелерімен салыстырғанда OySyn бірегейлігі неде"
+
+#: templates/about_oysyn.html:23
+msgid ""
+"Local data storage: All databases are hosted within the Republic of "
+"Kazakhstan, ensuring confidentiality."
+msgstr ""
+"Жергілікті деректерді сақтау: Барлық дерекқорлар құпиялылықты қамтамасыз ете "
+"отырып, Қазақстан Республикасының аумағында орналасқан."
+
+#: templates/about_oysyn.html:24
+msgid ""
+"Resource efficiency: Optimized architecture reduces disk space requirements."
+msgstr ""
+"Жергілікті деректерді сақтау: Барлық дерекқорлар құпиялылықты қамтамасыз ете "
+"отырып, Қазақстан Республикасының аумағында орналасқан."
+
+#: templates/about_oysyn.html:25
+msgid ""
+"High processing speed: Modern big data processing methods ensure quick text "
+"checks."
+msgstr ""
+"Жоғары өңдеу жылдамдығы: Үлкен деректерді өңдеудің заманауи әдістері мәтінді "
+"жылдам тексеруді қамтамасыз етеді."
+
+#: templates/about_oysyn.html:26
+msgid ""
+"Simple interface: The system is intuitive and does not require special "
+"technical knowledge."
+msgstr ""
+"Қарапайым интерфейс: жүйе интуитивті және арнайы техникалық білімді қажет "
+"етпейді."
+
+#: templates/about_oysyn.html:27
+msgid ""
+"Flexibility: OySyn can be customized to meet individual client requirements."
+msgstr ""
+"Икемділік: OySyn клиенттің жеке талаптарын қанағаттандыру үшін теңшеуге "
+"болады."
+
+#: templates/about_oysyn.html:30
+msgid "Who can use OySyn"
+msgstr "OySyn-ді кім пайдалана алады"
+
+#: templates/about_oysyn.html:31
+msgid "OySyn is designed for various user categories:"
+msgstr "OySyn әртүрлі пайдаланушы санаттарына арналған:"
+
+#: templates/about_oysyn.html:33
+msgid ""
+"Educational institutions: Checking theses, coursework, and other student "
+"works."
+msgstr ""
+"Оқу орындары: Дипломдық жұмыстарды, курстық жұмыстарды және басқа студенттер "
+"жұмысын тексеру."
+
+#: templates/about_oysyn.html:34
+msgid ""
+"Journalists and publishers: Verifying the originality of materials for "
+"publication."
+msgstr ""
+"Журналистер мен баспагерлер: Жариялауға арналған материалдардың "
+"түпнұсқалығын тексеру."
+
+#: templates/about_oysyn.html:35
+msgid ""
+"Content creators: Copywriters, bloggers, and marketers check texts before "
+"publication."
+msgstr ""
+"Мазмұнды жасаушылар: Копирайтерлер, блогерлер және маркетологтар мәтіндерді "
+"жарияламас бұрын тексереді."
+
+#: templates/about_oysyn.html:36
+msgid "Main focus: Students, postgraduates, doctoral candidates, and faculty."
+msgstr "Негізгі бағыт: студенттер, аспиранттар, докторанттар және оқытушылар."
+
+#: templates/about_oysyn.html:39
+msgid ""
+"Does OySyn offer flexible pricing, and are there limits on the text volume"
+msgstr "OySyn икемді бағаны ұсынады ма және мәтін көлеміне шектеулер бар ма"
+
+#: templates/about_oysyn.html:40
+msgid ""
+"OySyn provides a flexible pricing system suitable for various user "
+"categories. For legal entities, individual tariffs can be developed. "
+"Detailed information is available on our official website: OySyn."
+msgstr ""
+"OySyn әртүрлі пайдаланушы санаттарына сәйкес келетін икемді баға жүйесін "
+"ұсынады. Заңды тұлғалар үшін жеке тарифтер әзірленуі мүмкін. Толық ақпарат "
+"біздің ресми сайтымызда бар: OySyn."
+
+#: templates/about_oysyn.html:42
+msgid ""
+"Do I need to install software to use OySyn, and does it have a mobile version"
+msgstr ""
+"OySyn пайдалану үшін бағдарламалық құралды орнату керек пе және оның "
+"мобильді нұсқасы бар ма"
+
+#: templates/about_oysyn.html:43
+msgid ""
+"OySyn is a cloud platform that does not require software installation. To "
+"use it:"
+msgstr ""
+"OySyn - бағдарламалық құралды орнатуды қажет етпейтін бұлттық платформа. Оны "
+"пайдалану үшін:"
+
+#: templates/about_oysyn.html:45
+msgid "Access the website from any device."
+msgstr "Кез келген құрылғыдан веб-сайтқа кіріңіз."
+
+#: templates/about_oysyn.html:46
+msgid "Register an account."
+msgstr "Тіркелгіні тіркеңіз."
+
+#: templates/about_oysyn.html:47
+msgid "Upload text for analysis."
+msgstr "Талдау үшін мәтінді жүктеп салыңыз."
+
+#: templates/about_oysyn.html:49
+msgid ""
+"The system is fully optimized for mobile devices and tablets, ensuring "
+"convenience on the go."
+msgstr ""
+"Жүйе мобильді құрылғылар мен планшеттер үшін толығымен оңтайландырылған, бұл "
+"жолда ыңғайлылықты қамтамасыз етеді."
+
+#: templates/about_oysyn.html:51
+msgid "What are OySyn's development prospects"
+msgstr "OySyn даму перспективалары қандай"
+
+#: templates/about_oysyn.html:52
+msgid "OySyn is actively developing in the following directions:"
+msgstr "OySyn келесі бағыттар бойынша белсенді дамуда:"
+
+#: templates/about_oysyn.html:54
+msgid ""
+"Integration with educational platforms: Integration into popular LMS for "
+"schools and universities."
+msgstr ""
+"Білім беру платформаларымен интеграция: мектептер мен университеттер үшін "
+"танымал LMS-ке интеграция."
+
+#: templates/about_oysyn.html:55
+msgid ""
+"Text improvement tools: Features for automatic correction of stylistic "
+"errors and suggestions."
+msgstr ""
+"Мәтінді жақсарту құралдары: Стилистикалық қателер мен ұсыныстарды автоматты "
+"түрде түзету мүмкіндіктері."
+
+#: templates/about_oysyn.html:56
+msgid ""
+"Database enrichment: Continuous updates of sources to improve analysis "
+"accuracy."
+msgstr ""
+"Дерекқорды байыту: талдау дәлдігін жақсарту үшін көздерді үздіксіз жаңарту."
+
+#: templates/about_oysyn.html:59
+msgid "Why is OySyn a reliable choice for plagiarism detection"
+msgstr "Неліктен OySyn плагиатты анықтау үшін сенімді таңдау болып табылады"
+
+#: templates/about_oysyn.html:61
+msgid ""
+"A local system: A product of domestic development that meets international "
+"standards."
+msgstr ""
+"Жергілікті жүйе: халықаралық стандарттарға сәйкес келетін отандық даму өнімі."
+
+#: templates/about_oysyn.html:62
+msgid ""
+"Data security: Security certification from the Committee on Information "
+"Security of the Republic of Kazakhstan."
+msgstr ""
+"Деректердің қауіпсіздігі: Қазақстан Республикасы Ақпараттық қауіпсіздік "
+"комитетінің қауіпсіздік сертификаты."
+
+#: templates/about_oysyn.html:63
+msgid ""
+"Supporting the national economy: Using the system helps preserve "
+"intellectual and financial resources within the country."
+msgstr ""
+"Ұлттық экономиканы қолдау: жүйені пайдалану ел ішіндегі зияткерлік және "
+"қаржылық ресурстарды сақтауға көмектеседі."
+
+#: templates/about_oysyn.html:69 templates/home.html:26
+msgid "Start for free"
+msgstr "Тегін бастау"
+
+#: templates/account/email/email_confirmation_message.txt:2
+#, python-format
+msgid ""
+"Hello from %(site_name)s!\n"
+"\n"
+"You are receiving this email because user %(user_display)s has given yours "
+"as an email address to connect their account.\n"
+"\n"
+"To confirm this is correct, go to %(activate_url)s\n"
+msgstr ""
+"%(site_name)s атынан сәлем!\n"
+"\n"
+"%(user_display)s пайдаланушысы тіркелгісін қосу үшін сізге электрондық пошта "
+"мекенжайын бергендіктен осы электрондық хатты алып отырсыз.\n"
+"\n"
+"Мұның дұрыстығын растау үшін %(activate_url)s мекенжайына өтіңіз\n"
+
+#: templates/account/email/email_confirmation_message.txt:8
+#, python-format
+msgid ""
+"Thank you from %(site_name)s!\n"
+"%(site_domain)s"
+msgstr ""
+"%(site_name)s атынан рахмет!\n"
+"%(site_domain)s"
+
+#: templates/account/email/email_confirmation_subject.txt:3
+msgid "Confirm your sign up"
+msgstr "Тіркелуіңізді растаңыз"
+
+#: templates/account/email_confirm.html:6
+#: templates/account/email_confirm.html:12
+msgid "Confirm email address"
+msgstr "Электрондық пошта мекенжайын растаңыз"
+
+#: templates/account/email_confirm.html:15
+#, python-format
+msgid ""
+"Please confirm that <a href=\"mailto:%(email)s\">%(email)s is an email "
+"address for user %(user_display)s."
+msgstr ""
+"<a href=\"mailto:%(email)s\">%(email)s %(user_display)s пайдаланушысының "
+"электрондық пошта мекенжайы екенін растаңыз."
+
+#: templates/account/email_confirm.html:19
+msgid "Confirm"
+msgstr "Растау"
+
+#: templates/account/email_confirm.html:23
+#, python-format
+msgid ""
+"This email confirmation link expired or is invalid. Please <a "
+"href=\"%(email_url)s\">issue a new email confirmation request</a>."
+msgstr ""
+"Бұл электрондық поштаны растау сілтемесінің мерзімі бітті немесе жарамсыз. "
+"<a href=\"%(email_url)s\">жаңа электрондық поштаны растау сұрауын жіберіңіз</"
+"a>."
+
+#: templates/account/login.html:19
+msgid "If you have not registered yet, you can Sign Up for free"
+msgstr "Әлі тіркелмеген болсаңыз, тегін тіркеле аласыз"
+
+#: templates/account/login.html:19
+msgid "here"
+msgstr "Мұнда"
+
+#: templates/account/logout.html:11
+msgid "Are you sure?"
+msgstr "Сенімдісіз бе?"
+
+#: templates/account/password_reset.html:6
+#: templates/account/password_reset.html:12
+msgid "Password Reset"
+msgstr "Құпия сөзді қалпына келтіру"
+
+#: templates/account/password_reset.html:13
+msgid ""
+"If you have forgotten your password, please, type in your email and we will "
+"send you link to reset your password."
+msgstr ""
+"Құпия сөзіңізді ұмытып қалсаңыз, электрондық поштаңызды енгізіңіз, біз сізге "
+"құпия сөзді қалпына келтіру үшін сілтеме жібереміз."
+
+#: templates/account/password_reset.html:17
+#: templates/report_new_detail.html:141
+msgid "Submit"
+msgstr "Жіберу"
+
+#: templates/account/password_reset_done.html:4
+#: templates/account/password_reset_done.html:10
+msgid "Password Reset Sent"
+msgstr "Құпия сөзді жаңарту жіберілді"
+
+#: templates/account/password_reset_done.html:11
+msgid ""
+"A link to reset your password has been sent to your email address. Please "
+"check your inbox."
+msgstr ""
+"Құпия сөзді қалпына келтіру сілтемесі электрондық пошта мекенжайыңызға "
+"жіберілді. Кіріс жәшігіңізді тексеріңіз."
+
+#: templates/account/password_reset_done.html:12
+msgid "If you do not receive the email, please check your spam folder."
+msgstr "Электрондық хатты алмасаңыз, спам қалтаңызды тексеріңіз."
+
+#: templates/account/password_reset_done.html:13
+#: templates/account/password_reset_from_key_done.html:12
+msgid "Back to Login"
+msgstr "Кіру дегенге қайта келу"
+
+#: templates/account/password_reset_from_key.html:5
+#: templates/account/password_reset_from_key.html:11
+msgid "Set New Password"
+msgstr "Жаңа құпия сөзді орнату"
+
+#: templates/account/password_reset_from_key.html:15
+msgid "Set Password"
+msgstr "Құпия сөзді орнату"
+
+#: templates/account/password_reset_from_key.html:17
+msgid "Remembered your password?"
+msgstr "Құпия сөзіңізді есте сақтадыңыз ба?"
+
+#: templates/account/password_reset_from_key.html:17
+msgid "Login"
+msgstr "Жүйеге кіру"
+
+#: templates/account/password_reset_from_key_done.html:4
+#: templates/account/password_reset_from_key_done.html:10
+msgid "Password Reset Successful"
+msgstr "Құпия сөзді қалпына келтіру сәтті аяқталды"
+
+#: templates/account/password_reset_from_key_done.html:11
+msgid ""
+"Your password has been successfully reset. You can now log in with your new "
+"password."
+msgstr ""
+"Құпия сөзіңіз сәтті қалпына келтірілді. Енді сіз жаңа құпия сөзбен кіре "
+"аласыз."
+
+#: templates/account/signup.html:6 templates/account/signup.html:13
+msgid "Sign Up"
+msgstr "Тіркелу"
+
+#: templates/document_confirm_delete.html:13
+msgid "Delete document"
+msgstr "Құжатты жою"
+
+#: templates/document_confirm_delete.html:17
+msgid "Delete"
+msgstr "Жою"
+
+#: templates/document_create.html:19
+msgid "Upload new document"
+msgstr " Жаңа құжат жүктеу"
+
+#: templates/document_create.html:26
+msgid "Upload"
+msgstr "Жүктеу"
+
+#: templates/document_detail.html:6 templates/report_new_detail.html:15
+msgid "Document details"
+msgstr "Құжаттың мәліметтері"
+
+#: templates/document_detail.html:13 templates/document_detail_new.html:18
+#: templates/instance_update.html:26 templates/report_detail.html:14
+msgid "Document"
+msgstr "Құжат"
+
+#: templates/document_detail_new.html:19
+msgid "Document name"
+msgstr "Құжаттың атауы"
+
+#: templates/document_detail_new.html:20 templates/instance_update.html:28
+#: templates/report_detail.html:16 templates/report_new_detail.html:30
+msgid "Uploaded by"
+msgstr "Жүктеген"
+
+#: templates/document_detail_new.html:21
+msgid "Uploading date"
+msgstr "Жүктеу күні"
+
+#: templates/document_detail_new.html:24 templates/report_detail.html:20
+#: templates/report_new_detail.html:40
+msgid "Report"
+msgstr "Есеп"
+
+#: templates/document_detail_new.html:25
+msgid "Uniqueness procent"
+msgstr "Бірегейлік пайызы"
+
+#: templates/document_detail_new.html:26
+msgid "Probability percentage"
+msgstr "Мүмкіндік пайызы"
+
+#: templates/document_detail_new.html:27
+msgid "Trying to use formulas"
+msgstr "Формулаларды қолдануға тырысуда"
+
+#: templates/document_detail_new.html:28 templates/report_detail.html:25
+msgid "Attempt to hide symbols"
+msgstr "Символдарды жасыруға тырысу"
+
+#: templates/document_detail_new.html:29
+msgid "Repeat space"
+msgstr "Бос орынды қайталау"
+
+#: templates/document_detail_new.html:30
+msgid "Replacement of Cyrillic letters with Latin"
+msgstr "Кириллица әріптерін латынға ауыстыру"
+
+#: templates/document_detail_new.html:33
+msgid "Plagiarism sources"
+msgstr "Плагиат көздері"
+
+#: templates/document_detail_new.html:35
+msgid "Source"
+msgstr "Көз"
+
+#: templates/document_detail_new.html:44
+msgid "Current source ID"
+msgstr "Ағымдағы көз ID"
+
+#: templates/document_detail_new.html:46
+msgid "Current source URL"
+msgstr "Ағымдағы көздің URL-мекенжайы"
+
+#: templates/document_detail_new.html:48
+msgid "Number"
+msgstr "Нөмір"
+
+#: templates/document_detail_new.html:55
+msgid "Update the Type of the plagiarism instance"
+msgstr "Плагиат жағдайының түрін жаңарту"
+
+#: templates/document_highlight.html:6 templates/document_highlight.html:33
+#, fuzzy
+#| msgid "Document title"
+msgid "Document Highlight"
+msgstr "Құжаттың атауы"
+
+#: templates/document_list.html:6
+msgid "Мои документы"
+msgstr "Менің құжаттарым"
+
+#: templates/document_list.html:12
+msgid "My documents"
+msgstr "Менің құжаттарым"
+
+#: templates/document_list.html:13 templates/home.html:410
+#: templates/report_list.html:13
+msgid "Check document"
+msgstr "Құжатты тексеру"
+
+#: templates/document_list.html:23 templates/folder_list_root.html:70
+#: templates/report_list.html:23
+msgid "Originality"
+msgstr "Бірегейлік"
+
+#: templates/document_list.html:43 templates/report_list.html:50
+msgid "There is no documents yet."
+msgstr "Әлі құжаттар жоқ"
+
+#: templates/folder_list_root.html:5
+#, fuzzy
+#| msgid "Link to original document"
+msgid "List folders and documents"
+msgstr "Негізгі құжатқа сілтеме"
+
+#: templates/folder_list_root.html:30 templates/folder_list_root.html:93
+msgid "Root Folder"
+msgstr "Басты папка"
+
+#: templates/folder_list_root.html:38
+msgid "New folder"
+msgstr "Жаңа папка"
+
+#: templates/folder_list_root.html:46
+msgid "Documents list"
+msgstr "Құжаттар тізімі"
+
+#: templates/folder_list_root.html:51
+msgid "Search by title"
+msgstr "Атауы бойынша іздеу"
+
+#: templates/folder_list_root.html:54
+#, fuzzy
+#| msgid "Research Fellow"
+msgid "Search"
+msgstr "Ғалым-зерттеуші"
+
+#: templates/folder_list_root.html:58
+msgid "Move documents"
+msgstr "Құжаттарды жылжыту"
+
+#: templates/folder_list_root.html:59
+#, fuzzy
+#| msgid "Delete document"
+msgid "Delete documents"
+msgstr "Құжатты жою"
+
+#: templates/folder_list_root.html:66 templates/user_detail.html:16
+msgid "Name"
+msgstr "Аты"
+
+#: templates/folder_list_root.html:68
+msgid "Result"
+msgstr ""
+
+#: templates/folder_list_root.html:88
+msgid "Select Destination Folder"
+msgstr ""
+
+#: templates/folder_list_root.html:100
+#, fuzzy
+#| msgid "Delete document"
+msgid "Move selected documents"
+msgstr "Құжатты жою"
+
+#: templates/folder_list_root.html:111
+#, fuzzy
+#| msgid "Confirm"
+msgid "Confirm Deletion"
+msgstr "Растау"
+
+#: templates/folder_list_root.html:115
+#, fuzzy
+#| msgid "Are you sure you want to delete"
+msgid "Are you sure you want to delete the following documents?"
+msgstr "Жоюға сенімдісіз бе"
+
+#: templates/folder_list_root.html:121
+#, fuzzy
+#| msgid "Confirm"
+msgid "Confirm delete"
+msgstr "Растау"
+
+#: templates/home.html:14
+#, fuzzy
+#| msgid "Kazakhstan plagiarism detection system"
+msgid "Background image for plagiarism detection system"
+msgstr "Қазақстанның плагиат анықтау жүйесі"
+
+#: templates/home.html:21
+msgid "The best plagiarism detection system"
+msgstr "Плагиатты анықтаудың ең дәл жүйесі"
+
+#: templates/home.html:22
+msgid "Kazakhstan text borrowing detection system"
+msgstr "Қазақстандық түпнұсқалықты растау"
+
+#: templates/home.html:33
+msgid "Speed"
+msgstr "Жылдамдық"
+
+#: templates/home.html:35
+#, python-format
+msgid "12%% faster than all existing modern analogues"
+msgstr "Барлық қазіргі заманғы аналогтардан 12%% жылдам"
+
+#: templates/home.html:42
+msgid "Accuracy"
+msgstr " Дәлдік"
+
+#: templates/home.html:44
+#, python-format
+msgid "Aims for 100%% accuracy through a unique mathematical method"
+msgstr "Бірегей математикалық әдіс арқылы 100%% дәлдікті көздейді"
+
+#: templates/home.html:51
+msgid "Multilingualism"
+msgstr "Көптілділік"
+
+#: templates/home.html:53
+msgid "Analyzes borrowings from sources not only in the author's language"
+msgstr "Автордың тілінен басқа көздерден алынған мәліметтерді талдайды"
+
+#: templates/home.html:60
+msgid "AI Using"
+msgstr "Жасанды интеллектіні қолдану"
+
+#: templates/home.html:62
+msgid "Detecting of a text generated with AI (ChatGPT)"
+msgstr "Жасанды интеллект (ChatGPT) арқылы жасалған мәтінді анықтау"
+
+#: templates/home.html:86
+msgid "Будь оригинальным вместе с OySyn"
+msgstr ""
+
+#: templates/home.html:121
+msgid "Advantages"
+msgstr " Артықшылықтар"
+
+#: templates/home.html:123 templates/home.html:132
+msgid "Unique database architecture capabilities"
+msgstr "Бірегей дерекқор архитектурасының мүмкіндіктері"
+
+#: templates/home.html:137
+msgid "Reduced disk space requirements compared to foreign analogues"
+msgstr ""
+"Шетелдік аналогтармен салыстырғанда диск кеңістігіне қойылатын талаптардың "
+"азайтылуы"
+
+#: templates/home.html:142
+msgid ""
+"High speed of query processing, provided by state-of-the-art approaches to "
+"processing large data arrays"
+msgstr ""
+"Үлкен деректер массивтерін өңдеудің заманауи тәсілдерімен қамтамасыз етілген "
+"сұрауларды өңдеудің жоғары жылдамдығы"
+
+#: templates/home.html:147
+msgid "The system can be adapted to customer requirements"
+msgstr "Жүйе тапсырыс берушінің талаптарына бейімделе алады"
+
+#: templates/home.html:169
+msgid "Clients"
+msgstr "Клиенттер"
+
+#: templates/home.html:176
+msgid "Univercities"
+msgstr "Университеттер"
+
+#: templates/home.html:183
+msgid "Hours of suport"
+msgstr "Қолдау көрсету сағаттары"
+
+#: templates/home.html:190
+msgid "Employees"
+msgstr "Қызметкерлер"
+
+#: templates/home.html:212
+msgid "Learn about the system's capabilities in 60 seconds"
+msgstr "Жүйенің мүмкіндіктерімен 60 секундта танысыңыз"
+
+#: templates/home.html:215
+msgid ""
+"Use antiplagiatkz to guarantee the uniqueness and quality of your content. "
+"Start today and see for yourself the effectiveness of our system!"
+msgstr ""
+"Контентіңіздің бірегейлігі мен сапасын қамтамасыз ету үшін antiplagiatkz "
+"пайдаланыңыз. Бүгін бастаңыз және жүйеміздің тиімділігін өзіңіз көріңіз!"
+
+#: templates/home.html:219
+msgid ""
+"Our algorithms check your text against millions of sources on the Internet "
+"and academic databases. Get results in minutes"
+msgstr ""
+"Біздің алгоритмдеріңіз мәтініңізді Интернеттегі және академиялық "
+"дерекқорлардағы миллиондаған көздермен тексереді. Нәтижелерді бірнеше минут "
+"ішінде алыңыз"
+
+#: templates/home.html:222
+msgid ""
+"We provide clear and detailed reports on the percentage of originality, "
+"sources of borrowings and text matches. Easily analyze and check all "
+"elements of your document"
+msgstr ""
+"Біз бірегейлік пайызы, алынған дереккөздер және мәтін сәйкестіктері туралы "
+"анық және егжей-тегжейлі есептер ұсынамыз. Құжатыңыздың барлық элементтерін "
+"оңай талдаңыз және тексеріңіз"
+
+#: templates/home.html:225
+msgid ""
+"The easy-to-use interface allows you to quickly upload documents, receive "
+"reports and manage audit results without any extra effort."
+msgstr ""
+"Пайдалануға ыңғайлы интерфейс құжаттарды жылдам жүктеп, есептерді алу және "
+"аудит нәтижелерін қосымша күш жұмсамай басқаруға мүмкіндік береді"
+
+#: templates/home.html:229
+msgid ""
+"We care about your privacy. All uploaded documents are processed with strict "
+"security standards and your information remains protected."
+msgstr ""
+"Біз сіздің жеке деректеріңізге қамқорлық жасаймыз. Барлық жүктелген құжаттар "
+"қатаң қауіпсіздік стандарттарымен өңделеді және сіздің ақпараттарыңыз "
+"қорғалған күйде қалады"
+
+#: templates/home.html:279
+msgid "Testimonials"
+msgstr "Пікірлер"
+
+#: templates/home.html:282
+msgid "What users say about our plagiarism detection system"
+msgstr "Пайдаланушылар біздің плагиат анықтау жүйеміз туралы не дейді"
+
+#: templates/home.html:321
+#, fuzzy
+#| msgid ""
+#| "Antiplagiatkz helped us effectively control the originality of the "
+#| "content. The results are always accurate and fast. Excellent support and "
+#| "adaptation to our needs. Very satisfied"
+msgid ""
+"OySyn helped us effectively control the originality of the content. The "
+"results are always accurate and fast. Excellent support and adaptation to "
+"our needs. Very satisfied"
+msgstr ""
+"Antiplagiatkz контенттің бірегейлігін тиімді бақылауға көмектесті. Нәтижелер "
+"әрдайым дәл және жылдам. Керемет қолдау және біздің қажеттіліктерімізге "
+"бейімделу. Өте риза"
+
+#: templates/home.html:326
+msgid "Ruslan Kairatov"
+msgstr "Руслан Қайратов"
+
+#: templates/home.html:327
+msgid "Director of Information Technology"
+msgstr "Ақпараттық технологиялар директоры"
+
+#: templates/home.html:336
+#, fuzzy
+#| msgid ""
+#| "The antiplagiatkz system is simply excellent! Intuitive interface and "
+#| "accuracy of checking are at their best. It has greatly simplified our "
+#| "work. I recommend it to everyone"
+msgid ""
+"The OySyn system is simply excellent! Intuitive interface and accuracy of "
+"checking are at their best. It has greatly simplified our work. I recommend "
+"it to everyone"
+msgstr ""
+"Antiplagiatkz жүйесі керемет! Интуитивті интерфейс және тексерудің дәлдігі "
+"жоғары деңгейде. Бұл біздің жұмысымызды едәуір жеңілдетті. Баршаға ұсынамын"
+
+#: templates/home.html:341
+msgid "Aliya Nurmuhamedova"
+msgstr "Әлия Нұрмұхамедова"
+
+#: templates/home.html:342
+msgid "Quality Manager"
+msgstr "Сапа менеджері"
+
+#: templates/home.html:351
+#, fuzzy
+#| msgid ""
+#| "We started using antiplagiatkz to check materials before publishing. "
+#| "Convenient interface, fast scanning and reliable results are all we need"
+msgid ""
+"We started using OySyn to check materials before publishing. Convenient "
+"interface, fast scanning and reliable results are all we need"
+msgstr ""
+"Біз жариялаудан бұрын материалдарды тексеру үшін antiplagiatkz қолдана "
+"бастадық. Ыңғайлы интерфейс, жылдам сканерлеу және сенімді нәтижелер — бізге "
+"қажеттінің бәрі"
+
+#: templates/home.html:356
+msgid "Damir Baimukhamedov"
+msgstr "Дамир Баймұхамедов"
+
+#: templates/home.html:357
+msgid "Editor"
+msgstr "Редактор"
+
+#: templates/home.html:366
+#, fuzzy
+#| msgid ""
+#| "The antiplagiatkz system has become an indispensable tool in my work. It "
+#| "helps maintain academic integrity and provides clear reports. It is a "
+#| "pleasure to work with such a product."
+msgid ""
+"The OySyn system has become an indispensable tool in my work. It helps "
+"maintain academic integrity and provides clear reports. It is a pleasure to "
+"work with such a product."
+msgstr ""
+"Antiplagiatkz жүйесі менің жұмысымда алмастырылмайтын құралға айналды. Ол "
+"академиялық адалдықты сақтауға көмектеседі және анық есептер береді. Мұндай "
+"өніммен жұмыс істеу үлкен қуаныш."
+
+#: templates/home.html:371
+msgid "Zhanna Musina"
+msgstr "Жанна Мусина"
+
+#: templates/home.html:372
+msgid "Professor"
+msgstr "Профессор"
+
+#: templates/home.html:381
+#, fuzzy
+#| msgid ""
+#| "I use antiplagiatkz to check scientific articles. The system works "
+#| "flawlessly, helps to avoid plagiarism and maintain high quality "
+#| "standards. Excellent tool for work"
+msgid ""
+"I use OySyn to check scientific articles. The system works flawlessly, helps "
+"to avoid plagiarism and maintain high quality standards. Excellent tool for "
+"work"
+msgstr ""
+"Мен ғылыми мақалаларды тексеру үшін antiplagiatkz қолданамын. Жүйе ақаусыз "
+"жұмыс істейді, плагиаттан аулақ болуға көмектеседі және жоғары сапа "
+"стандарттарын сақтайды. Жұмыс үшін тамаша құрал."
+
+#: templates/home.html:386
+msgid "Amir Sultanov"
+msgstr "Амир Сұлтанов"
+
+#: templates/home.html:387
+msgid "Research Fellow"
+msgstr "Ғалым-зерттеуші"
+
+#: templates/home.html:406
+msgid "Start using for free"
+msgstr "Тегін пайдалануды бастаңыз"
+
+#: templates/home.html:408
+msgid "You can start using our loan search system for free today"
+msgstr "Біздің қарыз іздеу жүйесін бүгін тегін пайдалануды бастауыңызға болады"
+
+#: templates/home.html:423
+msgid "Tariffs"
+msgstr "Тарифтер"
+
+#: templates/home.html:425
+msgid ""
+"Choose the most suitable tariff for yourself. We also provide individual "
+"tariffs upon request"
+msgstr ""
+"Өзіңізге ең қолайлы тарифті таңдаңыз. Сондай-ақ, сұраныс бойынша жеке "
+"тарифтер ұсынамыз"
+
+#: templates/home.html:435
+msgid "Free"
+msgstr "Тегін"
+
+#: templates/home.html:436 templates/home.html:458 templates/home.html:480
+msgid "month"
+msgstr "ай"
+
+#: templates/home.html:439
+msgid "Limited number of modules."
+msgstr "Модульдердің шектеулі саны."
+
+#: templates/home.html:442
+msgid "up to 150 000 symbols"
+msgstr "150 000 символға дейін"
+
+#: templates/home.html:445
+msgid "Check document by full base"
+msgstr "Құжатты толық база бойынша тексеру"
+
+#: templates/home.html:448
+#, fuzzy
+msgid "Full list of plagiarism instances"
+msgstr "Плагиат жағдайларының толық тізімі"
+
+#: templates/home.html:451 templates/home.html:473 templates/home.html:495
+msgid "Buy now"
+msgstr "Қазір сатып алыңыз"
+
+#: templates/home.html:457
+msgid "Premium"
+msgstr "Премиум"
+
+#: templates/home.html:461
+msgid "Up to 300 000 symbols"
+msgstr "300 000 символға дейін"
+
+#: templates/home.html:464 templates/home.html:486
+msgid "Check doc by full base"
+msgstr "Құжатты толық база бойынша тексеру"
+
+#: templates/home.html:467 templates/home.html:489
+msgid "Detect texts generated by AI"
+msgstr "Жасанды интеллект арқылы жасалған мәтіндерді анықтау"
+
+#: templates/home.html:470 templates/home.html:492
+msgid "Check by libraries of universities"
+msgstr "Университеттердің кітапханалары бойынша тексеру"
+
+#: templates/home.html:479
+msgid "Max"
+msgstr "Максимум"
+
+#: templates/home.html:483
+msgid "Up to 3 000 000 symbols"
+msgstr "3 000 000 символға дейін"
+
+#: templates/home.html:510
+msgid "Frequently asked questions"
+msgstr "Жиі қойылатын сұрақтар"
+
+#: templates/home.html:512
+msgid ""
+"If you have not found the answer to your question in this section, call us "
+"and we will be happy to help you"
+msgstr ""
+"Егер осы бөлімде сұрағыңызға жауап таппаған болсаңыз, бізге қоңырау шалыңыз, "
+"біз сізге қуана көмек көрсетеміз"
+
+#: templates/home.html:525
+msgid "How does the OySyn system work?"
+msgstr "OySyn жүйесі қалай жұмыс істейді?"
+
+#: templates/home.html:528
+msgid ""
+"OySyn uses algorithms to compare text with an extensive database of sources, "
+"including Internet resources and academic publications. The system checks "
+"for matches and provides a report on the percentage of originality and the "
+"borrowings found"
+msgstr ""
+"OySyn алгоритмдерді пайдаланып, мәтінді Интернет ресурстары мен академиялық "
+"жарияланымдарды қоса алғанда кең көлемді дерекқормен салыстырады. Жүйе "
+"сәйкестіктерді тексереді және бірегейлік пайызы мен табылған алынулар туралы "
+"есеп береді"
+
+#: templates/home.html:535
+msgid "How can I upload a document for verification?"
+msgstr "Құжатты тексеруге қалай жүктей аламын?"
+
+#: templates/home.html:538
+msgid ""
+"You can upload a document through a convenient interface on our website. "
+"Click the \"Upload file\" button, select a document from your device and "
+"follow the on-screen instructions. The supported formats are .doc, .docx, ."
+"pdf and .txt"
+msgstr ""
+"Сіз құжатты біздің веб-сайттағы ыңғайлы интерфейс арқылы жүктей аласыз. "
+"\"Файлды жүктеу\" түймесін басыңыз, құрылғыңыздан құжатты таңдаңыз және "
+"экрандағы нұсқауларды орындаңыз. Қолданылатын форматтар: .doc, .docx, .pdf "
+"және .txt"
+
+#: templates/home.html:545
+msgid "How long does the verification process take?"
+msgstr "Тексеру процесі қанша уақыт алады?"
+
+#: templates/home.html:548
+msgid ""
+"The verification time depends on the size and complexity of the document. "
+"The process usually takes a few minutes. You will receive an email "
+"notification as soon as the report is ready."
+msgstr ""
+"Тексеру уақыты құжаттың көлемі мен күрделілігіне байланысты. Процесс әдетте "
+"бірнеше минутқа созылады. Есеп дайын болғанда сізге электронды пошта арқылы "
+"хабарлама келеді"
+
+#: templates/home.html:555
+msgid "How does the system handle data privacy?"
+msgstr "Жүйе деректердің құпиялығын қалай қамтамасыз етеді?"
+
+#: templates/home.html:558
+msgid ""
+"We take data privacy very seriously. All uploaded documents are processed "
+"according to our strict security measures. Information is not shared with "
+"third parties and is used only for plagiarism checking."
+msgstr ""
+"Біз деректердің құпиялығына өте жауапкершілікпен қараймыз. Барлық жүктелген "
+"құжаттар қатаң қауіпсіздік шараларымызға сәйкес өңделеді. Ақпарат үшінші "
+"тараптарға берілмейді және тек плагиат тексеру үшін пайдаланылады"
+
+#: templates/home.html:565
+msgid "What types of reports does the system provide?"
+msgstr "Жүйе қандай типтегі есептер ұсынады?"
+
+#: templates/home.html:568
+msgid ""
+"OySyn system provides detailed reports, including the percentage of "
+"originality, identified borrowings and links to sources from which fragments "
+"were borrowed. You can also view text matches and their context"
+msgstr ""
+"OySyn жүйесі егжей-тегжейлі есептер ұсынады, оның ішінде бірегейлік пайызы, "
+"анықталған алынулар және фрагменттер алынған көздерге сілтемелер бар. Сондай-"
+"ақ, мәтіннің сәйкестіктері мен олардың контекстін көруге болады"
+
+#: templates/home.html:606
+msgid "Dostyk str, 16, BC Talan Towers"
+msgstr "Достық көшесі, 16, Talan Towers БС"
+
+#: templates/home.html:633
+msgid "Your name"
+msgstr "Сіздің атыңыз"
+
+#: templates/home.html:641
+msgid "Theme"
+msgstr "Тақырып"
+
+#: templates/home.html:645
+msgid "Message"
+msgstr "Хабарлама"
+
+#: templates/home.html:649
+msgid "Sending"
+msgstr "Жіберу"
+
+#: templates/home.html:651
+msgid "Your message is sent. Thank you!"
+msgstr "Сіздің хабыңыз жіберілді. Рахмет!"
+
+#: templates/instance_update.html:7 templates/instance_update.html:34
+msgid "Update type"
+msgstr "Типті жаңарту"
+
+#: templates/instance_update.html:22
+msgid "Update plagiarism instance type"
+msgstr "Плагиат жағдайының типін жаңарту"
+
+#: templates/instance_update.html:29 templates/report_detail.html:17
+#: templates/report_new_detail.html:34
+msgid "Uploaded at"
+msgstr "Жүктелген уақыт"
+
+#: templates/instance_update.html:31
+msgid "Link to original document"
+msgstr "Негізгі құжатқа сілтеме"
+
+#: templates/instance_update.html:32
+msgid "Link"
+msgstr "Сілтеме"
+
+#: templates/instance_update.html:38 templates/user_update.html:17
+msgid "Change"
+msgstr "Өзгерту"
+
+#: templates/instance_update.html:41
+msgid "Other plagiarism instances"
+msgstr "Басқа плагиат жағдайлары"
+
+#: templates/payments/payment_form.html:7
+msgid "Purchase new checks"
+msgstr "Жаңа тексеру сатып алыңыз"
+
+#: templates/payments/payment_success.html:7
+#: templates/payments/payment_success.html:13
+msgid "Payment successfull"
+msgstr "Төлем сәтті болды"
+
+#: templates/payments/payment_success.html:14
+msgid ""
+"Your payment has been successfully. You have purchased {{ payment."
+"checks_purchased }}"
+msgstr ""
+"Төлеміңіз сәтті болды. Сіз {{ payment.checks_purchased }} сатып алдыңыз"
+
+#: templates/payments/payment_widget.html:5
+msgid "Payment Widget"
+msgstr ""
+
+#: templates/payments/payment_widget.html:9
+msgid "Processing Payment"
+msgstr ""
+
+#: templates/report_detail.html:6 templates/report_detail.html:11
+#: templates/report_new_detail.html:7
+msgid "Report details"
+msgstr "Есеп мәліметтері"
+
+#: templates/report_detail.html:21
+msgid "Report created at"
+msgstr "Есеп жасалған уақыт"
+
+#: templates/report_detail.html:22 templates/report_new_detail.html:42
+msgid "Originality percent"
+msgstr "Бірегейлік пайызы"
+
+#: templates/report_detail.html:24
+msgid "Formula usage probability"
+msgstr "Формулаларды қолдану ықтималдығы"
+
+#: templates/report_detail.html:26 templates/report_new_detail.html:49
+msgid "White spaces"
+msgstr "Бос орындар"
+
+#: templates/report_detail.html:27 templates/report_new_detail.html:50
+msgid "Replacement of cyrillic letters with latin"
+msgstr "Кириллица әріптерін латын әріптеріне ауыстыру"
+
+#: templates/report_detail.html:32
+msgid "Plagiarism instances"
+msgstr "Плагиат жағдайлары"
+
+#: templates/report_list.html:12
+msgid "Checking history"
+msgstr "Тексеру тарихы"
+
+#: templates/report_list.html:20
+msgid "Titile"
+msgstr "Атауы"
+
+#: templates/report_new_detail.html:19
+#, fuzzy
+msgid "Download report"
+msgstr "Есепті жүктеу"
+
+#: templates/report_new_detail.html:27
+msgid "Information about the document"
+msgstr "Құжат туралы ақпарат"
+
+#: templates/report_new_detail.html:41
+msgid "Information about the report"
+msgstr "Есеп туралы ақпарат"
+
+#: templates/report_new_detail.html:47
+msgid "Formula using attempts"
+msgstr "Формулаларды қолдану әрекеттері"
+
+#: templates/report_new_detail.html:48
+msgid "Symbols hiding attempts"
+msgstr "Символдарды жасыру әрекеттері"
+
+#: templates/report_new_detail.html:56
+#, fuzzy
+#| msgid "Full list of plagiarism instances"
+msgid "List of top plagiarism instances"
+msgstr "Плагиат жағдайларының топ тізімі"
+
+#: templates/report_new_detail.html:62
+#, fuzzy
+#| msgid "Plagiarism percentage"
+msgid "Plagiarism Percentage"
+msgstr "Плагиат пайызы"
+
+#: templates/report_new_detail.html:90
+#, fuzzy
+#| msgid "Plagiarism instances"
+msgid "Top Plagiarism Instances (Local)"
+msgstr "Плагиат жағдайлары"
+
+#: templates/report_new_detail.html:114
+#, fuzzy
+#| msgid "Plagiarism instances"
+msgid "No plagiarism instances found."
+msgstr "Плагиат жағдайлары"
+
+#: templates/report_new_detail.html:124
+#, fuzzy
+#| msgid "Clients"
+msgid "Comments"
+msgstr "Клиенттер"
+
+#: templates/report_new_detail.html:133
+msgid "Write the first comment ;) "
+msgstr "Бірінші пікірді жазыңыз ;)"
+
+#: templates/report_new_detail.html:138
+#, fuzzy
+#| msgid "Upload new document"
+msgid "Add new comment"
+msgstr " Жаңа құжат жүктеу"
+
+#: templates/report_new_detail.html:139
+#, fuzzy
+#| msgid "Document title"
+msgid "Comment text"
+msgstr "Құжаттың атауы"
+
+#: templates/user_detail.html:6
+msgid "User details"
+msgstr "Пайдаланушы мәліметтері"
+
+#: templates/user_detail.html:13
+msgid "My profile"
+msgstr "Менің профилім"
+
+#: templates/user_detail.html:17
+msgid "Middle_name"
+msgstr ""
+
+#: templates/user_detail.html:18
+msgid "Surname"
+msgstr "Тегі"
+
+#: templates/user_detail.html:19 users/models.py:30
+msgid "IIN"
+msgstr ""
+
+#: templates/user_detail.html:20
+msgid "Email"
+msgstr "Электрондық пошта"
+
+#: templates/user_detail.html:23
+msgid "Zip Code"
+msgstr ""
+
+#: templates/user_detail.html:24
+msgid "Available Checks"
+msgstr "Тексерулер саны"
+
+#: templates/user_detail.html:27
+#, fuzzy
+#| msgid "Organization List"
+msgid "Organization"
+msgstr "Ұйымдар тізімі"
+
+#: templates/user_update.html:7
+msgid "Update user info"
+msgstr "Пайдаланушы ақпаратын жаңарту"
+
+#: templates/user_update.html:13
+msgid "Update my profile"
+msgstr "Менің профилімді жаңарту"
+
+#: users/models.py:12
+msgid "role"
+msgstr "рөл"
+
+#: users/models.py:27
+msgid "Number of documents user can check."
+msgstr "Пайдаланушы тексере алатын құжаттар саны."
+
+#: users/models.py:29
+msgid "middle name"
+msgstr ""
+
+#: users/models.py:31
+msgid "city"
+msgstr ""
+
+#: users/models.py:32
+#, fuzzy
+#| msgid "Address"
+msgid "address"
+msgstr "Мекен-жай"
+
+#: users/models.py:33
+msgid "zip code"
+msgstr ""
+
+#~ msgid "Organization details"
+#~ msgstr "Ұйымның мәліметтері"
+
+#~ msgid "Created by"
+#~ msgstr "Жасаған"
+
+#, fuzzy
+#~| msgid "Organization List"
+#~ msgid "Organizations"
+#~ msgstr "Ұйымдар тізімі"
+
+#, fuzzy
+#~| msgid "Purchase new checks"
+#~ msgid "Purchase checks"
+#~ msgstr "Жаңа тексеру сатып алыңыз"
+
+#, fuzzy
+#~| msgid "Uploading date"
+#~ msgid "Upload date"
+#~ msgstr "Жүктеу күні"
+
+#, fuzzy
+#~| msgid "Document name"
+#~ msgid "Purchase document checks"
+#~ msgstr "Құжаттың атауы"
+
+#~ msgid "Buy with a discount"
+#~ msgstr "Жеңілдікпен сатып алыңыз"
+
+#, fuzzy
+#~| msgid "Get 5% discount for 2+ checks"
+#~ msgid "Get 5 percent discount for 2 and more checks"
+#~ msgstr "2-ден 5-ке дейн тексеру үшін 5% жеңілдік алыңыз"
+
+#, fuzzy
+#~| msgid "Get 10% discount for 5+ checks"
+#~ msgid "Get 10 percent discount for 5 and more checks checks"
+#~ msgstr "5-тен коп тексеру үшін 5% жеңілдік алыңыз"
+
+#~ msgid "Number of checks"
+#~ msgstr "Тексерулер саны"
+
+#~ msgid "Regular price: "
+#~ msgstr "Қалыпты баға:"
+
+#~ msgid "Your price with a discount: "
+#~ msgstr "Сіздің бағаңыз жеңілдікпен:"
+
+#~ msgid "Pricing Table"
+#~ msgstr "Бағалар кестесі"
+
+#~ msgid "Option"
+#~ msgstr "Опциялар"
+
+#~ msgid "Number of Checks"
+#~ msgstr "Тексерулер саны"
+
+#~ msgid "Price"
+#~ msgstr "Баға"
+
+#~ msgid "Simple"
+#~ msgstr "Жай"
+
+#~ msgid "More"
+#~ msgstr "Көбірек"
+
+#~ msgid "Even more"
+#~ msgstr "Одан да көп"
+
+#, fuzzy
+#~| msgid "Download report"
+#~ msgid "Download certificate"
+#~ msgstr "Есепті жүктеу"
+
+#, fuzzy
+#~| msgid "Plagiarism percentage"
+#~ msgid "Plagiarism percent"
+#~ msgstr "Плагиат пайызы"
+
+#, fuzzy
+#~ msgid "Buy checks"
+#~ msgstr "Тексерулерді сатып алу"
+
+#, fuzzy
+#~ msgid "document type"
+#~ msgstr "Құжаттың атауы"
+
+#, python-brace-format
+#~ msgid "Payment successfull! You have purchased {number_of_checks} checks."
+#~ msgstr "Төлем сәтті болды! Сіз {number_of_checks} тексерулер сатып алдыңыз."
+
+#~ msgid "Payment failed. Please try again later."
+#~ msgstr "Төлем орындалмады. Тағы жасауды сәл кейінірек көріңізді өтінеміз."
+
+#~ msgid "Purchase"
+#~ msgstr "Сатып алу"
+
+#~ msgid "ChatGPT generated percentage"
+#~ msgstr "ChatGPT арқылы жасалған пайызы"
+
+#, fuzzy
+#~ msgid "Top plagiarism instances"
+#~ msgstr "Плагиат жағдайлары"
+
+#~ msgid "For govermental organizations"
+#~ msgstr "Мемлекеттік ұйымдар үшін"
+
+#~ msgid "For business"
+#~ msgstr "Бизнес үшін"
+
+#, fuzzy
+#~ msgid "There are no plagiarism instances."
+#~ msgstr "Плагиат жағдайлары жоқ"
+
+#~ msgid "Originality Verification Report"
+#~ msgstr "Оригиналдылықты тексеру есебі"
+
+#~ msgid "Plagiarism sources list"
+#~ msgstr "Плагиат көздерінің тізімі"
+
+#~ msgid ""
+#~ "Снизиженные требования к дисковому пространству в сравнении с зарубежными "
+#~ "аналогами"
+#~ msgstr ""
+#~ "Шетелдік аналогтармен салыстырғанда дискілік кеңістікке төмендетілген "
+#~ "талаптар"
+
+#~ msgid ""
+#~ "Высокая скорость обработки запросов, обеспеченная суперсовременными "
+#~ "подходами к обработке больших массивов данных"
+#~ msgstr ""
+#~ "Үлкен деректер массивтерін өңдеудің ең жаңа тәсілдерімен қамтамасыз "
+#~ "етілген жоғары сұраныс өңдеу жылдамдығы"
+
+#~ msgid "Система может быть адаптирована под требования заказчиков"
+#~ msgstr "Жүйе тапсырыс берушілердің талаптарына сәйкес бейімделе алады"

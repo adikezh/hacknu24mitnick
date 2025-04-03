@@ -1,0 +1,38 @@
+{% extends '_base.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans 'Document details' %}{% endblock title %}
+
+{% block content %}
+<div class="container" style="margin-top: 120px; margin-bottom: 120px;">
+  <div class="row mt-5">
+    <div class="col-md-6">
+      <ul>
+        <strong>{% trans 'Document' %}</strong>
+        <li>Название документа: {{ document.title }}</li>
+        <li>Документ загрузил: {{ document.created_by }}</li>
+        <li>Дата загрузки: {{ document.created_at }}</li>
+      </ul>
+      <ul>
+        <strong>Отчет</strong>
+        <li>Процент уникальности: <span id="uniquness-percent">{{ report.uniqueness }}</span>%</li>
+        <li>Вероятность использования ChatGPT: {{ report.chatgpt_generated_percentage }}%</li>
+        <li>Попытка использования формул: {{ report.formulas_result | length }}</li>
+        <li>Попытка скрыть символы: {{ report.invisible_symbols_result | length }}</li>
+        <li>Повтор пробела: {{ report.white_spaces_result | length }}</li>
+        <li>Замена букв кириллицы на латиницу: {{ report.latin_letters_result | length }}</li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <ul>
+        <strong>Источники плагиата</strong>
+        {% for plagiarism_instance in plagiarism_instances %}
+        <li><a href="{{ plagiarism_instance.url }}" target="_blank">{{ forloop.counter }}. Источник {{ plagiarism_instance.id }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock content %}

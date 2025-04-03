@@ -1,0 +1,52 @@
+{% extends '_base.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans 'Мои документы' %}{% endblock title %}
+
+{% block content %}
+<div class="container" style="margin-top: 120px; margin-bottom: 120px;">
+  <div class="row">
+    <div class="col">
+      <h1>{% trans 'My documents' %}
+        <a href="{% url 'document_create' %}" class="btn btn-primary">{% trans 'Check document' %}</a>
+      </h1>
+      <div class="table-responsive">
+        <table class="table mt-3">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">{% trans 'Title' %}</th>
+              <th scope="col">{% trans 'Date' %}</th>
+              <th scope="col">{% trans 'Status' %}</th>
+              <th scope="col">{% trans 'Originality' %}</th>
+              <th scope="col">{% trans 'Actions' %}</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+            {% for document in object_list %}
+            <tr>
+              <th scope="row">{{ forloop.counter }}</th>
+              <td>{{ document.title }}</td>
+              <td>{{ document.created_at}}</td>
+              <td>{{ document.get_status_display }}</td>
+              <td>{{uniqueness_percent }}%</td>
+              <td>
+                <a href="{% url 'document_detail' document.pk %}" class="btn btn-outline-primary btn-sm"><i class="bi bi-eye"></i></a>
+                <a href="{% url 'document_delete' document.pk %}" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash"></i></a>
+              </td>
+            </tr>
+            {% empty %}
+            <p class="mt-3 mb-3">
+              {% trans 'There is no documents yet.' %}
+            </p>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock content %}

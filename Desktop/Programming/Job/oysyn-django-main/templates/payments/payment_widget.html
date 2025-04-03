@@ -1,0 +1,14 @@
+<!-- payment_widget.html -->
+{% extends '_base.html' %}
+{% load i18n %}
+
+{% block title %}{% trans "Payment Widget" %}{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <h2>{% trans "Processing Payment" %}</h2>
+    <div id="payment-widget">
+        {{ js_code|safe }}
+    </div>
+</div>
+{% endblock content %}

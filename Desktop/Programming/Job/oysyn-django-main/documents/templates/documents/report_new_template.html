@@ -1,0 +1,193 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Отчет об оригинальности</title>
+  <style>
+    @page {
+      size: A4;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      margin-left: 40px;
+      margin-right: 40px;
+    }
+
+    @font-face {
+      font-family: 'Roboto-Regular';
+      src: url("/home/oysyn/codebase/antiplagiatkz-app/staticfiles/fonts/Roboto-Regular.ttf") format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    @font-face {
+      font-family: 'Roboto-Bold';
+      src: url("/home/oysyn/codebase/antiplagiatkz-app/fonts/Roboto-Bold.ttf") format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+
+    body {
+      font-family: 'Roboto-Regular', sans-serif;
+      font-size: 16px;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .text-right {
+      text-align: right;
+    }
+
+    .blue {
+      color: #2E5AAC;
+    }
+
+    .h1 {
+      font-size: 20px;
+    }
+
+    .h1 {
+      font-size: 18px;
+    }
+
+    .container {
+      width: 800px;
+      margin: 0 auto;
+    }
+
+    .header-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .header-table td {
+      vertical-align: middle;
+    }
+
+    .organization-logo {
+      width: 100px;
+      height: auto;
+    }
+
+    .organization-name {
+      text-align: right;
+      word-wrap: break-word;
+    }
+
+    .results-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .instances-list {
+      list-style-type: decimal;
+    }
+
+    .instances-list li {
+      margin-bottom: 10px;
+    }
+
+    .instance-title {
+      font-weight: bold;
+    }
+
+    .instance-module {
+      font-style: italic;
+    }
+
+    .footer-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    .footer-table td {
+      vertical-align: top;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <table class="header-table">
+      <tr>
+        <td class="organization-logo-container">
+          <img class="organization-logo" src="data:image/png;base64,{{ organization_logo_base64 }}" alt="Organization Logo">
+        </td>
+        <td class="organization-name-container">
+          <span class="h2 blue organization-name">{{ organization_name }}</span>
+        </td>
+      </tr>
+    </table>
+    <h1 class="text-center blue" style="margin-top: 20px;">ОТЧЕТ<br>об оригинальности</h1>
+    <p style="margin-bottom: 0px;">
+      <span class="blue">ИНФОРМАЦИЯ О ДОКУМЕНТЕ</span><br>
+      <strong>Название:</strong> {{ title }}<br>
+      <strong>Автор:</strong> {{ author }}<br>
+      <strong>Тип документа:</strong> {{ document_type }}<br>
+      <strong>Проверил:</strong> {{ checked_by }}<br>
+      {% if department %}
+        <strong>Подразделение:</strong> {{ department }}<br>
+      {% endif %}
+      <strong>Дата проверки:</strong> {{ created_at }}<br>
+    </p>
+    <div class="chart-container text-center" style="margin-top: 0px;">
+      <img src="data:image/png;base64,{{ chart_base64 }}" alt="Chart" width="550px" height="auto">
+    </div>
+    <table class="results-table" style="margin-top: 20px;">
+      <tr>
+        <td class="left">
+          <span class="blue">РЕЗУЛЬТАТ ПРОВЕРКИ</span><br>
+          <strong>Оригинальность:</strong> {{ final_originality_percentage }}%<br>
+          <strong>Заимствования:</strong> {{ final_plagiarism_percentage }}%<br>
+          <strong>Цитирования:</strong> {{ final_citation_percentage }}%<br>
+          <strong>Самоцитирования:</strong> {{ final_selfcitation_percentage }}%<br>
+          <strong>Вероятность использования ИИ:</strong> {{ chatgpt_generated_percentage|floatformat:2 }}%
+        </td>
+        <td class="right">
+          <span class="blue">ПОПЫТКИ ОБХОДА</span><br>
+          Скрытые символы: 1<br>
+          Повтор пробелов: 3<br>
+          Замена букв: 1<br>
+          Использование формул: 0<br><br>
+        </td>
+      </tr>
+    </table>
+    <p>
+      <span class="blue">МОДУЛИ ПОИСКА</span><br>
+      Наука, ЮрДок, Библиотеки, Патенты, Медицина, Военное дело, Модуль ИИ
+    </p>
+    <p style="margin-top: 20px;">
+      <span class="blue">СПИСОК ЗАИМСТВОВАНИЙ</span>
+    </p>
+    <ol class="instances-list">
+      {% for plagiarism_instance in plagiarism_instances %}
+      <li>
+        <span class="instance-title">{{ plagiarism_instance }}</span> -
+        <span class="instance-module">{{ plagiarism_instance.module }}</span>
+      </li>
+      {% empty %}
+      <li>
+        {% trans 'There is no plagiarism instances' %}.
+      </li>
+      {% endfor %}
+    </ol>
+    <table class="footer-table">
+      <tr>
+        <td class="left">
+          <img src="data:image/png;base64,{{ oysyn_logo_base64 }}" alt="OySyn Logo" width="auto" height="120px"><br>
+          <small>Отчет предоставлен сервисом <strong>OySyn.kz</strong></small>
+        </td>
+        <td class="right">
+          <img src="data:image/png;base64,{{ qr_code_base64 }}" alt="QR Code" width="auto" height="120px"><br>
+          <small>{% trans 'Please scan the QR-code to validate the document.' %}</small>
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>

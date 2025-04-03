@@ -1,0 +1,146 @@
+
+{% extends '_base.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block title %}Детали документа{% endblock title %}
+
+{% block content %}
+<style>
+  .highlight {
+    color: red;
+  }
+</style>
+<div class="row mt-5">
+  <div class="col">
+    <ul>
+      <strong>{% trans 'Document' %}</strong>
+      <li>{% trans 'Document name' %}: {{ document.title }}</li>
+      <li>{% trans 'Uploaded by' %}: {{ document.created_by }}</li>
+      <li>{% trans 'Uploading date' %}: {{ document.created_at }}</li>
+    </ul>
+    <ul>
+      <strong>{% trans 'Report' %}</strong>
+      <li>{% trans 'Uniqueness procent' %}: <span id="uniquness-percent">{{ report.uniqueness }}</span>%</li>
+      <li>{% trans 'Probability percentage' %} ChatGPT: {{ report.chatgpt_generated_percentage }}%</li>
+      <li>{% trans 'Trying to use formulas' %}: {{ report.formulas_result | length }}</li>
+      <li>{% trans 'Attempt to hide symbols' %}: {{ report.invisible_symbols_result | length }}</li>
+      <li>{% trans 'Repeat space' %}: {{ report.white_spaces_result | length }}</li>
+      <li>{% trans 'Replacement of Cyrillic letters with Latin' %}: {{ report.latin_letters_result | length }}</li>
+    </ul>
+    <ul>
+      <strong>{% trans 'Plagiarism sources' %}</strong>
+      {% for plagiarism_instance in instances %}
+      <li><a href="{{ plagiarism_instance.url }}" target="_blank">{{ forloop.counter }}. {% trans 'Source' %} {{ plagiarism_instance.id }}</a></li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+<div class="row mt-5">
+  <div class="col">
+    <div class="mt-3">
+      <div class="mb-3">
+        <span>{% trans 'Current source ID' %}: <span id="current-instance-id">{{ current_instance_id }}</span> - {{ current_instance.type }}</span>
+        <br>
+        <span>{% trans 'Current source URL' %}: <a href="{{ current_instance_url }}" target="_blank" id="current-instance-url">Ссылка</a></span>
+        <br>
+        <span>{% trans 'Number' %} <span id="current-instance-index">{{ current_instance_index }}</span> {% trans 'of' %} <span id="total-instances">{{ total_instances }}</span></span>
+      </div>
+      <button id="prev-instance" class="btn btn-outline-primary">{% trans 'Previous' %}</button>
+      <button id="next-instance" class="btn btn-outline-primary">{% trans 'Next' %}</button>
+    </div>
+
+    <div class="mt-3">
+      <label for="instance-type">{% trans 'Update the Type of the plagiarism instance' %}:</label>
+      <select class="instance-type-select" data-instance-id="{{ current_instance_id }}">
+        {% for key, value in current_instance.PLAGIARISM_INSTANCE_TYPE_CHOICES.items %}
+          <option value="{{ key }}" {% if current_instance.type == key %}selected{% endif %}>{{ value }}</option>
+        {% endfor %}
+      </select>
+      <!-- <button id="update-instance-type" class="btn btn-primary">Обновить тип</button> -->
+    </div>
+
+    <div id="document-text" class="mt-3 mb-5">{{ highlighted_text|safe }}</div>
+  </div>
+</div>
+{% endblock content %}
+
+{% block page_js %}
+<script>
+  const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+  let currentInstanceId = "{{ current_instance_id }}";
+  const reportId = "{{ report.id }}";
+
+  document.getElementById('next-instance').addEventListener('click', () => {
+    switchInstance(1);
+  });
+
+  document.getElementById('prev-instance').addEventListener('click', () => {
+    switchInstance(-1);
+  });
+
+  // document.getElementById('update-instance-type').addEventListener('click', () => {
+  //   const newType = document.getElementById('instance-type').value;
+  //   updateInstanceType(currentInstanceId, newType);
+  // });
+  const instanceSelects = document.querySelectorAll('.instance-type-select');
+  instanceSelects.forEach(select => {
+    select.addEventListener('change', function() {
+      const instanceId = this.dataset.instanceId;
+      const newType = this.value;
+      updateInstanceType(instanceId, newType);
+    });
+  });
+
+  function switchInstance(direction) {
+    fetch("{% url 'next_instance' %}", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-CSRFToken': csrftoken
+      },
+      body: JSON.stringify({
+        'report_id': reportId,
+        'current_instance_id': currentInstanceId,
+        'direction': direction
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById('document-text').innerHTML = data.highlighted_text;
+      currentInstanceId = data.current_instance_id;
+      document.getElementById('current-instance-id').innerText = currentInstanceId;
+      const instanceUrlElement = document.getElementById('current-instance-url');
+      instanceUrlElement.innerText = data.current_instance_url;
+      instanceUrlElement.href = data.current_instance_url;
+      document.getElementById('current-instance-index').innerText = data.current_instance_index;
+      document.getElementById('total-instances').innerText = data.total_instances;
+    })
+    .catch(error => console.error('Ошибка:', error));
+  }
+
+  function updateInstanceType(instanceId, newType) {
+    fetch("{% url 'instance_type_update' %}", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-CSRFToken': csrftoken
+      },
+      body: JSON.stringify({
+        'instance_id': instanceId,
+        'type': newType
+      })
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.success) {
+        alert('Успешно обновлено! Уникальность: ' + data.uniqueness + '%');
+        document.getElementById('uniquness-percent').innerHTML('NEW VALUE');
+        location.reload();
+      }
+    })
+    .catch(error => console.error('Ошибка:', error));
+  }
+</script>
+{% endblock page_js %}

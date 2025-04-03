@@ -1,0 +1,33 @@
+{% extends "_base.html" %}
+
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans 'User details' %}{% endblock title %}
+
+{% block content %}
+<div class="container my-5">
+  <div class="row">
+    <div class="col">
+      <h2>
+        {% trans 'My profile' %}
+        <a href="{% url 'user_update' %}" class="btn btn-outline-primary btn-sm"><i class="bi bi-pencil"></i></a>
+      </h2>
+      <p class="mt-3">{% trans 'Name' %}: {{ object.first_name }}</p>
+      <p>{% trans 'Middle_name'%}: {{ object.middle_name }}</p>
+      <p>{% trans 'Surname' %}: {{ object.last_name }}</p>
+      <p>{% trans 'IIN'%}: {{ object.iin}}</p>
+      <p>{% trans 'Email' %}: {{ object.email }}</p>
+      <p>{% trans 'City' %}: {{ object.city }}</p>
+      <p>{% trans 'Address' %}: {{ object.address }}</p>
+      <p>{% trans 'Zip Code' %}: {{ object.zip_code }}</p>
+      <p>{% trans 'Available Checks' %}: {{ user.checks_available }}</p>
+      {% if object.organization %}
+      <p>
+        {% trans 'Organization' %}: <a href="{% url 'organizations:detail' object.organization.pk %}">{{ object.organization.title }}</a>
+      </p>
+      {% endif %}
+    </div>
+  </div>
+</div>  
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends '_base.html' %}
+
+{% load static %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block title %}{% trans "Purchase new checks" %}{% endblock title %}
+  
+{% block container %}
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <form id="paymentForm" method="post" action="{% url 'payment_view' %}">
+        {% csrf_token %}
+        <label for="tariff">Choose a tariff:</label>
+        <select name="tariff" id="tariff" required>
+          <option value="free_demo">Free Demo</option>
+          <option value="pro">Pro - 1999 Tenge</option>
+          <option value="max">Max - 4999 Tenge</option>
+        </select>
+        <label for="checks">Number of Checks:</label>
+        <input type="number" name="checks" id="checks" min="1" max="10" value="1" required>
+        <div id="cardDetails">
+          <label for="card_number">Card Number:</label>
+          <input type="text" name="card_number" required>
+      
+          <label for="expiry_date">Expiry Date (MM/YY):</label>
+          <input type="text" name="expiry_date" required>
+      
+          <label for="cvv">CVV:</label>
+          <input type="text" name="cvv" required>
+        </div>
+        <input type="submit" value="Pay">
+      </form>        
+    </div>
+  </div>
+</div>
+{% endblock container %}

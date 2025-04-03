@@ -1,0 +1,19 @@
+{% extends '_base.html' %}
+
+{% load static %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block title %}{% trans "Payment successfull" %}{% endblock title %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h1 class="text-center">{% trans "Payment successfull" %}</h1>
+      <p>{% trans "Your payment has been successfully. You have purchased {{ payment.checks_purchased }}" %}</p>
+    </div>
+  </div>
+</div>  
+{% endblock content %}
+  

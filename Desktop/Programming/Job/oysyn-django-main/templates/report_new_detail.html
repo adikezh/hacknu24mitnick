@@ -1,0 +1,201 @@
+{% extends '_base.html' %}
+
+{% load static %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block title %}{% trans 'Report details' %} - {{ report.title }}{% endblock title %}
+
+{% block content %}
+<div class="container" style="margin-top: 60px; margin-bottom: 120px;">
+  
+  <div class="row">
+    <div class="col">
+      <h1 class="mt-3 mb-3">
+        {% trans 'Document details' %}
+        {% if report.pdf_report %}
+        <a href="{{ report.pdf_report.url }}" class="btn btn-sm btn-primary" target="_blank">Скачать отчет</a>
+        {% else %}
+        <a href="{% url 'generate_report_new' %}?q={{ report.id}}" class="btn btn-sm btn-primary" target="_blank">{% trans 'Download report' %}</a>
+        {% endif %}
+        {% if report.pdf_certificate %}
+        <a href="{{ report.pdf_certificate.url }}" class="btn btn-sm btn-primary" target="_blank">Скачать справку</a>
+        {% else %}
+        <a href="{% url 'generate_certificate_new' %}?q={{ report.id}}" class="btn btn-sm btn-primary" target="_blank">Скачать справку</a>
+        {% endif %}
+        <a href="{% url 'document_update' report.id %}" class="btn btn-sm btn-primary" target="_blank">{% trans 'Изменить информацию о документе' %}</a>
+      </h1>
+      <p><strong>{% trans 'Information about the document' %}</strong></p>
+      <p>{% trans 'Document title' %}: {{ document.title }}</p>
+      <p>{% trans 'Document title' %}: {{ document.get_document_type_display }}</p>
+      <p>{% trans 'Document author' %}: {{ document.author }}</p>
+      <p>{% trans 'Uploaded by' %}: {{ document.created_by.email }}</p>
+      {% if document.department %}
+        <p>{% trans 'Department' %}: {{ document.department }}</p>
+      {% endif %}
+      <p>{% trans 'Uploaded at' %}: {{ document.created_at|date:"d.m.Y H:i" }}</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <h3 class="mt-3 mb-3">{% trans 'Report' %}</h3>
+      <p><strong>{% trans 'Information about the report' %}</strong></p>
+      <p>{% trans 'Originality percent' %}: <span id="uniquness-percent">{{ report.calculate_final_originality }}</span>%</p>
+      <p>Процент заимствований: <span id="plagiarism-percent">{{ report.calculate_final_plagiarism }}</span>%</p>
+      <p>{% trans 'Citation percentage' %}: <span id="citation-percent">{{ report.citation_percentage|floatformat:2 }}</span>%</p>
+      <p>{% trans 'Selfcitation percentage' %}: <span id="selfcitation-percent">{{ report.selfcitation_percentage|floatformat:2 }}</span>%</p>
+      <p>{% trans 'ChatGPT generated probability' %}: {{ report.chatgpt_generated_percentage|floatformat:2 }}%</p>
+      <p>{% trans 'Formula using attempts' %}: {{ report.formulas_result | length }}</p>
+      <p>{% trans 'Symbols hiding attempts' %}: {{ report.invisible_symbols_result | length }}</p>
+      <p>{% trans 'White spaces' %}: {{ report.white_spaces_result | length }}</p>
+      <p>{% trans 'Replacement of cyrillic letters with latin' %}: {{ report.latin_letters_result | length }}</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <h3 class="mt-5 mb-3">{% trans 'List of top plagiarism instances' %}</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <!-- <th scope="col">#</th> -->
+            <th scope="col">{% trans 'Title' %}</th>
+            <!-- <th scope="col">{% trans 'Plagiarism Percentage' %}</th> -->
+            <th scope="col">{% trans 'Module' %}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for instance in plagiarism_instances_internet %}
+          <tr>
+            <!-- <th scope="row">{{ forloop.counter }}</th> -->
+            <td>
+              {{ instance }} 
+              {% if instance.url %}
+                <a href="{% url 'instance_update' instance.pk%}"><i class="bi bi-pencil-square"></i></a>
+              {% endif %}
+            </td>
+            <!-- <td>
+              {{ instance.plagiarism_percentage }}%
+            </td> -->
+            <td>
+              {{ instance.module }} 
+              {% if instance.url %}
+                <a href="{{ instance.url }}" target="_blank"><i class="bi bi-box-arrow-up-right"></i></a>
+              {% endif %}
+            </td>
+          </tr>
+          {% endfor %}
+        <!-- </tbody> -->
+      <!-- </table> -->
+
+      <!-- <p class="mt-3 mb-3">{% trans 'Top Plagiarism Instances (Local)' %}</p> -->
+      <!-- <table class="table"> -->
+          <!-- <tbody> -->
+            {% for instance in plagiarism_instances_local %}
+            <tr>
+              <!-- <th scope="row">{{ forloop.counter }}</th> -->
+              <td>
+                {{ instance }} 
+                {% if instance.url %}
+                  <a href="{% url 'instance_update' instance.pk%}"><i class="bi bi-pencil-square"></i></a>
+                {% endif %}
+              </td>
+              <!-- <td>
+                {{ instance.plagiarism_percentage }}%
+              </td> -->
+              <td>
+                {{ instance.module }} 
+                {% if instance.url %}
+                  <a href="{{ instance.url }}" target="_blank"><i class="bi bi-box-arrow-up-right"></i></a>
+                {% endif %}
+              </td>
+            </tr>
+            {% empty %}
+            <tr>
+              <td colspan="4">{% trans 'No plagiarism instances found.' %}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+      </table>
+    </div>
+  </div>
+  
+  <div class="row mt-5">
+    <div class="col">
+      <h2>{% trans 'Comments' %}</h2>
+      <div id="commentList">
+        {% for comment in comments %}
+        <p id="comment-{{ comment.id }}">
+          {{ comment.text }}<br>
+          <small class="text-muted"><i class="bi bi-person"></i> {{ comment.created_by }} &emsp; <i class="bi bi-clock"></i> {{ comment.created_at }}</small>
+          <button class="btn btn-outline-danger btn-sm delete-comment" data-id="{{ comment.id }}"><i class="bi bi-trash"></i></button>
+        </p>          
+        {% empty %}
+        <p>{% trans "Write the first comment ;) " %}</p>
+        {% endfor %}
+      </div>
+      <form id="commentForm" method="post" class="mt-5">
+        {% csrf_token %}
+        <label for="text" class="form-label">{% trans 'Add new comment' %}</label><br>
+        <textarea name="text" required aria-label="{% trans 'Comment text' %}" class="form-control"></textarea>
+        <input type="hidden" name="report_id" value="{{ report.pk }}"><br>
+        <input type="submit" value="{% trans 'Submit' %}" class="btn btn-primary">
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock content %}
+
+{% block page_js %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function() {
+
+    // Create comment
+    $('#commentForm').on('submit', function(event) {
+      event.preventDefault();
+      var url = "{% url 'comments:create' %}";
+
+      $.ajax({
+        url: url,
+        type: 'POST',
+        data: $(this).serialize(),
+        success: function(response) {
+          // $('#commentList').append('<div>' + response.comment.text + ' <small>by ' + response.comment.created_by + ' at ' + response.comment.created_at + '</small></div>');
+          $('#commentList').append('<div>' + response.comment.text + '<br> <small><i class="bi bi-person"> ' + response.comment.created_by + ' &emsp; <i class="bi bi-clock"></i> ' + response.comment.created_at + '</small></div>');
+          $('#commentForm')[0].reset();
+        },
+        error: function(xhr) {
+          var errors = xhr.responseJSON.errors;
+          $('#commentList').append('<div class="alert alert-danger">Error: ' + JSON.stringify(errors) + '</div>');
+        }
+      });
+    });
+
+    // Delete comment
+    $(document).on('click', '.delete-comment', function() {
+      var commentId = $(this).data('id');
+      var url = "{% url 'comments:delete' 0 %}".replace('0', commentId);  // Correctly build the URL
+
+      $.ajax({
+        url: url,
+        type: 'POST',
+        data: {
+          'csrfmiddlewaretoken': '{{ csrf_token }}'  // Include CSRF token
+        },
+        success: function(response) {
+          if (response.status === 'success') {
+            $('#comment-' + commentId).remove();  // Remove the comment from the list
+          }
+        },
+        error: function(xhr) {
+          var message = xhr.responseJSON.message || 'An error occurred';
+          alert('Error: ' + message);
+        }
+      });
+    });
+
+  });
+</script>
+{% endblock page_js %}

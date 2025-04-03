@@ -1,0 +1,367 @@
+{% extends '_base.html' %}
+{% load i18n %}
+
+{% block title %}Купить проверку документа на оригинальность{% endblock title %}
+
+{% block content %}
+<div class="container" style="margin-top: 120px; margin-bottom: 120px;">
+  <div class="row">
+    <div class="col">
+      <h3>Купить проверку документа на оригинальность</h3>
+      <p class="mt-5"><strong>Купите со скидкой</strong></p>
+      <p>Получите скидку 5% при покупке 2 и более проверок.</p>
+      <p>Получите скидку 10% при покупке 5 и более проверок.</p>
+      
+      <form id="checkPurchaseForm" method="post">
+        {% csrf_token %}
+        <label for="number_of_checks">Количество проверок</label>
+        <input type="number" id="number_of_checks" name="number_of_checks" required min="1">
+        <p class="mt-5 text-muted">Обычная цена: <span id="regular_price">0</span> KZT</p>
+        <p>
+          <strong>Цена со скидкой: <span id="total_amount">0</span> KZT</strong>
+        </p>
+        <button type="button" class="btn btn-primary" id="payButton">Оплатить сейчас</button>
+      </form>
+
+      <h4 class="mt-5">Акционная цена за проверку документа на оригинальность</h4>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Опция</th>
+            <th>Количество проверок</th>
+            <th>Цена</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Стандарт</td>
+            <td>1</td>
+            <td>1 990 KZT</td>
+          </tr>
+          <tr>
+            <td>Больше</td>
+            <td>2-4</td>
+            <td>1 890 KZT <strong>(-5%)</strong></td>
+          </tr>
+          <tr>
+            <td>Еще больше</td>
+            <td>5 and more</td>
+            <td>1 791 KZT <strong>(-10%)</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- User Info Modal -->
+<div class="modal fade" id="userInfoModal" tabindex="-1" aria-labelledby="userInfoModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="userInfoModalLabel">Заполните данные</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="user-info-form">
+          {% csrf_token %}
+          <div class="mb-3">
+            <label for="first_name" class="form-label">Имя</label>
+            <input type="text" class="form-control" id="first_name" name="first_name" required>
+          </div>
+          <div class="mb-3">
+            <label for="last_name" class="form-label">Фамилия</label>
+            <input type="text" class="form-control" id="last_name" name="last_name" required>
+          </div>
+          <div class="mb-3">
+            <label for="middle_name" class="form-label">Отчество</label>
+            <input type="text" class="form-control" id="middle_name" name="middle_name" required>
+          </div>
+          <div class="mb-3">
+            <label for="iin" class="form-label">ИИН</label>
+            <input type="text" class="form-control" id="iin" name="iin" required minlength="12" maxlength="12" pattern="\d{12}" title="IIN must be 12 digits">
+          </div>
+          <div class="mb-3">
+            <label for="city" class="form-label">Город</label>
+            <input type="text" class="form-control" id="city" name="city" required>
+          </div>
+          <div class="mb-3">
+            <label for="address" class="form-label">Адрес</label>
+            <input type="text" class="form-control" id="address" name="address" required>
+          </div>
+          <div class="mb-3">
+            <label for="zip_code" class="form-label">Zip код</label>
+            <input type="text" class="form-control" id="zip_code" name="zip_code" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Сохранить</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://js.fortebank.com/widget/be_gateway.js"></script>
+<script type="text/javascript">
+  // Store BeGateway widget instance globally
+  let beGatewayWidget = null;
+  let widgetInitialized = false;
+
+  // Function to initialize the BeGateway widget
+  function initializeBeGatewayWidget(amount, numberOfChecks) {
+    const trackingId = 'transaction_' + Math.random().toString(36).substring(2, 15);
+    
+    if (beGatewayWidget) {
+      beGatewayWidget = null;
+    }
+    
+    return {
+      checkout_url: "https://securepayments.fortebank.com",
+      fromWebview: true,
+      checkout: {
+        iframe: true,
+        test: false,
+        version: 2,
+        transaction_type: "payment",
+        public_key: "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxof1b1WIQNmkcqqIAuXNVcF9uwQbiDaw4spjLEhbJNgJ7ElsGfsYTs+q0h4oreXV1DOI92s2nih21n+5iwe9JL3oyVBV0qWZ20n5aJla/xjedv0EFRr55uxzxw2/bK7zDYdWZQdcRQHBpu4/bar1fC2ainPQFYig0JcV6xf652r4FKepYccFzEdCOe5HtgIWnY0vWQHgVL2j9dUdOGuOrsWPOCgt+X7cixvZ0OsgeoG2NOuaT8NSyenLI902xg1bgFO1LctMisOCFFviPYbRtaIYVUnVihsDVB4ndu4rK28cokde5K/YecKJ5aj07cwqP95i8dbZdj2E6b2U4fG5FwIDAQAB",
+        order: {
+          amount: amount * 100,
+          currency: "KZT",
+          description: "Payment for document checks",
+          tracking_id: trackingId
+        },
+        notification_url: "https://oysyn.kz/ru/payments/payment_notification/"
+      },
+      closeWidget: function(status) {
+        console.debug('close widget callback with status: ' + status);
+        if (status === 'successful') {
+          handleSuccessfulPayment(trackingId, amount, numberOfChecks);
+        } else {
+          alert("Payment failed or was not completed.");
+        }
+        beGatewayWidget = null;
+        widgetInitialized = false;
+      }
+    };
+  }
+
+  // Start payment process with proper initialization sequence
+  async function startPayment() {
+    const numberOfChecks = parseInt($('#number_of_checks').val());
+    const amount = Math.round($('#total_amount').text());
+    
+    if (!numberOfChecks || numberOfChecks < 1) {
+      alert('Please enter the number of checks');
+      return;
+    }
+
+    try {
+      // Initialize widget configuration
+      const widgetConfig = initializeBeGatewayWidget(amount, numberOfChecks);
+      
+      // Create new widget instance with a promise
+      await new Promise((resolve) => {
+        beGatewayWidget = new BeGateway(widgetConfig);
+        setTimeout(resolve, 500); // Wait for proper initialization
+      });
+
+      // Create widget after initialization
+      beGatewayWidget.createWidget();
+      widgetInitialized = true;
+    } catch (error) {
+      console.error('Error initializing payment widget:', error);
+      alert('There was an error initializing the payment. Please try again.');
+    }
+  }
+
+  $(document).ready(function() {
+    // Pay button click handler
+    $('#payButton').on('click', function(event) {
+      event.preventDefault();
+      
+      // Validate if number of checks is entered
+      const numberOfChecks = $('#number_of_checks').val();
+      if (!numberOfChecks || numberOfChecks < 1) {
+        alert('Please enter the number of checks');
+        return;
+      }
+
+      // Fetch current user data
+      $.ajax({
+        url: "{% url 'user_detail' %}",
+        type: "GET",
+        headers: {
+          'X-Requested-With': 'XMLHttpRequest'
+        },
+        success: function(data) {
+          // Pre-fill form with existing user data if available
+          if (data.user) {
+            $('#first_name').val(data.user.first_name || '');
+            $('#last_name').val(data.user.last_name || '');
+            $('#middle_name').val(data.user.middle_name || '');
+            $('#iin').val(data.user.iin || '');
+            $('#city').val(data.user.city || '');
+            $('#address').val(data.user.address || '');
+            $('#zip_code').val(data.user.zip_code || '');
+          }
+          // Show modal
+          $('#userInfoModal').modal('show');
+        },
+        error: function() {
+          // Show modal even if we can't fetch user data
+          $('#userInfoModal').modal('show');
+        }
+      });
+    });
+
+    // User info form submission handler
+    $('#user-info-form').on('submit', async function(event) {
+      event.preventDefault();
+      
+      // Get form values and validate
+      const firstName = $('#first_name').val().trim();
+      const lastName = $('#last_name').val().trim();
+      const middleName = $('#middle_name').val().trim();
+      const iin = $('#iin').val().trim();
+      const city = $('#city').val().trim();
+      const address = $('#address').val().trim();
+      const zipCode = $('#zip_code').val().trim();
+
+      // Validate IIN format
+      if (!/^\d{12}$/.test(iin)) {
+        alert('IIN must be exactly 12 digits');
+        return;
+      }
+
+      // Validate zip code format
+      if (!/^\d{5,}$/.test(zipCode)) {
+        alert('Zip code must be at least 5 digits');
+        return;
+      }
+
+      // Validate all fields are filled
+      if (!middleName || !iin || !city || !address || !zipCode) {
+        alert('Please fill in all fields');
+        return;
+      }
+
+      try {
+        // Submit user info form
+        const response = await $.ajax({
+          url: "{% url 'user_update' %}",
+          type: "POST",
+          headers: {
+            'X-Requested-With': 'XMLHttpRequest'
+          },
+          data: {
+            first_name: firstName,
+            last_name: lastName,
+            middle_name: middleName,
+            iin: iin,
+            city: city,
+            address: address,
+            zip_code: zipCode,
+            csrfmiddlewaretoken: $('[name=csrfmiddlewaretoken]').val()
+          }
+        });
+
+        if (response.status === 'success') {
+          // Hide modal and start payment after successful update
+          $('#userInfoModal').modal('hide');
+          
+          // Wait for modal to fully hide before starting payment
+          setTimeout(async () => {
+            if (!widgetInitialized) {
+              await startPayment();
+            }
+          }, 500);
+        } else {
+          alert("Error saving user info. Please try again.");
+        }
+      } catch (error) {
+        if (error.responseJSON && error.responseJSON.errors) {
+          // Display form errors from Django
+          const errorMessages = Object.entries(error.responseJSON.errors)
+            .map(([field, errors]) => `${field}: ${errors.join(', ')}`)
+            .join('\n');
+          alert(`Please correct the following errors:\n${errorMessages}`);
+        } else {
+          alert("Error saving user info. Please try again.");
+        }
+      }
+    });
+
+    // Add input validation for IIN
+    $('#iin').on('input', function() {
+      this.value = this.value.replace(/[^\d]/g, '').slice(0, 12);
+    });
+
+    // Add input validation for zip code
+    $('#zip_code').on('input', function() {
+      this.value = this.value.replace(/[^\d]/g, '');
+    });
+
+    // Reset form and widget state when modal is closed
+    $('#userInfoModal').on('hidden.bs.modal', function() {
+      $('#user-info-form')[0].reset();
+      if (beGatewayWidget) {
+        beGatewayWidget = null;
+        widgetInitialized = false;
+      }
+    });
+  });
+
+  // Price calculation
+  const CHECK_PRICE = 1999;
+    
+  document.getElementById('number_of_checks').addEventListener('input', function() {
+    const numberOfChecks = parseInt(this.value) || 0;
+    const amount = calculateTotalAmount(numberOfChecks);
+    const regularPrice = calculateRegularPrice(numberOfChecks);
+    document.getElementById('total_amount').innerText = amount;
+    document.getElementById('regular_price').innerText = regularPrice;
+  });
+
+  function calculateTotalAmount(numberOfChecks) {
+    if (numberOfChecks === 1) {
+      return 1990;
+    } else if (numberOfChecks >= 2 && numberOfChecks <= 4) {
+      return Math.round(1999 * numberOfChecks * 0.95); // 5% discount
+    } else if (numberOfChecks >= 5) {
+      return Math.round(1999 * numberOfChecks * 0.90); // 10% discount
+    }
+    return 0;
+  }
+
+  function calculateRegularPrice(numberOfChecks) {
+    return numberOfChecks * 1990;
+  }
+
+  // Handle successful payment
+  function handleSuccessfulPayment(trackingId, amount, numberOfChecks) {
+    $.ajax({
+      url: "{% url 'payments:purchase_checks' %}",
+      type: "POST",
+      headers: {
+        'X-CSRFToken': '{{ csrf_token }}'
+      },
+      data: {
+        tracking_id: trackingId,
+        success: true,
+        amount: amount,
+        number_of_checks: numberOfChecks
+      },
+      success: function(response) {
+        alert("Payment status updated successfully.");
+        $('#number_of_checks').val('');
+        $('#total_amount').text('0');
+        $('#regular_price').text('0');
+      },
+      error: function(xhr) {
+        alert("Error logging payment success. Please try again.");
+      }
+    });
+  }
+</script>
+
+{% endblock %}

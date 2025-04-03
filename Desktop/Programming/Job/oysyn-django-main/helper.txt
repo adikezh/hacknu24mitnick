@@ -1,0 +1,97 @@
+Run postgres docker:
+docker run --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=postgres -d postgres
+
+Check test coverage:
+pip install coverage
+coverage run --omit='*/venv/*' manage.py test [my_app_name]
+coverage report
+
+Run redis docker:
+docker run --name redis -d redis
+
+Run celery:
+celery -A core worker --loglevel=info
+
+
+# --- Запуск elasticsearch с помощью docker START --- #
+
+docker run -d \
+  --name elasticsearch \
+  -e "discovery.type=single-node" \
+  -e "ES_JAVA_OPTS=-Xms512m -Xmx512m" \
+  -p 9200:9200 \
+  docker.elastic.co/elasticsearch/elasticsearch:8.10.1
+
+
+# change password
+sudo docker exec -it elasticsearch /bin/bash
+elasticsearch-setup-passwords auto
+
+
+# Показать информацию об индексах:
+https://localhost:9200/_cat/indices?v
+
+# Показать содержимое индекса:
+https://127.0.0.1:9200/documents/_search?pretty
+
+
+# --- Запуск elasticsearch с помощью docker END --- #
+
+
+sudo chown -R www-data:www-data /path/to/your/project/locale
+sudo chmod -R 775 /path/to/your/project/locale
+sudo chmod -R 775 /path/to/your/project/media
+
+
+
+Django localization
+python manage.py makemessages --all --ignore=env --ignore=venv
+python manage.py compilemessages --ignore=env --ignore=venv
+
+
+
+
+# --- Deploy Start --- #
+
+# reload gunicorn 
+sudo systemctl daemon-reload
+sudo systemctl restart gunicorn.socket gunicorn.service
+sudo systemctl restart celery.service
+
+# reload nginx after modifications
+sudo nginx -t && sudo systemctl restart nginx
+
+
+sudo systemctl daemon-reload && sudo systemctl restart gunicorn.socket gunicorn.service celery.service flower.service && sudo nginx -t && sudo systemctl restart nginx
+
+# --- Deploy End --- #
+
+
+# --- Monitor Logs Start --- #
+
+sudo tail -f /var/log/nginx/error.log
+sudo journalctl -u gunicorn.service -f
+sudo journalctl -u celery.service -f
+oysyn@oysyn-vm:~/LanguageTool-6.5$ ./start-languagetool.sh
+
+# --- Monitor Logs End --- #
+
+
+# --- Docker Compose Start --- #
+
+sudo docker-compose down -v
+sudo docker-compose up -d --build
+sudo docker-compose logs web
+
+# --- Docker Compose End--- #
+
+
+# --- Configure https Start --- #
+
+sudo apt-get update
+sudo apt-get install certbot
+sudo certbot certonly --standalone -d oysyn.kz # obtain the certificate
+
+
+# --- Configure https End --- #
+

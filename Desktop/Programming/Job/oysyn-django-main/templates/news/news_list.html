@@ -1,0 +1,25 @@
+{% extends '_base.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block title %}All news{% endblock title %}
+
+{% block content %}
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col text-center">
+      <a href="{% url 'news:create' %}">Create news</a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <ul>
+        {% for news in object_list %}
+        <li><a href="{% url 'news:detail' news.slug %}">{{ news.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock content %}

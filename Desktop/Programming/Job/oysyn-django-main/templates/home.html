@@ -1,0 +1,649 @@
+{% extends '_base.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans 'Main' %}{% endblock title %}
+
+{% block content %}
+<main class="main">
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero section">
+
+    <img src="{% static 'images/hero-bg-abstract.jpg' %}" alt="{% trans 'Background image for plagiarism detection system' %}" data-aos="fade-in" class="">
+
+    <div class="container">
+      <div class="row justify-content-center" data-aos="zoom-out">
+        <div class="col-xl-7 col-lg-9 text-center">
+          <!-- <h1>Самый точный сервис по выявлению плагиата</h1>
+          <p>Казахстанская система по поиску заимствований</p> -->
+          <h1>{% trans 'The best plagiarism detection system' %}</h1>
+          <p>{% trans 'Kazakhstan text borrowing detection system' %}</p>
+        </div>
+      </div>
+      <div class="text-center" data-aos="zoom-out" data-aos-delay="100">
+        <a href="{% url 'folder_list' %}" class="btn-get-started">{% trans 'Start for free' %}</a>
+      </div>
+
+      <div class="row gy-4 mt-5">
+        <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="100">
+          <div class="icon-box">
+            <div class="icon"><i class="bi bi-speedometer2"></i></div>
+            <h4 class="title"><a href="">{% trans 'Speed' %}</a></h4>
+            <!-- <p class="description">На 12% быстрее всех существующих современных аналогов</p> -->
+            <p class="description">{% trans '12% faster than all existing modern analogues' %}</p>
+          </div>
+        </div><!--End Icon Box -->
+
+        <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="200">
+          <div class="icon-box">
+            <div class="icon"><i class="bi bi-gem"></i></div>
+            <h4 class="title"><a href="">{% trans 'Accuracy' %}</a></h4>
+            <!-- <p class="description">Стремится к 100% точности благодаря уникальному математическому методу</p> -->
+            <p class="description">{% trans 'Aims for 100% accuracy through a unique mathematical method' %}</p>
+          </div>
+        </div><!--End Icon Box -->
+
+        <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="300">
+          <div class="icon-box">
+            <div class="icon"><i class="bi bi-translate"></i></div>
+            <h4 class="title"><a href="">{% trans 'Multilingualism' %}</a></h4>
+            <!-- <p class="description">Анализирует заимствования из источников не только языка автора</p> -->
+            <p class="description">{% trans "Analyzes borrowings from sources not only in the author's language" %}</p>
+          </div>
+        </div><!--End Icon Box -->
+
+        <div class="col-md-6 col-lg-3" data-aos="zoom-out" data-aos-delay="400">
+          <div class="icon-box">
+            <div class="icon"><i class="bi bi-robot"></i></div>
+            <h4 class="title"><a href="">{% trans 'AI Using' %}</a></h4>
+            <!-- <p class="description">Уже доступна пробная версия идентификации ИИ (ChatGPT)</p> -->
+            <p class="description">{% trans 'Detecting of a text generated with AI (ChatGPT)' %}</p>
+          </div>
+        </div><!--End Icon Box -->
+
+      </div>
+    </div>
+
+  </section><!-- /Hero Section -->
+
+
+
+
+
+
+
+
+
+  <section id="promo" class="promo section" style="margin-top: 120px">  
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6" data-aos="fade-up">
+          <img class="w-100 mb-3" src="{% static 'images/konkurs-banner.jpg' %}" alt="">
+        </div>
+        <div class="col-md-6" data-aos="fade-up">
+          <h2 class="">{% trans 'Будь оригинальным вместе с OySyn' %}<br></h2>
+          <p>
+            Участвуй в конкурсе и выиграй ценные призы с OySyn! 
+            Проверь 3 работы на сайте OySyn.kz и получи шанс выиграть:<br>
+            💰 1,000,000 ₸<br>
+            📱 iPhone 16<br>
+            🎧 AirPods<br><br>
+
+            Как участвовать?<br>
+              - Зарегистрируйся на OySyn.kz.<br>
+              - Проверь минимум 3 работы на плагиат и автоматически становись участником розыгрыша.<br>
+
+            🏆 Чем больше проверок, тем выше твои шансы на победу!<br>
+            📅 Конкурс действует до 30 декабря.<br>
+
+            Не упусти свой шанс стать победителем!<br>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+  <!-- About Section -->
+  <section id="about" class="about section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2 class="mt-5">{% trans 'Advantages' %}<br></h2>
+      <!-- <p>Возможности уникальной архитектуры базы данных</p> -->
+      <p>{% trans 'Unique database architecture capabilities' %}</p>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+
+      <div class="row gy-4">
+
+        <div class="col content" data-aos="fade-up" data-aos-delay="100">
+          <p>
+            {% trans 'Unique database architecture capabilities' %}:
+          </p>
+          <ul>
+            <li>
+              <i class="bi bi-check2-circle"></i> <span>
+                {% trans 'Reduced disk space requirements compared to foreign analogues' %}
+              </span>
+            </li>
+            <li>
+              <i class="bi bi-check2-circle"></i> <span>
+                {% trans 'High speed of query processing, provided by state-of-the-art approaches to processing large data arrays' %}
+              </span>
+            </li>
+            <li>
+              <i class="bi bi-check2-circle"></i> <span>
+                {% trans 'The system can be adapted to customer requirements' %}
+              </span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section><!-- /About Section -->
+
+  <!-- Stats Section -->
+  <section id="stats" class="stats section light-background py-5">
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="row gy-4">
+
+        <div class="col-lg-3 col-md-6">
+          <div class="stats-item text-center w-100 h-100">
+            <span data-purecounter-start="0" data-purecounter-end="237" data-purecounter-duration="1" class="purecounter"></span>
+            <p>{% trans 'Clients' %}</p>
+          </div>
+        </div><!-- End Stats Item -->
+
+        <div class="col-lg-3 col-md-6">
+          <div class="stats-item text-center w-100 h-100">
+            <span data-purecounter-start="0" data-purecounter-end="6" data-purecounter-duration="1" class="purecounter"></span>
+            <p>{% trans 'Univercities' %}</p>
+          </div>
+        </div><!-- End Stats Item -->
+
+        <div class="col-lg-3 col-md-6">
+          <div class="stats-item text-center w-100 h-100">
+            <span data-purecounter-start="0" data-purecounter-end="1453" data-purecounter-duration="1" class="purecounter"></span>
+            <p>{% trans 'Hours of suport' %}</p>
+          </div>
+        </div><!-- End Stats Item -->
+
+        <div class="col-lg-3 col-md-6">
+          <div class="stats-item text-center w-100 h-100">
+            <span data-purecounter-start="0" data-purecounter-end="14" data-purecounter-duration="1" class="purecounter"></span>
+            <p>{% trans 'Employees' %}</p>
+          </div>
+        </div><!-- End Stats Item -->
+
+      </div>
+
+    </div>
+
+  </section><!-- /Stats Section -->
+
+  <!-- About Alt Section -->
+  <section id="about-alt" class="about-alt section">
+
+    <div class="container my-5">
+
+      <div class="row gy-4">
+        <div class="col-lg-6 position-relative align-self-start" data-aos="fade-up" data-aos-delay="100">
+          <img src="{% static 'images/students.jpg' %}" class="img-fluid" alt="Students checking their documents for plagiarism">
+          <a href="https://drive.google.com/file/d/1oM5AxjuUpVuJe9p0wSCgf1EEqwKh8z53/view?usp=sharing" class="glightbox pulsating-play-btn"></a>
+        </div>
+        <div class="col-lg-6 content" data-aos="fade-up" data-aos-delay="200">
+          <h3>
+            {% trans "Learn about the system's capabilities in 60 seconds" %}
+          </h3>
+          <p class="fst-italic">
+            {% trans 'Use antiplagiatkz to guarantee the uniqueness and quality of your content. Start today and see for yourself the effectiveness of our system!' %}
+          </p>
+          <ul>
+            <li><i class="bi bi-check2-all"></i> <span>
+              {% trans 'Our algorithms check your text against millions of sources on the Internet and academic databases. Get results in minutes' %}
+            </span></li>
+            <li><i class="bi bi-check2-all"></i> <span>
+              {% trans 'We provide clear and detailed reports on the percentage of originality, sources of borrowings and text matches. Easily analyze and check all elements of your document' %}
+            </span></li>
+            <li><i class="bi bi-check2-all"></i> <span>
+              {% trans 'The easy-to-use interface allows you to quickly upload documents, receive reports and manage audit results without any extra effort.' %}
+            </span></li>
+          </ul>
+          <p>
+            {% trans 'We care about your privacy. All uploaded documents are processed with strict security standards and your information remains protected.' %}
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </section><!-- /About Alt Section -->
+
+  <!-- Clients Section -->
+  <section id="clients" class="clients section light-background my-5">
+    <div class="container" data-aos="fade-up">
+      <div class="clients-wrapper">
+        <div class="clients-row">
+          {% for org in organizations %}
+            <div class="client-logo" data-aos="zoom-in" data-aos-delay="{{ forloop.counter0|add:1 }}00">
+              <img src="{{ org.logo.url }}" class="img-fluid" alt="{{ org.title }}">
+            </div>
+          {% empty %}
+            <p class="text-muted">Нет клиентов для отображения.</p>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /Clients Section -->
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials section my-5">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>{% trans 'Testimonials' %}</h2>
+      <p>
+        <!-- Что говорят пользователи о нашей системе обнаружения заимствований -->
+        {% trans 'What users say about our plagiarism detection system' %}
+      </p>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="swiper init-swiper" data-speed="600" data-delay="5000" data-breakpoints="{ &quot;320&quot;: { &quot;slidesPerView&quot;: 1, &quot;spaceBetween&quot;: 40 }, &quot;1200&quot;: { &quot;slidesPerView&quot;: 3, &quot;spaceBetween&quot;: 40 } }">
+        <script type="application/json" class="swiper-config">
+          {
+            "loop": true,
+            "speed": 600,
+            "autoplay": {
+              "delay": 5000
+            },
+            "slidesPerView": "auto",
+            "pagination": {
+              "el": ".swiper-pagination",
+              "type": "bullets",
+              "clickable": true
+            },
+            "breakpoints": {
+              "320": {
+                "slidesPerView": 1,
+                "spaceBetween": 40
+              },
+              "1200": {
+                "slidesPerView": 3,
+                "spaceBetween": 20
+              }
+            }
+          }
+        </script>
+        <div class="swiper-wrapper">
+
+          <div class="swiper-slide">
+            <div class="testimonial-item" "="">
+          <p>
+            <i class=" bi bi-quote quote-icon-left"></i>
+              <span>
+                {% trans 'OySyn helped us effectively control the originality of the content. The results are always accurate and fast. Excellent support and adaptation to our needs. Very satisfied' %}
+              </span>
+              <i class="bi bi-quote quote-icon-right"></i>
+              </p>
+              <img src="{% static 'images/testimonials/testimonial-1.jpeg' %}" class="testimonial-img" alt="Testimonials of plagiarism detection system">
+              <h3>{% trans 'Ruslan Kairatov' %}</h3>
+              <h4>{% trans 'Director of Information Technology' %}</h4>
+            </div>
+          </div><!-- End testimonial item -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <p>
+                <i class="bi bi-quote quote-icon-left"></i>
+                <span>
+                  {% trans 'The OySyn system is simply excellent! Intuitive interface and accuracy of checking are at their best. It has greatly simplified our work. I recommend it to everyone' %}
+                </span>
+                <i class="bi bi-quote quote-icon-right"></i>
+              </p>
+              <img src="{% static 'images/testimonials/testimonial-2.jpeg' %}" class="testimonial-img" alt="Testimonials of OySyn system">
+              <h3>{% trans 'Aliya Nurmuhamedova' %}</h3>
+              <h4>{% trans 'Quality Manager' %}</h4>
+            </div>
+          </div><!-- End testimonial item -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <p>
+                <i class="bi bi-quote quote-icon-left"></i>
+                <span>
+                  {% trans 'We started using OySyn to check materials before publishing. Convenient interface, fast scanning and reliable results are all we need' %}
+                </span>
+                <i class="bi bi-quote quote-icon-right"></i>
+              </p>
+              <img src="{% static 'images/testimonials/testimonial-3.jpeg' %}" class="testimonial-img" alt="Testimonials of plagiarism detection system">
+              <h3>{% trans 'Damir Baimukhamedov' %}</h3>
+              <h4>{% trans 'Editor' %}</h4>
+            </div>
+          </div><!-- End testimonial item -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <p>
+                <i class="bi bi-quote quote-icon-left"></i>
+                <span>
+                  {% trans 'The OySyn system has become an indispensable tool in my work. It helps maintain academic integrity and provides clear reports. It is a pleasure to work with such a product.' %}
+                </span>
+                <i class="bi bi-quote quote-icon-right"></i>
+              </p>
+              <img src="{% static 'images/testimonials/testimonial-4.jpeg' %}" class="testimonial-img" alt="Testimonials of OySyn system">
+              <h3>{% trans 'Zhanna Musina' %}</h3>
+              <h4>{% trans 'Professor' %}</h4>
+            </div>
+          </div><!-- End testimonial item -->
+
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <p>
+                <i class="bi bi-quote quote-icon-left"></i>
+                <span>
+                  {% trans 'I use OySyn to check scientific articles. The system works flawlessly, helps to avoid plagiarism and maintain high quality standards. Excellent tool for work' %}
+                </span>
+                <i class="bi bi-quote quote-icon-right"></i>
+              </p>
+              <img src="{% static 'images/testimonials/testimonial-5.jpeg' %}" class="testimonial-img" alt="Testimonials of plagiarism detection system">
+              <h3>{% trans 'Amir Sultanov' %}</h3>
+              <h4>{% trans 'Research Fellow' %}</h4>
+            </div>
+          </div><!-- End testimonial item -->
+
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+    </div>
+
+  </section><!-- /Testimonials Section -->
+
+  <!-- Call To Action Section -->
+  <section id="call-to-action" class="call-to-action section accent-background">
+
+    <div class="container">
+      <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
+        <div class="col-xl-10">
+          <div class="text-center">
+            <h3>{% trans 'Start using for free' %}</h3>
+            <p>
+              {% trans 'You can start using our loan search system for free today' %}
+            </p>
+            <a class="cta-btn" href="{% url 'folder_list' %}">{% trans 'Check document' %}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section><!-- /Call To Action Section -->
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="pricing section">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2 class="mt-5">{% trans 'Tariffs' %}</h2>
+      <p>
+        {% trans 'Choose the most suitable tariff for yourself. We also provide individual tariffs upon request' %}
+      </p>
+    </div><!-- End Section Title -->
+
+    <div class="container pb-5">
+
+      <div class="row g-4 g-lg-0">
+
+        <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+          <div class="pricing-item">
+            <h3>{% trans 'Free' %}</h3>
+            <h4><sup>₸</sup>0<span> / {% trans 'month' %}</span></h4>
+            <ul>
+              <li><i class="bi bi-check"></i> <span>
+                {% trans 'Limited number of modules.' %}
+              </span></li>
+              <li><i class="bi bi-check"></i> <span>
+                {% trans 'up to 150 000 symbols' %}
+              </span></li>
+              <li class="na"><i class="bi bi-x"></i> <span>
+                {% trans 'Check document by full base' %}
+              </span></li>
+              <li class="na"><i class="bi bi-x"></i> <span>
+                {% trans 'Full list of plagiarism instances' %}
+              </span></li>
+            </ul>
+            <div class="text-center"><a href="{% url 'payments:purchase_checks' %}" class="buy-btn">{% trans 'Buy now' %}</a></div>
+          </div>
+        </div><!-- End Pricing Item -->
+
+        <div class="col-lg-4 featured" data-aos="zoom-in" data-aos-delay="200">
+          <div class="pricing-item">
+            <h3>{% trans 'Premium' %}</h3>
+            <h4><sup>₸</sup>1 990<span> / {% trans 'month' %}</span></h4>
+            <ul>
+              <li><i class="bi bi-check"></i> <span>
+                {% trans 'Up to 300 000 symbols' %}
+              </span></li>
+              <li><i class="bi bi-check"></i> <span>
+                {% trans 'Check doc by full base' %}
+              </span></li>
+              <li><i class="bi bi-check"></i> <span>
+                {% trans 'Detect texts generated by AI' %}
+              </span></li>
+              <li><i class="bi bi-check"></i> <span>
+                {% trans 'Check by libraries of universities' %}
+              </span></li>
+            </ul>
+            <div class="text-center"><a href="{% url 'payments:purchase_checks' %}" class="buy-btn">{% trans 'Buy now' %}</a></div>
+          </div>
+        </div><!-- End Pricing Item -->
+
+        <div class="col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+          <div class="pricing-item">
+            <h3>{% trans 'Max' %}</h3>
+            <h4><sup>₸</sup>4 990<span> / {% trans 'month' %}</span></h4>
+            <ul>
+              <li><i class="bi bi-check"></i> <span>
+                {% trans 'Up to 3 000 000 symbols' %}
+              </span></li>
+              <li><i class="bi bi-check"></i> <span>
+                {% trans 'Check doc by full base' %}
+              </span></li>
+              <li><i class="bi bi-check"></i> <span>
+                {% trans 'Detect texts generated by AI' %}
+              </span></li>
+              <li><i class="bi bi-check"></i> <span>
+                {% trans 'Check by libraries of universities' %}
+              </span></li>
+            </ul>
+            <div class="text-center"><a href="{% url 'payments:purchase_checks' %}" class="buy-btn">{% trans 'Buy now' %}</a></div>
+          </div>
+        </div><!-- End Pricing Item -->
+
+      </div>
+
+    </div>
+
+  </section><!-- /Pricing Section -->
+
+  <!-- Faq Section -->
+  <section id="faq" class="faq section light-background" style="padding-top: 120px; padding-bottom: 120px;">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>{% trans 'Frequently asked questions' %}</h2>
+      <p>
+        {% trans 'If you have not found the answer to your question in this section, call us and we will be happy to help you' %}
+      </p>
+    </div><!-- End Section Title -->
+
+    <div class="container">
+
+      <div class="row justify-content-center">
+
+        <div class="col-lg-10" data-aos="fade-up" data-aos-delay="100">
+
+          <div class="faq-container">
+
+            <div class="faq-item faq-active">
+              <h3>{% trans 'How does the OySyn system work?' %}</h3>
+              <div class="faq-content">
+                <p>
+                  {% trans 'OySyn uses algorithms to compare text with an extensive database of sources, including Internet resources and academic publications. The system checks for matches and provides a report on the percentage of originality and the borrowings found' %}
+                </p>
+              </div>
+              <i class="faq-toggle bi bi-chevron-right"></i>
+            </div><!-- End Faq item-->
+
+            <div class="faq-item">
+              <h3>{% trans 'How can I upload a document for verification?' %}</h3>
+              <div class="faq-content">
+                <p>
+                  {% trans 'You can upload a document through a convenient interface on our website. Click the "Upload file" button, select a document from your device and follow the on-screen instructions. The supported formats are .doc, .docx, .pdf and .txt' %}
+                </p>
+              </div>
+              <i class="faq-toggle bi bi-chevron-right"></i>
+            </div><!-- End Faq item-->
+
+            <div class="faq-item">
+              <h3>{% trans 'How long does the verification process take?' %}</h3>
+              <div class="faq-content">
+                <p>
+                  {% trans 'The verification time depends on the size and complexity of the document. The process usually takes a few minutes. You will receive an email notification as soon as the report is ready.' %}
+                </p>
+              </div>
+              <i class="faq-toggle bi bi-chevron-right"></i>
+            </div><!-- End Faq item-->
+
+            <div class="faq-item">
+              <h3>{% trans 'How does the system handle data privacy?' %}</h3>
+              <div class="faq-content">
+                <p>
+                  {% trans 'We take data privacy very seriously. All uploaded documents are processed according to our strict security measures. Information is not shared with third parties and is used only for plagiarism checking.' %}
+                </p>
+              </div>
+              <i class="faq-toggle bi bi-chevron-right"></i>
+            </div><!-- End Faq item-->
+
+            <div class="faq-item">
+              <h3>{% trans 'What types of reports does the system provide?' %}</h3>
+              <div class="faq-content">
+                <p>
+                  {% trans 'OySyn system provides detailed reports, including the percentage of originality, identified borrowings and links to sources from which fragments were borrowed. You can also view text matches and their context' %}
+                </p>
+              </div>
+              <i class="faq-toggle bi bi-chevron-right"></i>
+            </div><!-- End Faq item-->
+
+          </div>
+
+        </div><!-- End Faq Column-->
+
+      </div>
+
+    </div>
+
+  </section><!-- /Faq Section -->
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact section" style="padding-top: 120px; padding-bottom: 120px;">
+
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>{% trans 'Contacts' %}</h2>
+      <p></p>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="mb-4" data-aos="fade-up" data-aos-delay="200">
+        <iframe style="border:0; width: 100%; height: 270px;" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2504.1096835086414!2d71.43017527656954!3d51.12488483857528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4245841eb39fd6ab%3A0x7a855ed3aa68eec9!2sTalan%20Towers!5e0!3m2!1sru!2skz!4v1721575293216!5m2!1sru!2skz" frameborder="0" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div><!-- End Google Maps -->
+
+      <div class="row gy-4">
+
+        <div class="col-lg-4">
+          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
+            <i class="bi bi-geo-alt flex-shrink-0"></i>
+            <div>
+              <h3>{% trans 'Address' %}</h3>
+              <p>{% trans 'Dostyk str, 16, BC Talan Towers' %}</p>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
+            <i class="bi bi-telephone flex-shrink-0"></i>
+            <div>
+              <h3>{% trans 'Phone' %}</h3>
+              <p>+7 705 185 44 90</p>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
+            <i class="bi bi-envelope flex-shrink-0"></i>
+            <div>
+              <h3>Email</h3>
+              <p>press@globalaeon.tech</p>
+            </div>
+          </div><!-- End Info Item -->
+
+        </div>
+
+        <div class="col-lg-8">
+          <form action="#" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+            <div class="row gy-4">
+
+              <div class="col-md-6">
+                <input type="text" name="name" class="form-control" placeholder="{% trans 'Your name' %}" required="">
+              </div>
+
+              <div class="col-md-6 ">
+                <input type="email" class="form-control" name="email" placeholder="Email" required="">
+              </div>
+
+              <div class="col-md-12">
+                <input type="text" class="form-control" name="subject" placeholder="{% trans 'Theme' %}" required="">
+              </div>
+
+              <div class="col-md-12">
+                <textarea class="form-control" name="message" rows="6" placeholder="{% trans 'Message' %}" required=""></textarea>
+              </div>
+
+              <div class="col-md-12 text-center">
+                <div class="loading">{% trans 'Sending' %}</div>
+                <div class="error-message"></div>
+                <div class="sent-message">{% trans 'Your message is sent. Thank you!' %}</div>
+
+                <button type="submit">{% trans 'Send' %}</button>
+              </div>
+
+            </div>
+          </form>
+        </div><!-- End Contact Form -->
+
+      </div>
+
+    </div>
+
+  </section><!-- /Contact Section -->
+
+</main>
+{% endblock content %}

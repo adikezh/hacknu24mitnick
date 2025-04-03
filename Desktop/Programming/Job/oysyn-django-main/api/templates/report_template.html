@@ -1,0 +1,122 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta content="OySyn - the best plagiarism checking system" name="description">
+  <meta content="oysyn, antiplagiat" name="keywords">
+  <title>{% trans 'Plagiarism check report' %}</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 1in;
+    }
+    @font-face {
+      font-family: 'Roboto-Regular';
+      src: url("/home/oysyn/codebase/antiplagiatkz-app/static/fonts/Roboto-Regular.ttf") format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'Roboto-Bold';
+      src: url("/home/oysyn/codebase/antiplagiatkz-app/static/fonts/Roboto-Bold.ttf") format('truetype');
+      font-weight: normal;
+      font-style: normal;
+    }
+    #text-logo {
+      font-family: 'Roboto-Regular', sans-serif;
+      font-size: 24px;
+      line-height: 0px;
+      margin: 0px;
+      padding: 0px;
+    }
+    body {
+      font-family: 'Roboto-Regular', sans-serif;
+    }
+    .text-center {
+      text-align: center;
+    }
+    .h1 {
+      font-size: 36px;
+    }
+    .h2 {
+      font-size: 24px;
+    }
+    .h3 {
+      font-size: 18px;
+    }
+    .text {
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="text-logo" class="text-center">OySyn</h1>
+  <p class="text text-center" style="margin: 0px; padding: 0px;">{% trans 'Innovative plagiarism checking system' %}</p>
+  <h2 class="h2 text-center" style="margin-top: 50px;">{% trans 'REPORT<br>of passing the system to confirm originality' %}</h2>
+  <div class="report-section">
+    <p class="text">{% trans 'Author' %}: {{ author }}</p>
+    <p class="text">{% trans 'Document type' %}: {{ document_type }}</p>
+    <p class="text">{% trans 'Document title' %}: {{ title }}</p>
+    <p class="text">{% trans 'Originality percentage' %}: {{ final_originality_percentage }}%</p>
+    <p class="text">{% trans 'Plagiarism percentage' %}: {{ final_plagiarism_percentage }}%</p>
+    <p class="text">{% trans 'Citation percentage' %}: {{ final_citation_percentage }}%</p>
+    <p class="text">{% trans 'Selfcitation percentage' %}: {{ final_selfcitation_percentage }}%</p>
+    <p class="text">{% trans 'ChatGPT generated probability' %}: {{ chatgpt_generated_percentage|floatformat:2 }}%</p>
+    <p class="text">{% trans 'Document checked by' %}: {{ checked_by }}</p>
+    <p class="text">{% trans 'Date' %}: {{ created_at }}</p>
+  </div>
+  <br>
+  <div class="report-section">
+    <h3 class="h3 text-center">{% trans 'List of plagiarism instances' %}</h3>
+    <table class="table table-stripped">
+      <thead>
+        <tr>
+          <th scope="col" class="text">#</th>
+          <th scope="col" class="text">{% trans 'Title' %}</th>
+          <th scope="col" class="text">{% trans 'Share in report' %} %</th>
+          <th scope="col" class="text">{% trans 'Module' %}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for plagiarism_instance in plagiarism_instances %}
+        <tr>
+          <th scope="row" class="text">{{ forloop.counter }}</th>
+          <td class="text">
+            {{ plagiarism_instance }} 
+          </td>
+          <td class="text">
+            {{ plagiarism_instance.plagiarism_percentage }}
+          </td>
+          <td class="text">
+            {{ plagiarism_instance.module }} 
+          </td>
+        </tr>
+        {% empty %}
+        <tr>
+          <th scope="row" class="text">-</th>
+          <td class="text">
+            {% trans 'There is no plagiarism instances' %}.
+          </td>
+          <td class="text">
+            -
+          </td>
+          <td class="text">
+            -
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <br>
+    <br>
+    <br>
+    <div class="text-center">
+      <p class="text" style="padding: 0px; margin: 0px;">{% trans 'Please scan the QR-code to validate the document.' %}</p>
+      <img width="100px" height="100px" src="data:image/png;base64,{{ qr_code_base64 }}" alt="QR Code" />
+    </div>
+  </div>
+</body>
+</html>

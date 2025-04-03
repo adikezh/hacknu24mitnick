@@ -1,0 +1,82 @@
+{% extends '_base.html' %}
+
+{% load static %}
+{% load i18n %}
+
+{% block title %}{% trans 'Document Highlight' %}{% endblock title %}
+
+{% block content %}
+<style>
+    .highlight {
+        display: inline;
+        cursor: pointer;
+    }
+
+    .highlight[data-type="PLAGIARISM"] {
+        background-color: rgba(255, 0, 0, 0.3);
+    }
+
+    .highlight[data-type="QUOTE"] {
+        background-color: rgba(255, 255, 0, 0.3);
+    }
+
+    .highlight[data-type="SELFQUOTE"] {
+        background-color: rgba(0, 255, 0, 0.3);
+    }
+
+    #document-text {
+        white-space: pre-wrap;
+    }
+</style>
+
+<div class="container" style="margin-top: 120px; margin-bottom: 120px;">
+    <h1 class="text-center mb-3">{% trans 'Document Highlight' %}</h1>
+    <div class="row">
+        <div class="col-md-12">
+            <pre id="document-text" class="mt-3 mb-5"></pre>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+
+{% block page_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const documentText = "{{ document.text_content|escapejs }}";
+        const instances = JSON.parse('{{ plagiarism_instances|safe }}');
+
+        const container = document.getElementById('document-text');
+        let highlightedText = '';
+        let lastIndex = 0;
+
+        // Sort instances by their start index to ensure correct order
+        instances.sort((a, b) => a.plagiarism_ranges.start - b.plagiarism_ranges.start);
+
+        instances.forEach((instance) => {
+            const start = instance.plagiarism_ranges.start;
+            const end = instance.plagiarism_ranges.end;
+            const type = instance.type;
+
+            // Add text before the highlighted instance
+            if (start > lastIndex) {
+                highlightedText += documentText.substring(lastIndex, start);
+            }
+
+            // Add the highlighted instance
+            highlightedText += `<span class="highlight" data-type="${type}" data-instance-id="${instance.id}">
+                                    ${documentText.substring(start, end)}
+                                </span>`;
+            
+            // Update the last index to the end of the current instance
+            lastIndex = end;
+        });
+
+        // Add any remaining text after the last instance
+        highlightedText += documentText.substring(lastIndex);
+
+        // Set the inner HTML of the container
+        container.innerHTML = highlightedText;
+    });
+</script>
+{% endblock page_js %}
